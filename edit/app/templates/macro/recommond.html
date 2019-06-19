@@ -1,0 +1,12 @@
+{% macro new(blogs) %}
+    <div class="zhuanti">
+      <h2 class="hometitle">最新发布</h2>
+      <ul>
+          {% for blog in blogs %}
+              <li> <i><img src="{{ blog.poster }}"></i>
+                <p>{{ blog.title }} <span><a href="{{ url_for('web.detail',id=blog.id) }}">阅读</a></span> </p>
+              </li>
+          {% endfor %}
+      </ul>
+    </div>
+{% endmacro %}

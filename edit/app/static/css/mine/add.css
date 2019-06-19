@@ -1,0 +1,21 @@
+
+body{
+    background: url("../../images/self/timg.jpg");
+    background-size: cover;
+}
+.publish-form{
+    display: inline-block;
+    line-height: 30px;
+    font-size: 20px;
+    opacity: 0.7;
+}
+
+.publish-form input,select{
+    height: 30px;
+    border-radius: 5%;
+}
+.is-btn{
+    background-color: #00A7EB;
+    height: 50px;
+    border-radius: 10%;
+}

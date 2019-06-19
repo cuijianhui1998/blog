@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Home</title>
+    <script type="text/javascript" src="{{ url_for('static',filename='js/404/jquery-1.8.3.min.js') }}"></script>
+    <script src="{{ url_for('static',filename='js/404/preloader.js')}}"></script>
+    <link rel="stylesheet" href="{{ url_for('static',filename='css/404/style.css') }}">
+    <link href='{{ url_for('static',filename='css/404/font.css') }}' rel='stylesheet'>
+    <script type="text/javascript" src="{{ url_for('static',filename='js/404/css_browser_selector.js') }}"></script>
+    <script type="text/javascript" src="{{ url_for('static',filename='js/404/plax.js') }}"></script>
+    <script type="text/javascript" src="{{ url_for('static',filename='js/404/jquery.spritely-0.6.1.js') }}"></script>
+    <script type="text/javascript" src="{{ url_for('static',filename='js/404/jquery-animate-css-rotate-scale.js') }}"></script>
+    <script type="text/javascript" src="{{ url_for('static',filename='js/404/script.js') }}"></script>
+</head>
+<body >
+    <div id="indicator"></div>
+    <div class="wrapper">
+        <div class="sky init">
+            <div id="clouds" class="clouds init"> </div>
+        </div>
+        <div class="convas init">
+            <div id="mountain" class="mountain"></div>
+            <div class="ground"></div>
+            <div class="holder">
+            <div class="rocks"></div>
+            <div class="work-sign"></div>
+            <div class="text-sign">
+                <div class="text font">
+
+                    <a href="{{ url_for('web.index') }}">Back Home→</a>
+
+                </div>
+            </div>
+            <div class="init hole">
+                <div class="sweat"></div>
+                <div class="worker swing "></div>
+                <div class="ground-bottom">
+                    <div class="cleaner"></div>
+                </div>
+            </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+

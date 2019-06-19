@@ -1,0 +1,86 @@
+{% extends 'base.html' %}
+{% import 'macro/flash.html' as myMacro %}
+
+{% block title %}<title>PublishBlog</title>{% endblock %}
+{% block style %}
+    <link rel="stylesheet" href="{{ url_for('static',filename='editormd/css/editormd.css') }}"/>
+    <link rel="stylesheet" href="{{ url_for('static',filename='css/mine/publish.css') }}"/>
+    <link rel="stylesheet" href="{{ url_for('static',filename='css/mine/add.css') }}"/>
+{% endblock %}
+
+{% block header %}{% endblock %}
+{% block content %}
+    <form action="{{ url_for('web.publish') }}" method="post" enctype="multipart/form-data" class="publish-form">
+        <div class="select">
+            <label >标题:
+                <input type="text" name="title" placeholder="发布博客" class="title">
+            </label>
+            <label>主页推荐:
+                <select name="is_recommend">
+                    <option value ="1">是</option>
+                    <option value ="0" selected>否</option>
+                </select>
+            </label>
+            <label>类型:
+                <select name="select">
+                    <option value ="pythonBase">python基础</option>
+                    <option value ="pythonProcess" selected>python进阶</option>
+                    <option value="pythonNew">python新特性</option>
+                    <option value ="flask">flask</option>
+                    <option value ="Django">Django</option>
+                    <option value="tornado">tornado</option>
+                    <option value ="html5">html5</option>
+                    <option value ="css">css</option>
+                    <option value="javascript">javascript</option>
+                    <option value ="allIsFile">一切皆文件</option>
+                    <option value ="install">linux的安装</option>
+                    <option value="other">其他</option>
+                </select>
+            </label>
+            <label>
+                作者:
+                <input type="text" name="author" value="灰灰">
+            </label></br>
+            <label>
+                博客海报:
+                <input type="file" name="poster">
+            </label>
+        </div>
+        <div id="test-editormd">
+            <textarea name="TextContent" id="TextContent" ></textarea>
+        </div>
+        <div class="sub">
+            <input type="submit" name="submit" value="发布博客" class="is-btn">
+            <input type="submit" name="preview" value="预览" class="is-btn">
+        </div>
+        {{ form.csrf_token }}
+    </form>
+    <script src="{{ url_for('static',filename='js/jquery-3.4.1.min.js') }}"></script>
+    <script src="{{ url_for('static',filename='editormd/editormd.min.js') }}"></script>
+    <script type="text/javascript">
+        var testEditor;
+
+        $(function () {
+            testEditor = editormd("test-editormd", {
+                width: "90%",
+                height: 640,
+                syncScrolling: "single",
+                path: "{{ url_for('static',filename='editormd/lib/') }}",
+                // 上传图片
+                imageUpload : true,
+                imageFormats : [ "jpg", "jpeg", "gif", "png", "bmp", "webp" ],
+                // 上传图片时指定调用后台的视图函数
+                // homepage是蓝图 uploads是访问url
+                imageUploadURL : "{{ url_for('web.uploads') }}",
+
+            });
+        });
+    </script>
+{% endblock %}
+
+{% block footer %}{% endblock %}
+{% block top %}{% endblock %}
+
+{% block control %}
+    <a href="{{ url_for('web.index') }}" class="add-blog" title="返回主页"><img src="{{ url_for('static',filename="images/self/add1.png") }}">Go</a>
+{% endblock %}

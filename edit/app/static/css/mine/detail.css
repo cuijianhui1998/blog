@@ -1,0 +1,10 @@
+.code-color code{
+    display: block;
+}
+.code-color ol li{
+    list-style:decimal;
+}
+.code-color ul li{
+    list-style:disc;
+}
+

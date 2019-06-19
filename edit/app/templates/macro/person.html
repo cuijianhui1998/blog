@@ -1,0 +1,29 @@
+{% macro info() %}
+    <div class="sidebar">
+    <div class="about">
+      <p class="avatar"> <img src="{{ url_for('static',filename='images/avatar.jpg')}}" alt=""> </p>
+      <p class="abname">追风少年 | 灰灰</p>
+      <p class="abposition">python忠实热爱者</p>
+      <p class="abtext"> 在校大三学生,喜欢code,喜欢将平常学到的东西记录下来,希望能在这条路上发展的越来越顺畅! </p>
+    </div>
+    <div class="weixin">
+      <h2 class="hometitle">微信关注</h2>
+      <ul>
+        <img src="{{ url_for('static',filename='images/wx.jpg')}}">
+      </ul>
+    </div>
+  </div>
+{% endmacro %}
+
+
+{% macro found() %}
+    <div class="guanzhu" id="follow-us">
+      <h2 class="hometitle">关注我们 么么哒！</h2>
+      <ul>
+        <li class="sina"><a href="https://weibo.com/6572260602/profile?topnav=1&wvr=6&is_all=1" target="_blank"><span>新浪微博</span>灰灰博客</a></li>
+        <li class="qq"><a href="/" target="_blank"><span>QQ号</span>1450938973</a></li>
+        <li class="email"><a href="/" target="_blank"><span>邮箱帐号</span>cjhpython@gmail.com</a></li>
+        <li class="wxgzh"><a href="/" target="_blank"><span>微信号</span>Hui15798083576</a></li>
+      </ul>
+    </div>
+{% endmacro %}

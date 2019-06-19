@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+{% import 'macro/person.html' as myInfo %}
+{% block content %}
+<div class="pagebg ab" style="background:url({{ url_for('static',filename='images/blank.jpg') }}) no-repeat" > </div>
+<div class="container">
+  <h1 class="t_nav"><span>像“草根”一样，紧贴着地面，低调的存在，冬去春来，枯荣无恙。</span><a href="/" class="n1">网站首页</a><a href="/" class="n2">关于我</a></h1>
+  <div class="news_infos">
+    <ul>
+      <p>灰灰，男，一个热衷于python的大三学生,喜欢写爬虫,使用脚本解决生活中的琐事<br />
+        <br />
+        从大学刚开始的天天的LOL,到后来不得不面对毕业以及就业的压力,选择了python作为自己的第一语言<br />
+        <br />
+        刚开始学习的时候总是会遇到各种各样现在看来很弱智的问题,一路走来,慢慢的也能解决一些初级的问题,偶尔会做一些小项目.<br />
+        <br />
+        学习python也有快两年了,写起代码来最重要的是简洁,能一行解决绝不写两行,这是python给我最好的印象,我非常喜欢python的for循环和切片,相对于学习Java基础的那段时间来讲,简直就是折磨,每次写个for循环能让我抓狂,
+          对于可迭代的对象仍然无法像python那样更加容易理解的遍历.<br />
+        <br />
+          对于本网站的界面确实很丑,因为我对前端一无所知,最近也才了解一点JavaScript,如果各位看到特别看不下去的地方,还请勿喷,对此,我还需要感谢杨青小姐姐,我的前端样式大多数都还保留了她的模板的样式,不然我都不敢直视我的界面,她有很多漂亮的前端模板,有兴趣的可以去他主页看看把<a href="www.yangqq.com">杨青个人主页</a></p>
+      <br />
+      <h2>关于本网站</h2>
+      &nbsp;
+      <p>域 名：www.cuijianhui.com 创建于2019年06月17日&nbsp;</p>
+      <br />
+      <p>服务器：阿里云服务器&nbsp;&nbsp;<a href="https://promotion.aliyun.com/ntms/act/ambassador/sharetouser.html?userCode=8smrzoqa&amp;productCode=vm" target="_blank"><span style="color:#FF0000;"><strong>前往阿里云官网购买&gt;&gt;</strong></span></a></p>
+      <br />
+      <p>备案号：赣ICP备19005026号-1</p>
+      <br />
+      <p>程 序：python flask </p>
+    </ul>
+  </div>
+  {{ myInfo.info() }}
+
+</div>
+{% endblock %}

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="Encoding">
+    <file url="file://$PROJECT_DIR$/app/templates/detail.html" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/app/templates/life.html" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/app/templates/list.html" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/app/templates/sayme.html" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/app/templates/share.html" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/app/templates/time.html" charset="GBK" />
+  </component>
+</project>
