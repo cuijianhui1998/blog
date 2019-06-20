@@ -1,52 +1,65 @@
+import os
+import sys
+import logging
+from logging.handlers import RotatingFileHandler
 
-from flask import Flask
-from flask_login import LoginManager
-from flask_admin import Admin
-from flask_admin.contrib.sqla import ModelView
+from flask import Flask,request,render_template
 
+from app.setting import config
+from app.models import Auth,Article
+from app.extension import login_register,admin_register,db_register
 
-from app.model.base import db
-from app.model.article import Article
-from app.model.auth import Auth
+basedir = os.path.abspath(os.path.dirname(os.path.dirname(__file__)))
 
-from app.lib.admin import ArticleView,MyIndexView
+def create_app(config_name=None):
+    if config_name is None:
+        win = sys.platform.startswith('win')
+        config_name = 'development' if win else 'production'
 
-login_manager = LoginManager()
-
-def create_app():
     app =Flask(__name__)
-    app.config.from_object("app.setting")
-    app.config.from_object("app.secret")
+    app.config.from_object(config[config_name])
 
     admin_register(app)
-    blueprint_register(app)
     db_register(app)
     login_register(app)
 
+    blueprint_register(app)
+    logging_register(app)
+    error_register(app)
+
     return app
 
-def login_register(app):
-    login_manager.init_app(app)
-    login_manager.login_view = 'web.login'
-
-
-def db_register(app):
-    db.init_app(app)
-    with app.app_context():
-        db.create_all()
 
 def blueprint_register(app):
     from app.web import web
     app.register_blueprint(web)
 
+def logging_register(app):
+    class RequestFormatter(logging.Formatter):
+        def format(self, record):
+            record.url = request.url
+            record.remote_addr = request.remote_addr
+            return super(RequestFormatter,self).format(record)
 
-def admin_register(app):
-    admin = Admin(app, name='博客后台',index_view= MyIndexView(name="首页"),template_mode='bootstrap3')
-    # admin.add_view(ModelView(Auth, db.session, name='用户'))
-    admin.add_view(ArticleView(Article, db.session,name='博客列表'))
-    admin.add_view(ModelView(Auth, db.session, name='用户列表'))
-    # admin.add_view(AdminCreateBlogView(name='发表博客',endpoint='create'))
+    request_formatter = RequestFormatter(
+        '[%(asctime)s] %(remote_addr)s requested %(url)s\n'
+        '%(levelname)s in %(module)s: %(message)s'
+    )
+    formatter = logging.Formatter('%(asctime)s - %(name)s - %(levelname)s - %(message)s')
+    file_handler = RotatingFileHandler(os.path.join(basedir,'logs/blog.log'),maxBytes=10 * 1024 * 1024, backupCount=10)
+    file_handler.setFormatter(formatter)
+    file_handler.setLevel(logging.INFO)
 
-@login_manager.user_loader
-def get_user(uid):
-    return Auth.query.get(int(uid))
+    if not app.debug:
+        app.logger.addHandler(file_handler)
+
+def error_register(app):
+
+    @app.errorhandler(404)
+    def page_not_found(error):
+        return render_template('404.html'),404
+
+    @app.errorhandler(500)
+    def internal_server_error(error):
+        return render_template('500.html'),500
+

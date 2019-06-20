@@ -1,11 +1,13 @@
+import datetime
+
 from flask import render_template,request,jsonify,redirect,url_for,flash
 from flask_login import login_required
 
-from app.tools.qstorge import uploadImg
-from app.model.article import Article
-from app.model.base import db
-from app.tools.cut_image import get_specification_image
-from app.forms.article import ArticleForm
+from app.lib.photo_shop import uploadImg,get_specification_image
+from app.lib.data_structure import UniqueList
+from app.models import Article
+from app.extension import db
+from app.forms import ArticleForm,SearchForm
 from . import web
 
 
@@ -71,4 +73,32 @@ def uploads():
     return jsonify(res)
 
 
+@web.route('/detail')
+def detail():
+    key = request.args.get('id')
+    blog = Article.query.get_or_404(key)
+    return render_template('detail.html',blog=blog)
+
+@web.route('/search',methods=['GET','POST'])
+def search():
+    form = SearchForm(request.form)
+    blogs = UniqueList()
+    if request.method=='POST' and form.validate():
+        key = request.form.get("keyboard")
+        blogs.extend(Article.query.filter_by(select=key).all())
+        blogs.extend(Article.query.filter(Article.title.like("%{}%".format(key))).all())
+        blogs.extend(Article.query.filter(Article.body.like("%{}%".format(key))).all())
+        return render_template('control/search.html',key=key,blogs=blogs)
+    return render_template('control/search.html', blogs=blogs,form=form)
+
+
+@web.route('/time')
+def time_axis():
+    '''
+    時間軸
+    '''
+    logs = Article.query.order_by(Article.create_time.desc()).all()
+    logs = [(datetime.date(l.create_time),l.title,l.id) for l in logs]
+
+    return render_template('time.html',logs=logs)
 

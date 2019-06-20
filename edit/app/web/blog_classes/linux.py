@@ -1,7 +1,7 @@
-from flask import render_template
+from flask import render_template,abort
 
-from app.model.article import Article
-from app.lib.blog_type import BlogTypeEnum
+from app.models import Article
+from app.lib.data_structure import BlogTypeEnum
 from app.lib.blankprint import BlankPrint
 
 linux = BlankPrint('linux')
@@ -33,5 +33,5 @@ def linux_install():
 
 @linux.route('/more')
 def linux_more():
-    pass
+    abort(404)
     # return render_template('list.html')

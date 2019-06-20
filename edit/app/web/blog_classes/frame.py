@@ -1,7 +1,7 @@
 from flask import render_template
 
-from app.model.article import Article
-from app.lib.blog_type import BlogTypeEnum
+from app.models import Article
+from app.lib.data_structure import BlogTypeEnum
 from app.lib.blankprint import BlankPrint
 
 web_frame = BlankPrint('web_frame')

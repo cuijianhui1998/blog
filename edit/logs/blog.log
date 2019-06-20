@@ -1,0 +1,11 @@
+2019-06-20 16:39:30,493 - flask.app - ERROR - Exception on /linux/more [GET]
+Traceback (most recent call last):
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\flask\app.py", line 2311, in wsgi_app
+    response = self.full_dispatch_request()
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\flask\app.py", line 1835, in full_dispatch_request
+    return self.finalize_request(rv)
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\flask\app.py", line 1850, in finalize_request
+    response = self.make_response(rv)
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\flask\app.py", line 1976, in make_response
+    'The view function did not return a valid response. The'
+TypeError: The view function did not return a valid response. The function either returned None or ended without a return statement.

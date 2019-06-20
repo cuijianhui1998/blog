@@ -1,11 +1,38 @@
 from datetime import datetime
+from contextlib import contextmanager
 
 import bleach
 from markdown import markdown
-from sqlalchemy import Column,Integer,String,Text,DateTime,Boolean
+from flask_login import UserMixin
+from sqlalchemy import Column,String,Integer,Text,Boolean,DateTime
+from flask_sqlalchemy import SQLAlchemy as _SQLAlchemy
 
-from app.model.base import Base,db
 
+class SQLAlchemy(_SQLAlchemy):
+    @contextmanager
+    def submit_data(self):
+        try:
+            yield
+            self.session.commit()
+        except Exception as e:
+            self.session.rollback()
+            raise e
+
+db = SQLAlchemy()
+
+class Base(db.Model):
+    __abstract__ = True
+
+    def setter_data(self,obj):
+        for key,value in obj.items():
+            if hasattr(self,key):
+                setattr(self,key,value)
+
+class Auth(Base,UserMixin):
+    __tablename__ = 'auth'
+    id = Column(Integer,primary_key=True,autoincrement=True)
+    username = Column(String(20))
+    password = Column(String(20))
 
 
 class Article(Base):

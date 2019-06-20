@@ -2,8 +2,8 @@ from flask import render_template,request,url_for,redirect,flash
 from flask_login import login_user
 
 from . import web
-from app.forms.auth import AuthForm
-from app.model.auth import Auth
+from app.forms import AuthForm
+from app.models import Auth
 
 
 @web.route('/login',methods=['GET','POST'])
@@ -24,3 +24,11 @@ def login():
         flash('不存在该用户')
 
     return render_template('auth/login.html',form=form)
+
+
+@web.route('/say_me')
+def say_me():
+    '''
+    留言
+    '''
+    return render_template('sayme.html')

@@ -1,7 +1,23 @@
 import os
 
+from flask import current_app
+from qiniu import Auth,put_data
 from skimage import io
-from matplotlib import pyplot as plt
+
+
+def uploadImg(fileData):
+    access_key = current_app.config['QINIU_ACCESS_KEY']
+    secret_key = current_app.config['QINIU_SECRET_KEY']
+    q = Auth(access_key,secret_key)
+    bucket_name = current_app.config['QINIU_BUCKET_NAME']
+    token = q.upload_token(bucket_name,None,3600)
+    ret,info = put_data(token,None,fileData)
+    if info.status_code == 200:
+        # 获取七牛云保存的图片名称
+        fileName = ret.get("hash")
+        # 拼接完整图片url路径返回
+        imgUrl = "http://{}/{}".format(current_app.config['QINIU_BUCKET_DOMAIN'], fileName)
+        return imgUrl
 
 def get_specification_image(imageFile):
     '''

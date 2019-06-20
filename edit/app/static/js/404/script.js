@@ -1,16 +1,16 @@
 var slider;
 var images = [
 "/static/images/404/ground.png",
-"static/images/404/clouds.png",
-"static/images/404/ground-bottom.png",
-"static/images/404/hole.png",
-"static/images/404/mountain.png",
-"static/images/404/rocks.png",
-"static/images/404/sky-bg.jpg",
-"static/images/404/sweat.png",
-"static/images/404/texty-sign.png",
-"static/images/404/worker.png",
-"static/images/404/working-sign.png"
+"/static/images/404/clouds.png",
+"/static/images/404/ground-bottom.png",
+"/static/images/404/hole.png",
+"/static/images/404/mountain.png",
+"/static/images/404/rocks.png",
+"/static/images/404/sky-bg.jpg",
+"/static/images/404/sweat.png",
+"/static/images/404/texty-sign.png",
+"/static/images/404/worker.png",
+"/static/images/404/working-sign.png"
 ];
 
 var index = 0;

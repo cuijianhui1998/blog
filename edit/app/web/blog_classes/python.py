@@ -1,9 +1,7 @@
 from flask import render_template,url_for,request
 
-
-from app.web.blog_classes import python,linux
-from app.model.article import Article
-from app.lib.blog_type import BlogTypeEnum
+from app.models import Article
+from app.lib.data_structure import BlogTypeEnum
 from app.lib.blankprint import BlankPrint
 
 python = BlankPrint('python')
