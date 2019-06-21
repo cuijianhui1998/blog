@@ -1,0 +1,24 @@
+.news_infos li{
+    background-color: #F5F5DC;
+    margin-bottom: 5px;
+}
+.news_infos p{
+    padding: auto 8px;
+}
+.leave_message{
+    padding: 10px 40px;
+}
+.leave_message textarea{
+    resize: none;
+    width: 100%;
+    height: 120px;
+}
+.leave_message input{
+    position: relative;
+    float: right;
+    margin-top: -27px;
+    padding: 0px;
+    width: 60px;
+    border-right: 0px;
+    border-bottom: 0px;
+}

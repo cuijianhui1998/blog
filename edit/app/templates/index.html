@@ -11,10 +11,11 @@
     <div class="picsbox">
   <div class="banner">
     <div id="banner" class="fader">
+    {% if recommend %}
         {% for blog in recommend %}
             <li class="slide" ><a href="{{ url_for('web.detail',id=blog.id) }}" target="_blank"><img src="{{ blog.poster }}"><span class="imginfo">{{ blog.title }}</span></a></li>
         {% endfor %}
-
+    {% endif %}
 
       <div class="fader_controls">
         <div class="page prev" data-target="prev">&lsaquo;</div>

@@ -1,14 +1,17 @@
 import datetime
+import random
 
-from flask import render_template,request,jsonify,redirect,url_for,flash
+from flask import render_template,request,jsonify,redirect,url_for,flash,current_app
 from flask_login import login_required
+from sqlalchemy.sql.expression import func,select
 
 from app.lib.photo_shop import uploadImg,get_specification_image
 from app.lib.data_structure import UniqueList
-from app.models import Article
+from app.models import Article,Tips
 from app.extension import db
 from app.forms import ArticleForm,SearchForm
 from . import web
+from app.lib.common_data import right_show
 
 
 '''
@@ -76,8 +79,11 @@ def uploads():
 @web.route('/detail')
 def detail():
     key = request.args.get('id')
+    tips = Tips.query.order_by(func.rand()).first()
+    message = random.choice(current_app.config['FINISHED_MESSAGE'])
+    tips = (message,tips.tip)
     blog = Article.query.get_or_404(key)
-    return render_template('detail.html',blog=blog)
+    return render_template('detail.html',blog=blog,tips=tips)
 
 @web.route('/search',methods=['GET','POST'])
 def search():

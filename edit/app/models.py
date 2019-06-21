@@ -1,6 +1,8 @@
 from datetime import datetime
+import random
 from contextlib import contextmanager
 
+from werkzeug.security import generate_password_hash,check_password_hash
 import bleach
 from markdown import markdown
 from flask_login import UserMixin
@@ -23,6 +25,10 @@ db = SQLAlchemy()
 class Base(db.Model):
     __abstract__ = True
 
+    create_time = Column(DateTime)
+    def __init__(self):
+        self.create_time = datetime.utcnow()
+
     def setter_data(self,obj):
         for key,value in obj.items():
             if hasattr(self,key):
@@ -32,8 +38,33 @@ class Auth(Base,UserMixin):
     __tablename__ = 'auth'
     id = Column(Integer,primary_key=True,autoincrement=True)
     username = Column(String(20))
-    password = Column(String(20))
+    email = Column(String(50),unique=True)
+    _password = Column('password',String(100))
 
+    @property
+    def password(self):
+        return self._password
+    @password.setter
+    def password(self,value):
+        self._password = generate_password_hash(value)
+
+    def check_password(self,value):
+        return check_password_hash(self._password,value)
+
+class Tips(Base):
+    __tablename__ = 'tips'
+    id = Column(Integer,primary_key=True,autoincrement=True)
+    tip = Column(String(200),unique=True)
+
+class Message(Base):
+    __tablename__ = 'message'
+    id = Column(Integer,primary_key=True,autoincrement=True)
+    name = Column(String(50))
+    leave_message = Column(Text)
+
+    def __init__(self):
+        super().__init__()
+        self.name ='用户'+''.join(random.sample('zyxwvutsrqponmlkjihgfedcba0123456789',8))
 
 class Article(Base):
     '''
@@ -48,10 +79,8 @@ class Article(Base):
     is_recommend = Column(Boolean,default=False)
     author = Column(String(20))
     poster = Column(String(100))
-    create_time = Column(DateTime)
 
-    def __init__(self):
-        self.create_time = datetime.utcnow()
+
 
     @staticmethod
     def on_changed_body(target, value, oldvalue, initiator):

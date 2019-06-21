@@ -1,5 +1,8 @@
+import requests
+import json
+
 from wtforms import Form,StringField,TextAreaField,SubmitField,PasswordField
-from wtforms.validators import DataRequired,Optional
+from wtforms.validators import DataRequired,Optional,Email,Length,ValidationError
 from flask_wtf import FlaskForm
 from flask_wtf.file import FileField,FileAllowed
 
@@ -17,6 +20,20 @@ class AuthForm(Form):
     username = StringField(validators=[DataRequired()])
     password = PasswordField(validators=[DataRequired()])
 
+class RegisterForm(AuthForm):
+    email = StringField(validators=[Email(),DataRequired()])
+
+
+    def validate_email(self,field):
+        # 调用了第三方API验证邮箱的合法性
+        url = 'https://app.verify-email.org/api/v1/' \
+              'A75mNHZgOMEJ1fqmixtEjUdWmTQa7CdVV9VnjXIOEGDEj6SYzh/verify/{email}'.format(email=field.data)
+        data = json.loads(requests.get(url).text)
+        if data['smtp_code'] != 250:
+            raise ValidationError("邮箱不合法")
+
+class MessageForm(Form):
+    leave_message = TextAreaField(validators=[DataRequired(),Length(max=400)])
 
 class SearchForm(Form):
     keyboard = StringField(validators=[DataRequired(),])

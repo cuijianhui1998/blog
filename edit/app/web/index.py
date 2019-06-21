@@ -10,7 +10,7 @@ def index():
     博客的首頁
     '''
     recommend = Article.query.filter_by(is_recommend=1).limit(3)
-    list = Article.query.order_by(Article.create_time.desc()).all()
+    list = Article.query.order_by(Article.create_time.desc())
     new = Article.query.order_by(Article.create_time.desc()).limit(3)
     return render_template('index.html',recommend=recommend,list=list,new_blog=new)
 

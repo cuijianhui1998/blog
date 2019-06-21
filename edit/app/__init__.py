@@ -6,7 +6,7 @@ from logging.handlers import RotatingFileHandler
 from flask import Flask,request,render_template
 
 from app.setting import config
-from app.models import Auth,Article
+from app.models import Auth,Article,Tips,Message
 from app.extension import login_register,admin_register,db_register
 
 basedir = os.path.abspath(os.path.dirname(os.path.dirname(__file__)))

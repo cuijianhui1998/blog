@@ -1,15 +1,17 @@
 import os
 
-
 class BaseConfig:
     SECRET_KEY = b's\x97_\x95\xcd\xc5\x8c\xa37I\x95\xe9\xcc+-\xa0\xb9\x9a\xef\x04\r\xc7\xd3l'
     SQLALCHEMY_TRACK_MODIFICATIONS = False
 
     ALLOW_IMAGE_EXTENSIONS = ['jpg','png','ico','gif']
+    FINISHED_MESSAGE = ['你知道吗','告诉你个小技巧','听说','我刚刚知道','号外号外']
+
+    MAIL_VALIDATE_KEY = 'A75mNHZgOMEJ1fqmixtEjUdWmTQa7CdVV9VnjXIOEGDEj6SYzh'
 
 class DevelopmentConfig(BaseConfig):
     ENV = 'development'
-    SQLALCHEMY_DATABASE_URI = 'mysql+pymysql://root:123456@localhost:3306/spider?charset=utf8'
+    SQLALCHEMY_DATABASE_URI = 'mysql+pymysql://root:123456@localhost:3306/blog?charset=utf8'
 
     QINIU_ACCESS_KEY = 'yqSGVN0FE4wkhVX2S4xAWlqDOtze7PYpHdV9WAVc'
     QINIU_SECRET_KEY = '4tMN1Rf4hClLnonAEkP4rel9U3W4rTIFfCkRpJVp'
@@ -29,7 +31,7 @@ class ProductionConfig(BaseConfig):
     password = os.getenv('MYSQL_PASSWORD')
     port = os.getenv('MYSQL_PORT')
     database = os.getenv('MYSQL_DATABASE')
-    SQLALCHEMY_DATABASE_URI = 'mysql+pymysql://{username}:{password}@localhost:{port}/{database}?charset=utf-8'.format(
+    SQLALCHEMY_DATABASE_URI = 'mysql+pymysql://{username}:{password}@localhost:{port}/{database}?charset=utf8'.format(
         username=username,
         password=password,
         port=port,

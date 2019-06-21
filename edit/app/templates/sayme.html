@@ -1,14 +1,26 @@
 {% extends 'base.html' %}
 {% import 'macro/person.html' as myInfo %}
+
+{% block mystyle %}
+    {{ super() }}
+    <link rel="stylesheet" href="{{ url_for('static',filename='css/mine/say_me.css') }}">
+{% endblock %}
 {% block content %}
     <div class="pagebg ab" style="background:url({{ url_for('static',filename='images/blank.jpg') }}) no-repeat"> </div>
     <div class="container">
       <h1 class="t_nav"><span>你，我生命中一个重要的过客，我们之所以是过客，因为你未曾会为我停留。</span><a href="/" class="n1">网站首页</a><a href="/" class="n2">留言</a></h1>
       <div class="news_infos">
         <ul>
-          此处安装评论插件
+            {% for message in leave_messages %}
+                <li><p><span>{{ message.name }}</span>:<span>{{ message.leave_message }}</span></p></li>
+            {% endfor %}
         </ul>
+        <form action="{{ url_for('web.say_me') }}" method="post" class="leave_message">
+            <textarea name="leave_message" placeholder="发表一下你的想法吧"></textarea>
+            <input type="submit" name="submit" value="发送">
+        </form>
       </div>
         {{ myInfo.info() }}
     </div>
 {% endblock %}
+{% block top %}{% endblock %}

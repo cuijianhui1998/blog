@@ -3,7 +3,7 @@ from flask_admin import Admin
 from flask_admin.contrib.sqla import ModelView
 
 
-from app.models import Article,Auth,db
+from app.models import Article,Auth,db,Tips,Message
 from app.lib.admin import ArticleView,MyIndexView
 
 
@@ -25,6 +25,8 @@ def admin_register(app):
     # admin.add_view(ModelView(Auth, db.session, name='用户'))
     admin.add_view(ArticleView(Article, db.session,name='博客列表'))
     admin.add_view(ModelView(Auth, db.session, name='用户列表'))
+    admin.add_view(ModelView(Tips,db.session,name='小技巧'))
+    admin.add_view(ModelView(Message, db.session, name='游客留言'))
     # admin.add_view(AdminCreateBlogView(name='发表博客',endpoint='create'))
 
 @login_manager.user_loader
