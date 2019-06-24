@@ -8,3 +8,17 @@
     font-size: 20px;
     background-color: aqua;
 }
+.nnn{
+    height: 0;
+    padding: 0;
+    position: relative;
+    left: 95%;
+}
+.blogs-update{
+
+    width: 20px;
+
+}
+.nnn ul{
+    display: none;
+}

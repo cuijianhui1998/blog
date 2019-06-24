@@ -2,8 +2,10 @@
 {% import 'macro/recommond.html' as reco %}
 {% import 'macro/person.html' as follow %}
 
-{% block style %}
+{% block mystyle %}
     {{ super() }}
+    <link rel="stylesheet" href="{{ url_for('static',filename="css/mine/404.css") }}"/>
+    <script src="{{ url_for('static',filename='js/mine/blog-content.js') }}"></script>
 {% endblock %}
 {% block content %}
 <article>
@@ -41,46 +43,7 @@
   </div>
     <div class="blank"></div>
     <!--blogsbox begin-->
-    <div class="blogsbox">
-    {% for blog in list %}
-{#        有图片的模板#}
-        {% if blog.poster %}
-            <div class="blogs" data-scroll-reveal="enter bottom over 1s" >
-            <h3 class="blogtitle"><a href="{{ url_for('web.detail',id=blog.id) }}" target="_blank">{{ blog.title }}</a></h3>
-            <span class="blogpic"><a href="{{ url_for('web.detail',id=blog.id) }}" title=""><img src="{{ blog.poster }}" alt=""></a></span>
-            <p class="blogtext">{{ blog.body }} </p>
-            <div class="bloginfo">
-                <ul>
-                  <li class="author"><a href="/">{{ blog.author }}</a></li>
-                  <li class="lmname"><a href="/">{{ blog.select }}</a></li>
-                  <li class="timer">{{ blog.create_time }}</li>
-                  <li class="view"><span>34567</span>已阅读</li>
-                  <li class="like">9999</li>
-                </ul>
-            </div>
-        </div>
-        {% else %}
-{#        无图片的模板#}
-            <div class="blogs" data-scroll-reveal="enter bottom over 1s" >
-
-              <h3 class="blogtitle"><a href="{{ url_for('web.detail',id=blog.id) }}" target="_blank">{{ blog.title }}</a></h3>
-              <p class="blogtext">{{ blog.body }}</p>
-              <div class="bloginfo">
-                <ul>
-                  <li class="author"><a href="/">{{ blog.author }}</a></li>
-                  <li class="lmname"><a href="/">{{ blog.select }}</a></li>
-                  <li class="timer">{{ blog.create_time }}</li>
-                  <li class="view">4567已阅读</li>
-                  <li class="like">9999</li>
-                </ul>
-              </div>
-            </div>
-        {% endif %}
-    {% endfor %}
-
-
-
-  </div>
+    {{ reco.showlist(blogs,current_user) }}
 
     <!--blogsbox end-->
     <div class="sidebar">
@@ -130,7 +93,6 @@
       </ul>
     </div>
     {{ follow.found() }}
-
 
   </div>
 

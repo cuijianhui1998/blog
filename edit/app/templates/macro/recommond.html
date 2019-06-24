@@ -10,3 +10,48 @@
       </ul>
     </div>
 {% endmacro %}
+
+{% macro showlist(blogs,current_user) %}
+    <div class="blogsbox">
+    {% if blogs %}
+        {% for blog in blogs %}
+            <div class="blogs" data-scroll-reveal="enter bottom over 1s" >
+            {# 开始           判断用户是否有权限修改该条博客#}
+            {% if current_user.is_authenticated and current_user.email==blog.auth.email %}
+                <div class="nnn">
+                <img class="blogs-update" src="{{ url_for('static',filename="images/self/point.png") }}">
+                <ul id="blogs-control">
+                    <li><a href="{{ url_for('web.update',id=blog.id) }}">修改</a></li>
+                    <li>删除</li>
+                </ul>
+            </div>
+            {% else %}
+            {% endif %}
+            {# 结束          #}
+            <h3 class="blogtitle"><a href="{{ url_for('web.detail',id=blog.id) }}" target="_blank">{{ blog.title }}</a></h3>
+            {% if blog.poster %}
+                <span class="blogpic"><a href="{{ url_for('web.detail',id=blog.id) }}" title=""><img src="{{ blog.poster }}" alt=""></a></span>
+            {% else %}
+            {% endif %}
+            <p class="blogtext">{{ blog.body }} </p>
+            <div class="bloginfo">
+                <ul>
+                  <li class="author"><a href="/">{{ blog.author }}</a></li>
+                  <li class="lmname"><a href="/">{{ blog.select }}</a></li>
+                  <li class="timer">{{ blog.create_time }}</li>
+                  <li class="view"><span>34567</span>已阅读</li>
+                  <li class="like">9999</li>
+                </ul>
+            </div>
+        </div>
+        {% endfor %}
+    {% else %}
+        <div class="not-found">
+            <img src="{{ url_for('static',filename='images/self/404.png') }}"/>
+            <p>暂时没有此类型的博客哦!</p>
+            <a href="{{ url_for('web.publish') }}"><input type="button" value="去发表"/></a>
+            <a href="{{ url_for('web.index') }}"><input type="button" value="回主页"/></a>
+        </div>
+    {% endif %}
+    </div>
+{% endmacro %}

@@ -1,22 +1,20 @@
 import datetime
-import random
 
-from flask import render_template,request,jsonify,redirect,url_for,flash,current_app
+
+from flask import render_template,request,jsonify,redirect,url_for,flash
 from flask_login import login_required
-from sqlalchemy.sql.expression import func,select
+
 
 from app.lib.photo_shop import uploadImg,get_specification_image
 from app.lib.data_structure import UniqueList
 from app.models import Article,Tips
 from app.extension import db
-from app.forms import ArticleForm,SearchForm
+from app.forms import ArticleForm,SearchForm,MessageForm
 from . import web
 from app.lib.common_data import right_show
 
 
-'''
-主要描述的时是关于通过富文本编辑器添加博客的视图函数
-'''
+
 
 @web.route("/publish", methods=["GET", "POST"])
 @login_required
@@ -76,14 +74,7 @@ def uploads():
     return jsonify(res)
 
 
-@web.route('/detail')
-def detail():
-    key = request.args.get('id')
-    tips = Tips.query.order_by(func.rand()).first()
-    message = random.choice(current_app.config['FINISHED_MESSAGE'])
-    tips = (message,tips.tip)
-    blog = Article.query.get_or_404(key)
-    return render_template('detail.html',blog=blog,tips=tips)
+
 
 @web.route('/search',methods=['GET','POST'])
 def search():
@@ -108,3 +99,16 @@ def time_axis():
 
     return render_template('time.html',logs=logs)
 
+
+@web.route('/update',methods=['GET','POST'])
+@login_required
+def update():
+    id = request.args.get("id")
+    article = Article.query.get_or_404(id)
+    if request.method == 'POST':
+        TextContent = request.form.get("TextContent")
+        with db.submit_data():
+            article.setter_data(request.form)
+            article.body = TextContent
+        return redirect(url_for('web.index'))
+    return render_template('control/update.html',article=article)

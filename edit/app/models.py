@@ -6,8 +6,9 @@ from werkzeug.security import generate_password_hash,check_password_hash
 import bleach
 from markdown import markdown
 from flask_login import UserMixin
-from sqlalchemy import Column,String,Integer,Text,Boolean,DateTime
+from sqlalchemy import Column,String,Integer,Text,Boolean,DateTime,ForeignKey
 from flask_sqlalchemy import SQLAlchemy as _SQLAlchemy
+
 
 
 class SQLAlchemy(_SQLAlchemy):
@@ -37,9 +38,16 @@ class Base(db.Model):
 class Auth(Base,UserMixin):
     __tablename__ = 'auth'
     id = Column(Integer,primary_key=True,autoincrement=True)
-    username = Column(String(20))
+    username = Column(String(20),unique=True)
     email = Column(String(50),unique=True)
     _password = Column('password',String(100))
+
+    articles = db.relationship('Article',back_populates='auth')
+
+    comments = db.relationship('Comment',back_populates='auth')
+
+    replys = db.relationship('Reply',back_populates='auth')
+
 
     @property
     def password(self):
@@ -47,7 +55,6 @@ class Auth(Base,UserMixin):
     @password.setter
     def password(self,value):
         self._password = generate_password_hash(value)
-
     def check_password(self,value):
         return check_password_hash(self._password,value)
 
@@ -65,6 +72,33 @@ class Message(Base):
     def __init__(self):
         super().__init__()
         self.name ='用户'+''.join(random.sample('zyxwvutsrqponmlkjihgfedcba0123456789',8))
+class Comment(Base):
+    # 评论
+    __tablename__ = 'comment'
+    id = Column(Integer,primary_key=True,autoincrement=True)
+    content = Column(String(100))
+
+    article_id = Column(Integer,ForeignKey('article.id'))
+    article = db.relationship('Article',back_populates='comments')
+
+    auth_id = Column(Integer,ForeignKey('auth.id'))
+    auth = db.relationship('Auth', back_populates='comments')
+
+    replys = db.relationship('Reply',back_populates='comment')
+
+
+class Reply(Base):
+    #回复
+    __tablename__ = 'reply'
+    id = Column(Integer,primary_key=True,autoincrement=True)
+    content = Column(String(100))
+
+    auth_id = Column(Integer,ForeignKey('auth.id'))
+    auth = db.relationship('Auth', back_populates='replys')
+
+    comment_id = Column(Integer,ForeignKey('comment.id'))
+    comment = db.relationship('Comment',back_populates='replys')
+
 
 class Article(Base):
     '''
@@ -77,10 +111,12 @@ class Article(Base):
     body_html = Column(Text)
     select = Column(String(20))
     is_recommend = Column(Boolean,default=False)
-    author = Column(String(20))
     poster = Column(String(100))
 
+    auth_id = Column(Integer, ForeignKey('auth.id'))
+    auth = db.relationship('Auth',back_populates='articles')
 
+    comments = db.relationship('Comment',back_populates='article')
 
     @staticmethod
     def on_changed_body(target, value, oldvalue, initiator):

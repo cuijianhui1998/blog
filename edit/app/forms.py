@@ -26,14 +26,22 @@ class RegisterForm(AuthForm):
 
     def validate_email(self,field):
         # 调用了第三方API验证邮箱的合法性
-        url = 'https://app.verify-email.org/api/v1/' \
-              'A75mNHZgOMEJ1fqmixtEjUdWmTQa7CdVV9VnjXIOEGDEj6SYzh/verify/{email}'.format(email=field.data)
+        url = 'https://www.mail-verifier.com/do/api?key={key}&verify={email}'.format(
+            key='309F51D4A00791A82E88AF530B8B4E75',email=field.data)
         data = json.loads(requests.get(url).text)
-        if data['smtp_code'] != 250:
+        if data['code'] != 1:
             raise ValidationError("邮箱不合法")
 
 class MessageForm(Form):
     leave_message = TextAreaField(validators=[DataRequired(),Length(max=400)])
+
+class CommentForm(Form):
+    comment = TextAreaField(validators=[DataRequired(),Length(max=400)])
+    comment_submit = SubmitField()
+
+class ReplyForm(Form):
+    reply = TextAreaField(validators=[DataRequired(),Length(max=400)])
+    reply_submit = SubmitField()
 
 class SearchForm(Form):
     keyboard = StringField(validators=[DataRequired(),])
@@ -41,3 +49,5 @@ class SearchForm(Form):
         #设置最长的检索字符
         if len(field.data)>20:
             field.data = field.data[:20]
+
+

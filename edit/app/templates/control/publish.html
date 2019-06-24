@@ -6,6 +6,7 @@
     <link rel="stylesheet" href="{{ url_for('static',filename='editormd/css/editormd.css') }}"/>
     <link rel="stylesheet" href="{{ url_for('static',filename='css/mine/publish.css') }}"/>
     <link rel="stylesheet" href="{{ url_for('static',filename='css/mine/add.css') }}"/>
+    <script src="{{ url_for('static',filename='js/jquery-3.4.1.min.js') }}" type="text/javascript"></script>
 {% endblock %}
 
 {% block header %}{% endblock %}
@@ -39,8 +40,9 @@
             </label>
             <label>
                 作者:
-                <input type="text" name="author" value="灰灰">
+                <input type="text" name="author" value="{{ current_user.username }}">
             </label></br>
+            <input type="hidden" name="auth_id" value="{{ current_user.id }}">
             <label>
                 博客海报:
                 <input type="file" name="poster">

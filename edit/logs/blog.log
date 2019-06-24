@@ -233,3 +233,760 @@ Traceback (most recent call last):
   File "D:\ABC\edit\app\web\auth.py", line 55, in say_me
     if form.validate_on_submit():
 AttributeError: 'MessageForm' object has no attribute 'validate_on_submit'
+2019-06-24 09:12:08,523 - flask.app - ERROR - Exception on /detail [GET]
+Traceback (most recent call last):
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\flask\app.py", line 2311, in wsgi_app
+    response = self.full_dispatch_request()
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\flask\app.py", line 1834, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\flask\app.py", line 1737, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\flask\_compat.py", line 36, in reraise
+    raise value
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\flask\app.py", line 1832, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\flask\app.py", line 1818, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "D:\ABC\edit\app\web\release.py", line 84, in detail
+    tips = (message,tips.tip)
+AttributeError: 'NoneType' object has no attribute 'tip'
+2019-06-24 10:38:02,527 - flask.app - ERROR - Exception on /update [POST]
+Traceback (most recent call last):
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\flask\app.py", line 2311, in wsgi_app
+    response = self.full_dispatch_request()
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\flask\app.py", line 1834, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\flask\app.py", line 1737, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\flask\_compat.py", line 36, in reraise
+    raise value
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\flask\app.py", line 1832, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\flask\app.py", line 1818, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "D:\ABC\edit\app\web\release.py", line 115, in update
+    article = Article.query.get_or_404(id)
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\flask_sqlalchemy\__init__.py", line 422, in get_or_404
+    rv = self.get(ident)
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\sqlalchemy\orm\query.py", line 959, in get
+    return self._get_impl(ident, loading.load_on_pk_identity)
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\sqlalchemy\orm\query.py", line 1026, in _get_impl
+    if len(primary_key_identity) != len(mapper.primary_key):
+TypeError: object of type 'NoneType' has no len()
+2019-06-24 10:42:01,188 - flask.app - ERROR - Exception on /update [POST]
+Traceback (most recent call last):
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\flask\app.py", line 2311, in wsgi_app
+    response = self.full_dispatch_request()
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\flask\app.py", line 1834, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\flask\app.py", line 1737, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\flask\_compat.py", line 36, in reraise
+    raise value
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\flask\app.py", line 1832, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\flask\app.py", line 1818, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "D:\ABC\edit\app\web\release.py", line 114, in update
+    id = int(request.args.get("id"))
+TypeError: int() argument must be a string, a bytes-like object or a number, not 'NoneType'
+2019-06-24 10:43:08,076 - flask.app - ERROR - Exception on /update [POST]
+Traceback (most recent call last):
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\flask\app.py", line 2311, in wsgi_app
+    response = self.full_dispatch_request()
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\flask\app.py", line 1834, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\flask\app.py", line 1737, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\flask\_compat.py", line 36, in reraise
+    raise value
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\flask\app.py", line 1832, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\flask\app.py", line 1818, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "D:\ABC\edit\app\web\release.py", line 114, in update
+    id = int(request.args.get("id"))
+TypeError: int() argument must be a string, a bytes-like object or a number, not 'NoneType'
+2019-06-24 10:44:19,759 - flask.app - ERROR - Exception on /update [POST]
+Traceback (most recent call last):
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\flask\app.py", line 2311, in wsgi_app
+    response = self.full_dispatch_request()
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\flask\app.py", line 1834, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\flask\app.py", line 1737, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\flask\_compat.py", line 36, in reraise
+    raise value
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\flask\app.py", line 1832, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\flask\app.py", line 1818, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "D:\ABC\edit\app\web\release.py", line 115, in update
+    article = Article.query.get_or_404(id)
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\flask_sqlalchemy\__init__.py", line 422, in get_or_404
+    rv = self.get(ident)
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\sqlalchemy\orm\query.py", line 959, in get
+    return self._get_impl(ident, loading.load_on_pk_identity)
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\sqlalchemy\orm\query.py", line 1026, in _get_impl
+    if len(primary_key_identity) != len(mapper.primary_key):
+TypeError: object of type 'NoneType' has no len()
+2019-06-24 10:45:21,280 - flask.app - ERROR - Exception on /update [POST]
+Traceback (most recent call last):
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\flask\app.py", line 2311, in wsgi_app
+    response = self.full_dispatch_request()
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\flask\app.py", line 1834, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\flask\app.py", line 1737, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\flask\_compat.py", line 36, in reraise
+    raise value
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\flask\app.py", line 1832, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\flask\app.py", line 1818, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "D:\ABC\edit\app\web\release.py", line 115, in update
+    article = Article.query.get_or_404(id)
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\flask_sqlalchemy\__init__.py", line 422, in get_or_404
+    rv = self.get(ident)
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\sqlalchemy\orm\query.py", line 959, in get
+    return self._get_impl(ident, loading.load_on_pk_identity)
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\sqlalchemy\orm\query.py", line 1026, in _get_impl
+    if len(primary_key_identity) != len(mapper.primary_key):
+TypeError: object of type 'NoneType' has no len()
+2019-06-24 10:47:39,326 - flask.app - ERROR - Exception on /update [POST]
+Traceback (most recent call last):
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\flask\app.py", line 2311, in wsgi_app
+    response = self.full_dispatch_request()
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\flask\app.py", line 1834, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\flask\app.py", line 1737, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\flask\_compat.py", line 36, in reraise
+    raise value
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\flask\app.py", line 1832, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\flask\app.py", line 1818, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "D:\ABC\edit\app\web\release.py", line 115, in update
+    article = Article.query.get_or_404(id)
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\flask_sqlalchemy\__init__.py", line 422, in get_or_404
+    rv = self.get(ident)
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\sqlalchemy\orm\query.py", line 959, in get
+    return self._get_impl(ident, loading.load_on_pk_identity)
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\sqlalchemy\orm\query.py", line 1026, in _get_impl
+    if len(primary_key_identity) != len(mapper.primary_key):
+TypeError: object of type 'NoneType' has no len()
+2019-06-24 10:49:56,844 - flask.app - ERROR - Exception on /update [POST]
+Traceback (most recent call last):
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\flask\app.py", line 2311, in wsgi_app
+    response = self.full_dispatch_request()
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\flask\app.py", line 1834, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\flask\app.py", line 1737, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\flask\_compat.py", line 36, in reraise
+    raise value
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\flask\app.py", line 1832, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\flask\app.py", line 1818, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "D:\ABC\edit\app\web\release.py", line 115, in update
+    article = Article.query.get_or_404(id)
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\flask_sqlalchemy\__init__.py", line 422, in get_or_404
+    rv = self.get(ident)
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\sqlalchemy\orm\query.py", line 959, in get
+    return self._get_impl(ident, loading.load_on_pk_identity)
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\sqlalchemy\orm\query.py", line 1026, in _get_impl
+    if len(primary_key_identity) != len(mapper.primary_key):
+TypeError: object of type 'NoneType' has no len()
+2019-06-24 10:50:57,901 - flask.app - ERROR - Exception on /update [POST]
+Traceback (most recent call last):
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\flask\app.py", line 2311, in wsgi_app
+    response = self.full_dispatch_request()
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\flask\app.py", line 1834, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\flask\app.py", line 1737, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\flask\_compat.py", line 36, in reraise
+    raise value
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\flask\app.py", line 1832, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\flask\app.py", line 1818, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "D:\ABC\edit\app\web\release.py", line 115, in update
+    article = Article.query.get_or_404(id)
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\flask_sqlalchemy\__init__.py", line 422, in get_or_404
+    rv = self.get(ident)
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\sqlalchemy\orm\query.py", line 959, in get
+    return self._get_impl(ident, loading.load_on_pk_identity)
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\sqlalchemy\orm\query.py", line 1026, in _get_impl
+    if len(primary_key_identity) != len(mapper.primary_key):
+TypeError: object of type 'NoneType' has no len()
+2019-06-24 10:56:29,776 - flask.app - ERROR - Exception on /update [POST]
+Traceback (most recent call last):
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\sqlalchemy\engine\base.py", line 1179, in _execute_context
+    context = constructor(dialect, self, conn, *args)
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\sqlalchemy\engine\default.py", line 745, in _init_compiled
+    for key in compiled_params
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\sqlalchemy\engine\default.py", line 745, in <genexpr>
+    for key in compiled_params
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\sqlalchemy\sql\sqltypes.py", line 1782, in process
+    value = _strict_as_bool(value)
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\sqlalchemy\sql\sqltypes.py", line 1757, in _strict_as_bool
+    raise TypeError("Not a boolean value: %r" % value)
+TypeError: Not a boolean value: '0'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\flask\app.py", line 2311, in wsgi_app
+    response = self.full_dispatch_request()
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\flask\app.py", line 1834, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\flask\app.py", line 1737, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\flask\_compat.py", line 36, in reraise
+    raise value
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\flask\app.py", line 1832, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\flask\app.py", line 1818, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "D:\ABC\edit\app\web\release.py", line 118, in update
+    article.is_recommend = request.form.get("is_recommend")
+  File "c:\users\hui\appdata\local\programs\python\python37\Lib\contextlib.py", line 119, in __exit__
+    next(self.gen)
+  File "D:\ABC\edit\app\models.py", line 21, in submit_data
+    raise e
+  File "D:\ABC\edit\app\models.py", line 18, in submit_data
+    self.session.commit()
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\sqlalchemy\orm\scoping.py", line 162, in do
+    return getattr(self.registry(), name)(*args, **kwargs)
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\sqlalchemy\orm\session.py", line 1026, in commit
+    self.transaction.commit()
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\sqlalchemy\orm\session.py", line 493, in commit
+    self._prepare_impl()
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\sqlalchemy\orm\session.py", line 472, in _prepare_impl
+    self.session.flush()
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\sqlalchemy\orm\session.py", line 2451, in flush
+    self._flush(objects)
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\sqlalchemy\orm\session.py", line 2589, in _flush
+    transaction.rollback(_capture_exception=True)
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\sqlalchemy\util\langhelpers.py", line 68, in __exit__
+    compat.reraise(exc_type, exc_value, exc_tb)
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\sqlalchemy\util\compat.py", line 129, in reraise
+    raise value
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\sqlalchemy\orm\session.py", line 2549, in _flush
+    flush_context.execute()
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\sqlalchemy\orm\unitofwork.py", line 422, in execute
+    rec.execute(self)
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\sqlalchemy\orm\unitofwork.py", line 589, in execute
+    uow,
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\sqlalchemy\orm\persistence.py", line 236, in save_obj
+    update,
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\sqlalchemy\orm\persistence.py", line 978, in _emit_update_statements
+    statement, multiparams
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\sqlalchemy\engine\base.py", line 988, in execute
+    return meth(self, multiparams, params)
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\sqlalchemy\sql\elements.py", line 287, in _execute_on_connection
+    return connection._execute_clauseelement(self, multiparams, params)
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\sqlalchemy\engine\base.py", line 1107, in _execute_clauseelement
+    distilled_params,
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\sqlalchemy\engine\base.py", line 1182, in _execute_context
+    e, util.text_type(statement), parameters, None, None
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\sqlalchemy\engine\base.py", line 1466, in _handle_dbapi_exception
+    util.raise_from_cause(sqlalchemy_exception, exc_info)
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\sqlalchemy\util\compat.py", line 383, in raise_from_cause
+    reraise(type(exception), exception, tb=exc_tb, cause=cause)
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\sqlalchemy\util\compat.py", line 128, in reraise
+    raise value.with_traceback(tb)
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\sqlalchemy\engine\base.py", line 1179, in _execute_context
+    context = constructor(dialect, self, conn, *args)
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\sqlalchemy\engine\default.py", line 745, in _init_compiled
+    for key in compiled_params
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\sqlalchemy\engine\default.py", line 745, in <genexpr>
+    for key in compiled_params
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\sqlalchemy\sql\sqltypes.py", line 1782, in process
+    value = _strict_as_bool(value)
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\sqlalchemy\sql\sqltypes.py", line 1757, in _strict_as_bool
+    raise TypeError("Not a boolean value: %r" % value)
+sqlalchemy.exc.StatementError: (builtins.TypeError) Not a boolean value: '0'
+[SQL: UPDATE article SET is_recommend=%(is_recommend)s WHERE article.id = %(article_id)s]
+[parameters: [{'is_recommend': '0', 'article_id': 1}]]
+2019-06-24 11:04:30,788 - flask.app - ERROR - Exception on /detail [GET]
+Traceback (most recent call last):
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\flask\app.py", line 2311, in wsgi_app
+    response = self.full_dispatch_request()
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\flask\app.py", line 1834, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\flask\app.py", line 1737, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\flask\_compat.py", line 36, in reraise
+    raise value
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\flask\app.py", line 1832, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\flask\app.py", line 1818, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "D:\ABC\edit\app\web\release.py", line 84, in detail
+    tips = (message,tips.tip)
+AttributeError: 'NoneType' object has no attribute 'tip'
+2019-06-24 11:21:47,502 - flask.app - ERROR - Exception on / [GET]
+Traceback (most recent call last):
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\flask\app.py", line 2311, in wsgi_app
+    response = self.full_dispatch_request()
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\flask\app.py", line 1834, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\flask\app.py", line 1737, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\flask\_compat.py", line 36, in reraise
+    raise value
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\flask\app.py", line 1832, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\flask\app.py", line 1818, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "D:\ABC\edit\app\web\index.py", line 15, in index
+    return render_template('index.html',recommend=recommend,blogs=blogs,new_blog=new)
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\flask\templating.py", line 135, in render_template
+    context, ctx.app)
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\flask\templating.py", line 117, in _render
+    rv = template.render(context)
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\jinja2\asyncsupport.py", line 76, in render
+    return original_render(self, *args, **kwargs)
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\jinja2\environment.py", line 1008, in render
+    return self.environment.handle_exception(exc_info, True)
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\jinja2\environment.py", line 780, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\jinja2\_compat.py", line 37, in reraise
+    raise value.with_traceback(tb)
+  File "D:\ABC\edit\app\templates\index.html", line 2, in top-level template code
+    {% import 'macro/recommond.html' as reco %}
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\jinja2\environment.py", line 1073, in make_module
+    return TemplateModule(self, self.new_context(vars, shared, locals))
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\jinja2\environment.py", line 1152, in __init__
+    body_stream = list(template.root_render_func(context))
+  File "D:\ABC\edit\app\templates\macro\recommond.html", line 16, in top-level template code
+    <li><a href="{{ url_for('web.update',id=blog.id) }}">修改</a></li>
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\jinja2\environment.py", line 430, in getattr
+    return getattr(obj, attribute)
+jinja2.exceptions.UndefinedError: 'blog' is undefined
+2019-06-24 11:24:14,873 - flask.app - ERROR - Exception on / [GET]
+Traceback (most recent call last):
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\flask\app.py", line 2311, in wsgi_app
+    response = self.full_dispatch_request()
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\flask\app.py", line 1834, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\flask\app.py", line 1737, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\flask\_compat.py", line 36, in reraise
+    raise value
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\flask\app.py", line 1832, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\flask\app.py", line 1818, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "D:\ABC\edit\app\web\index.py", line 15, in index
+    return render_template('index.html',recommend=recommend,blogs=blogs,new_blog=new)
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\flask\templating.py", line 135, in render_template
+    context, ctx.app)
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\flask\templating.py", line 117, in _render
+    rv = template.render(context)
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\jinja2\asyncsupport.py", line 76, in render
+    return original_render(self, *args, **kwargs)
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\jinja2\environment.py", line 1008, in render
+    return self.environment.handle_exception(exc_info, True)
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\jinja2\environment.py", line 780, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\jinja2\_compat.py", line 37, in reraise
+    raise value.with_traceback(tb)
+  File "D:\ABC\edit\app\templates\index.html", line 2, in top-level template code
+    {% import 'macro/recommond.html' as reco %}
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\jinja2\environment.py", line 1073, in make_module
+    return TemplateModule(self, self.new_context(vars, shared, locals))
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\jinja2\environment.py", line 1152, in __init__
+    body_stream = list(template.root_render_func(context))
+  File "D:\ABC\edit\app\templates\macro\recommond.html", line 16, in top-level template code
+    <li><a href="{{ url_for('web.update',id=blog.id) }}">修改</a></li>
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\jinja2\environment.py", line 430, in getattr
+    return getattr(obj, attribute)
+jinja2.exceptions.UndefinedError: 'blog' is undefined
+2019-06-24 15:36:30,438 - flask.app - ERROR - Exception on / [GET]
+Traceback (most recent call last):
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\sqlalchemy\engine\base.py", line 1244, in _execute_context
+    cursor, statement, parameters, context
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\sqlalchemy\engine\default.py", line 552, in do_execute
+    cursor.execute(statement, parameters)
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\pymysql\cursors.py", line 170, in execute
+    result = self._query(query)
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\pymysql\cursors.py", line 328, in _query
+    conn.query(q)
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\pymysql\connections.py", line 517, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\pymysql\connections.py", line 732, in _read_query_result
+    result.read()
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\pymysql\connections.py", line 1075, in read
+    first_packet = self.connection._read_packet()
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\pymysql\connections.py", line 684, in _read_packet
+    packet.check_error()
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\pymysql\protocol.py", line 220, in check_error
+    err.raise_mysql_exception(self._data)
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\pymysql\err.py", line 109, in raise_mysql_exception
+    raise errorclass(errno, errval)
+pymysql.err.InternalError: (1054, "Unknown column 'article.auth_id' in 'field list'")
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\flask\app.py", line 2311, in wsgi_app
+    response = self.full_dispatch_request()
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\flask\app.py", line 1834, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\flask\app.py", line 1737, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\flask\_compat.py", line 36, in reraise
+    raise value
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\flask\app.py", line 1832, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\flask\app.py", line 1818, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "D:\ABC\edit\app\web\index.py", line 15, in index
+    return render_template('index.html',recommend=recommend,blogs=blogs,new_blog=new)
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\flask\templating.py", line 135, in render_template
+    context, ctx.app)
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\flask\templating.py", line 117, in _render
+    rv = template.render(context)
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\jinja2\asyncsupport.py", line 76, in render
+    return original_render(self, *args, **kwargs)
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\jinja2\environment.py", line 1008, in render
+    return self.environment.handle_exception(exc_info, True)
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\jinja2\environment.py", line 780, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\jinja2\_compat.py", line 37, in reraise
+    raise value.with_traceback(tb)
+  File "D:\ABC\edit\app\templates\index.html", line 3, in top-level template code
+    {% import 'macro/person.html' as follow %}
+  File "D:\ABC\edit\app\templates\base.html", line 130, in top-level template code
+    {% block content %}{% endblock %}
+  File "D:\ABC\edit\app\templates\index.html", line 17, in block "content"
+    {% for blog in recommend %}
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\sqlalchemy\orm\query.py", line 3317, in __iter__
+    return self._execute_and_instances(context)
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\sqlalchemy\orm\query.py", line 3342, in _execute_and_instances
+    result = conn.execute(querycontext.statement, self._params)
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\sqlalchemy\engine\base.py", line 988, in execute
+    return meth(self, multiparams, params)
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\sqlalchemy\sql\elements.py", line 287, in _execute_on_connection
+    return connection._execute_clauseelement(self, multiparams, params)
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\sqlalchemy\engine\base.py", line 1107, in _execute_clauseelement
+    distilled_params,
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\sqlalchemy\engine\base.py", line 1248, in _execute_context
+    e, statement, parameters, cursor, context
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\sqlalchemy\engine\base.py", line 1466, in _handle_dbapi_exception
+    util.raise_from_cause(sqlalchemy_exception, exc_info)
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\sqlalchemy\util\compat.py", line 383, in raise_from_cause
+    reraise(type(exception), exception, tb=exc_tb, cause=cause)
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\sqlalchemy\util\compat.py", line 128, in reraise
+    raise value.with_traceback(tb)
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\sqlalchemy\engine\base.py", line 1244, in _execute_context
+    cursor, statement, parameters, context
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\sqlalchemy\engine\default.py", line 552, in do_execute
+    cursor.execute(statement, parameters)
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\pymysql\cursors.py", line 170, in execute
+    result = self._query(query)
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\pymysql\cursors.py", line 328, in _query
+    conn.query(q)
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\pymysql\connections.py", line 517, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\pymysql\connections.py", line 732, in _read_query_result
+    result.read()
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\pymysql\connections.py", line 1075, in read
+    first_packet = self.connection._read_packet()
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\pymysql\connections.py", line 684, in _read_packet
+    packet.check_error()
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\pymysql\protocol.py", line 220, in check_error
+    err.raise_mysql_exception(self._data)
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\pymysql\err.py", line 109, in raise_mysql_exception
+    raise errorclass(errno, errval)
+sqlalchemy.exc.InternalError: (pymysql.err.InternalError) (1054, "Unknown column 'article.auth_id' in 'field list'")
+[SQL: SELECT article.create_time AS article_create_time, article.id AS article_id, article.title AS article_title, article.body AS article_body, article.body_html AS article_body_html, article.`select` AS article_select, article.is_recommend AS article_is_recommend, article.poster AS article_poster, article.auth_id AS article_auth_id 
+FROM article 
+WHERE article.is_recommend = %(is_recommend_1)s 
+ LIMIT %(param_1)s]
+[parameters: {'is_recommend_1': 1, 'param_1': 3}]
+(Background on this error at: http://sqlalche.me/e/2j85)
+2019-06-24 15:52:37,300 - flask.app - ERROR - Exception on / [GET]
+Traceback (most recent call last):
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\flask\app.py", line 2311, in wsgi_app
+    response = self.full_dispatch_request()
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\flask\app.py", line 1834, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\flask\app.py", line 1737, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\flask\_compat.py", line 36, in reraise
+    raise value
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\flask\app.py", line 1832, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\flask\app.py", line 1818, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "D:\ABC\edit\app\web\index.py", line 15, in index
+    return render_template('index.html',recommend=recommend,blogs=blogs,new_blog=new)
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\flask\templating.py", line 135, in render_template
+    context, ctx.app)
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\flask\templating.py", line 117, in _render
+    rv = template.render(context)
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\jinja2\asyncsupport.py", line 76, in render
+    return original_render(self, *args, **kwargs)
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\jinja2\environment.py", line 1008, in render
+    return self.environment.handle_exception(exc_info, True)
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\jinja2\environment.py", line 780, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\jinja2\_compat.py", line 37, in reraise
+    raise value.with_traceback(tb)
+  File "D:\ABC\edit\app\templates\index.html", line 3, in top-level template code
+    {% import 'macro/person.html' as follow %}
+  File "D:\ABC\edit\app\templates\base.html", line 130, in top-level template code
+    {% block content %}{% endblock %}
+  File "D:\ABC\edit\app\templates\index.html", line 46, in block "content"
+    {{ reco.showlist(blogs) }}
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\jinja2\runtime.py", line 579, in _invoke
+    rv = self._func(*arguments)
+  File "D:\ABC\edit\app\templates\macro\recommond.html", line 20, in template
+    {% if current_user.is_authenticated and current_user.username==blog.username %}
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\jinja2\environment.py", line 430, in getattr
+    return getattr(obj, attribute)
+jinja2.exceptions.UndefinedError: 'current_user' is undefined
+2019-06-24 16:02:04,084 - flask.app - ERROR - Exception on /detail [GET]
+Traceback (most recent call last):
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\flask\app.py", line 2311, in wsgi_app
+    response = self.full_dispatch_request()
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\flask\app.py", line 1834, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\flask\app.py", line 1737, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\flask\_compat.py", line 36, in reraise
+    raise value
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\flask\app.py", line 1832, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\flask\app.py", line 1818, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "D:\ABC\edit\app\web\release.py", line 82, in detail
+    tips = (message,tips.tip)
+AttributeError: 'NoneType' object has no attribute 'tip'
+2019-06-24 17:55:15,145 - flask.app - ERROR - Exception on /detail [GET]
+Traceback (most recent call last):
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\flask\app.py", line 2311, in wsgi_app
+    response = self.full_dispatch_request()
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\flask\app.py", line 1834, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\flask\app.py", line 1737, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\flask\_compat.py", line 36, in reraise
+    raise value
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\flask\app.py", line 1832, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\flask\app.py", line 1818, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "D:\ABC\edit\app\web\release.py", line 85, in detail
+    return render_template('detail.html',blog=blog,tips=tips,form=form)
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\flask\templating.py", line 135, in render_template
+    context, ctx.app)
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\flask\templating.py", line 117, in _render
+    rv = template.render(context)
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\jinja2\asyncsupport.py", line 76, in render
+    return original_render(self, *args, **kwargs)
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\jinja2\environment.py", line 1008, in render
+    return self.environment.handle_exception(exc_info, True)
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\jinja2\environment.py", line 780, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\jinja2\_compat.py", line 37, in reraise
+    raise value.with_traceback(tb)
+  File "D:\ABC\edit\app\templates\detail.html", line 2, in top-level template code
+    {% import 'macro/person.html' as follow %}
+  File "D:\ABC\edit\app\templates\base.html", line 130, in top-level template code
+    {% block content %}{% endblock %}
+  File "D:\ABC\edit\app\templates\detail.html", line 100, in block "content"
+    <form action="{{ url_for('web.reply') }}" method="post" class="reply-form leave_message">
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\flask\helpers.py", line 356, in url_for
+    return appctx.app.handle_url_build_error(error, endpoint, values)
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\flask\app.py", line 2080, in handle_url_build_error
+    reraise(exc_type, exc_value, tb)
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\flask\_compat.py", line 36, in reraise
+    raise value
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\flask\helpers.py", line 345, in url_for
+    force_external=external)
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\werkzeug\routing.py", line 2007, in build
+    raise BuildError(endpoint, values, method, self)
+werkzeug.routing.BuildError: Could not build url for endpoint 'web.reply'. Did you mean 'web.frame_all' instead?
+2019-06-24 18:46:50,270 - flask.app - ERROR - Exception on /comment [POST]
+Traceback (most recent call last):
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\flask\app.py", line 2311, in wsgi_app
+    response = self.full_dispatch_request()
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\flask\app.py", line 1835, in full_dispatch_request
+    return self.finalize_request(rv)
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\flask\app.py", line 1850, in finalize_request
+    response = self.make_response(rv)
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\flask\app.py", line 1976, in make_response
+    'The view function did not return a valid response. The'
+TypeError: The view function did not return a valid response. The function either returned None or ended without a return statement.
+2019-06-24 18:47:37,192 - flask.app - ERROR - Exception on /comment [POST]
+Traceback (most recent call last):
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\flask\app.py", line 2311, in wsgi_app
+    response = self.full_dispatch_request()
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\flask\app.py", line 1835, in full_dispatch_request
+    return self.finalize_request(rv)
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\flask\app.py", line 1850, in finalize_request
+    response = self.make_response(rv)
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\flask\app.py", line 1976, in make_response
+    'The view function did not return a valid response. The'
+TypeError: The view function did not return a valid response. The function either returned None or ended without a return statement.
+2019-06-24 18:49:36,399 - flask.app - ERROR - Exception on /comment [POST]
+Traceback (most recent call last):
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\flask\app.py", line 2311, in wsgi_app
+    response = self.full_dispatch_request()
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\flask\app.py", line 1835, in full_dispatch_request
+    return self.finalize_request(rv)
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\flask\app.py", line 1850, in finalize_request
+    response = self.make_response(rv)
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\flask\app.py", line 1976, in make_response
+    'The view function did not return a valid response. The'
+TypeError: The view function did not return a valid response. The function either returned None or ended without a return statement.
+2019-06-24 19:18:04,674 - flask.app - ERROR - Exception on /detail [GET]
+Traceback (most recent call last):
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\flask\app.py", line 2311, in wsgi_app
+    response = self.full_dispatch_request()
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\flask\app.py", line 1834, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\flask\app.py", line 1737, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\flask\_compat.py", line 36, in reraise
+    raise value
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\flask\app.py", line 1832, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\flask\app.py", line 1818, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "D:\ABC\edit\app\web\comment.py", line 26, in detail
+    return render_template('detail.html',blog=blog,tips=tips,comment_form=comment_form,reply_form=reply_form)
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\flask\templating.py", line 135, in render_template
+    context, ctx.app)
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\flask\templating.py", line 117, in _render
+    rv = template.render(context)
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\jinja2\asyncsupport.py", line 76, in render
+    return original_render(self, *args, **kwargs)
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\jinja2\environment.py", line 1008, in render
+    return self.environment.handle_exception(exc_info, True)
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\jinja2\environment.py", line 780, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\jinja2\_compat.py", line 37, in reraise
+    raise value.with_traceback(tb)
+  File "D:\ABC\edit\app\templates\detail.html", line 2, in top-level template code
+    {% import 'macro/person.html' as follow %}
+  File "D:\ABC\edit\app\templates\base.html", line 130, in top-level template code
+    {% block content %}{% endblock %}
+  File "D:\ABC\edit\app\templates\detail.html", line 100, in block "content"
+    <form action="{{ url_for('web.reply') }}" method="post" class="reply-form leave_message">
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\flask\helpers.py", line 356, in url_for
+    return appctx.app.handle_url_build_error(error, endpoint, values)
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\flask\app.py", line 2080, in handle_url_build_error
+    reraise(exc_type, exc_value, tb)
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\flask\_compat.py", line 36, in reraise
+    raise value
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\flask\helpers.py", line 345, in url_for
+    force_external=external)
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\werkzeug\routing.py", line 2007, in build
+    raise BuildError(endpoint, values, method, self)
+werkzeug.routing.BuildError: Could not build url for endpoint 'web.reply'. Did you mean 'web.frame_all' instead?
+2019-06-24 19:57:51,636 - flask.app - ERROR - Exception on /reply [POST]
+Traceback (most recent call last):
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\sqlalchemy\orm\session.py", line 1943, in add
+    state = attributes.instance_state(instance)
+AttributeError: 'function' object has no attribute '_sa_instance_state'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\flask\app.py", line 2311, in wsgi_app
+    response = self.full_dispatch_request()
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\flask\app.py", line 1834, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\flask\app.py", line 1737, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\flask\_compat.py", line 36, in reraise
+    raise value
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\flask\app.py", line 1832, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\flask\app.py", line 1818, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "D:\ABC\edit\app\web\comment.py", line 75, in reply
+    db.session.add(comment)
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\sqlalchemy\orm\scoping.py", line 162, in do
+    return getattr(self.registry(), name)(*args, **kwargs)
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\sqlalchemy\orm\session.py", line 1945, in add
+    raise exc.UnmappedInstanceError(instance)
+sqlalchemy.orm.exc.UnmappedInstanceError: Class 'builtins.function' is not mapped
+2019-06-24 20:16:31,572 - flask.app - ERROR - Exception on /detail [GET]
+Traceback (most recent call last):
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\flask\app.py", line 2311, in wsgi_app
+    response = self.full_dispatch_request()
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\flask\app.py", line 1834, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\flask\app.py", line 1737, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\flask\_compat.py", line 36, in reraise
+    raise value
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\flask\app.py", line 1832, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\flask\app.py", line 1818, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "D:\ABC\edit\app\web\comment.py", line 25, in detail
+    reply_form=reply_form)
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\flask\templating.py", line 135, in render_template
+    context, ctx.app)
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\flask\templating.py", line 117, in _render
+    rv = template.render(context)
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\jinja2\asyncsupport.py", line 76, in render
+    return original_render(self, *args, **kwargs)
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\jinja2\environment.py", line 1008, in render
+    return self.environment.handle_exception(exc_info, True)
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\jinja2\environment.py", line 780, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\jinja2\_compat.py", line 37, in reraise
+    raise value.with_traceback(tb)
+  File "D:\ABC\edit\app\templates\detail.html", line 2, in top-level template code
+    {% import 'macro/person.html' as follow %}
+  File "D:\ABC\edit\app\templates\base.html", line 130, in top-level template code
+    {% block content %}{% endblock %}
+  File "D:\ABC\edit\app\templates\detail.html", line 99, in block "content"
+    <span id="reply-total">{{ len(comment.replys) }}条回复</span>
+jinja2.exceptions.UndefinedError: 'len' is undefined
+2019-06-24 20:17:33,061 - flask.app - ERROR - Exception on /detail [GET]
+Traceback (most recent call last):
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\flask\app.py", line 2311, in wsgi_app
+    response = self.full_dispatch_request()
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\flask\app.py", line 1834, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\flask\app.py", line 1737, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\flask\_compat.py", line 36, in reraise
+    raise value
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\flask\app.py", line 1832, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\flask\app.py", line 1818, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "D:\ABC\edit\app\web\comment.py", line 25, in detail
+    reply_form=reply_form)
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\flask\templating.py", line 135, in render_template
+    context, ctx.app)
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\flask\templating.py", line 117, in _render
+    rv = template.render(context)
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\jinja2\asyncsupport.py", line 76, in render
+    return original_render(self, *args, **kwargs)
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\jinja2\environment.py", line 1008, in render
+    return self.environment.handle_exception(exc_info, True)
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\jinja2\environment.py", line 780, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\jinja2\_compat.py", line 37, in reraise
+    raise value.with_traceback(tb)
+  File "D:\ABC\edit\app\templates\detail.html", line 2, in top-level template code
+    {% import 'macro/person.html' as follow %}
+  File "D:\ABC\edit\app\templates\base.html", line 130, in top-level template code
+    {% block content %}{% endblock %}
+  File "D:\ABC\edit\app\templates\detail.html", line 99, in block "content"
+    <span id="reply-total">{{ length(comment.replys) }}条回复</span>
+jinja2.exceptions.UndefinedError: 'length' is undefined

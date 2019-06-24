@@ -11,7 +11,7 @@
 .leave_message textarea{
     resize: none;
     width: 100%;
-    height: 120px;
+    height: 40px;
 }
 .leave_message input{
     position: relative;
@@ -21,4 +21,23 @@
     width: 60px;
     border-right: 0px;
     border-bottom: 0px;
+}
+
+.news_pl ul{
+    padding: 8px 50px;
+}
+.news_pl li{
+    border-top:solid 0.5px wheat;
+}
+.news_pl .comment-content{
+    padding: 12px 7px;
+}
+
+.news_pl .comment-reply{
+    padding-bottom: 5px;
+    cursor: pointer;
+}
+
+.reply-form,#reply-list{
+    display: none;
 }
