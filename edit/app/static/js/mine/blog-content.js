@@ -2,25 +2,30 @@ $(document).ready(function () {
     $(".blogs-update").click(function () {
         $("#blogs-control").toggle()
     });
+    $("#comment-list>li").each(function (index,item) {
+        $(item).attr('id','id-'+index)
+    });
 
-    $("#reply").click(function () {
-        $(".reply-form").toggle();
+    $("li[id*=id-] span[id=reply]").click(function () {
+        //根据li的id值区分
+        $(this).parent().next().toggle();
     });
-    $("#reply-total").click(function () {
-        console.log("hello");
-        $("#reply-list").slideToggle(1000);
+
+    $("li[id*=id-] span[id=reply-total]").click(function () {
+        $(this).parent().next().next().slideToggle(1000);
     });
+
     $("#comment").focus(function () {
         $("#comment").animate({height:"120px"});
     });
-    $("#comment").blur(function () {
+    $("#comment").parent().blur(function () {
         $("#comment").animate({height:"40px"});
     });
-    $("#reply").focus(function () {
-        $("#reply").animate({height:"120px"});
+    $("li[id*=id-] textarea").focus(function () {
+        $(this).animate({height:"120px"});
     });
-    $("#reply").blur(function () {
-        $("#reply").animate({height:"40px"});
+    $("li[id*=id-] form").blur(function () {
+        $(this).animate({height:"40px"});
     });
 });
 

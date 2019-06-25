@@ -7,7 +7,7 @@ from flask import Flask,request,render_template
 
 from app.setting import config
 from app.models import Auth,Article,Tips,Message
-from app.extension import login_register,admin_register,db_register
+from app.extension import login_register,admin_register,db_register,bootstrap_register
 
 basedir = os.path.abspath(os.path.dirname(os.path.dirname(__file__)))
 
@@ -19,13 +19,16 @@ def create_app(config_name=None):
     app =Flask(__name__)
     app.config.from_object(config[config_name])
 
-    admin_register(app)
-    db_register(app)
-    login_register(app)
-
     blueprint_register(app)
     logging_register(app)
     error_register(app)
+
+    admin_register(app)
+    db_register(app)
+    login_register(app)
+    bootstrap_register(app)
+
+
 
     return app
 

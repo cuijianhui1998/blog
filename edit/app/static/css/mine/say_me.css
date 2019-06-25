@@ -16,9 +16,9 @@
 .leave_message input{
     position: relative;
     float: right;
-    margin-top: -27px;
+    margin-top: -33px;
     padding: 0px;
-    width: 60px;
+    width: 40px;
     border-right: 0px;
     border-bottom: 0px;
 }

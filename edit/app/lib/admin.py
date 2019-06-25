@@ -12,8 +12,10 @@ from flask_login import current_user
 class MyIndexView(AdminIndexView):
     @expose('/')
     def index(self):
-        if current_user.is_authenticated and current_user.username=='admin' :
-            return self.render(self._template)
+        if current_user.is_authenticated:
+            if current_user.username=='admin' :
+                return self.render(self._template)
+            return redirect(url_for('web.index'))
         return redirect(url_for('web.login'))
 
 

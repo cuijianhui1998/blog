@@ -1,9 +1,15 @@
 {% extends 'base.html' %}
 {% import 'macro/person.html' as follow %}
+{% from 'macro/comment.html' import comment %}
 
+{% block errorStyle %}{% endblock %}
 {% block mystyle %}
     {{ super() }}
     <link rel="stylesheet" href="{{ url_for('static',filename='css/mine/say_me.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static',filename='css/mine/detail.css') }}">
+
+    <script src="{{ url_for('static',filename='js/run_prettify.js') }}"></script>
+
 {% endblock %}
 
 {% block content %}
@@ -88,33 +94,7 @@
         <li><a href="/" title="【匆匆那些年】总结个人博客经历的这四年…">【匆匆那些年】总结个人博客经历的这四年…</a></li>
       </ul>
     </div>
-    <div class="news_pl">
-      <h2>文章评论</h2>
-      <ul>
-          {% for comment in blog.comments %}
-            <li>
-              <div class="comment-content">{{ comment.auth.username }}:{{ comment.content }}</div>
-              <div class="comment-reply">
-                  <span id="reply">回复</span>
-                  <span id="reply-total">{{ comment.replys|length }}条回复</span>
-              </div>
-              <form action="{{ url_for('web.reply',id=blog.id,comment_id=comment.id) }}" method="post" class="reply-form leave_message">
-                <textarea name="reply" id="reply" placeholder="发表一下你的想法吧"></textarea>
-                <input type="submit" name="reply_submit" value="发送">
-              </form>
-              <ul id="reply-list">
-                  {% for reply in comment.replys %}
-                    <li>{{ reply.auth.username }}:{{ reply.content }}</li>
-                  {% endfor %}
-              </ul>
-          </li>
-          {% endfor %}
-      </ul>
-      <form action="{{ url_for('web.comment',id=blog.id) }}" method="post" class="comment-form leave_message">
-            <textarea name="comment" id="comment" placeholder="发表一下你的想法吧"></textarea>
-            <input type="submit" name="comment_submit" value="发送">
-      </form>
-    </div>
+    {{ comment(blog,comments,pageinations) }}
   </div>
 
   <div class="sidebar">
@@ -174,10 +154,9 @@
     {{ follow.found() }}
   </div>
 
-</article>
-<link rel="stylesheet" href="{{ url_for('static',filename='css/mine/detail.css') }}">
 <script src="{{ url_for('static',filename='js/mine/blog-content.js') }}" type="text/javascript"></script>
-<script src="{{ url_for('static',filename='js/run_prettify.js') }}"></script>
+</article>
+
 {% endblock %}
 
 

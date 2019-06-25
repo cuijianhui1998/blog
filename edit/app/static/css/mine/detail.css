@@ -8,3 +8,16 @@
     list-style:disc;
 }
 
+.alert{
+    border: 1px solid;
+    position: fixed;
+    z-index: 96;
+    left: 40%;
+    top: 49%;
+    background-color: #9A9A9A;
+    display: none;
+}
+.alert p{
+    padding: 18px;
+}
+

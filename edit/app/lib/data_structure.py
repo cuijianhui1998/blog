@@ -1,5 +1,6 @@
 from enum import Enum,unique
 
+
 class UniqueList():
     '''
     创建了一个简单的无重复列表,用来存储在查询时能够去除掉重复的元素,

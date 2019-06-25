@@ -1,6 +1,7 @@
 from flask_login import LoginManager
 from flask_admin import Admin
 from flask_admin.contrib.sqla import ModelView
+from flask_bootstrap import Bootstrap
 
 
 from app.models import Article,Auth,db,Tips,Message
@@ -8,6 +9,12 @@ from app.lib.admin import ArticleView,MyIndexView
 
 
 login_manager = LoginManager()
+
+def bootstrap_register(app):
+    bootstrap = Bootstrap()
+    bootstrap.init_app(app)
+
+
 
 def login_register(app):
     login_manager.init_app(app)
