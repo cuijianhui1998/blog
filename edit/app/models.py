@@ -48,6 +48,8 @@ class Auth(Base,UserMixin):
 
     replys = db.relationship('Reply',back_populates='auth')
 
+    thumbs = db.relationship('Thumb',back_populates='auth')
+
 
     @property
     def password(self):
@@ -86,6 +88,16 @@ class Comment(Base):
 
     replys = db.relationship('Reply',back_populates='comment')
 
+class Thumb(Base):
+    __tablename__ = 'thumb'
+    id = Column(Integer,primary_key=True,autoincrement=True)
+
+    auth_id = Column(Integer,ForeignKey('auth.id'))
+    auth = db.relationship('Auth', back_populates='thumbs')
+
+    article_id = Column(Integer,ForeignKey('article.id'))
+    article = db.relationship('Article', back_populates='thumbs')
+
 
 class Reply(Base):
     #回复
@@ -118,6 +130,8 @@ class Article(Base):
 
     comments = db.relationship('Comment',back_populates='article')
 
+    thumbs = db.relationship('Thumb',back_populates='article')
+
     @staticmethod
     def on_changed_body(target, value, oldvalue, initiator):
         allowed_tags = ['a', 'abbr', 'acronym', 'b', 'blockquote', 'code',
@@ -126,11 +140,18 @@ class Article(Base):
         allowed_attrs = {'*': ['class'],
                          'a': ['href', 'rel'],
                          'img': ['src', 'alt']}
-
+        config = {
+            'markdown.extensions.codehilite': {
+                'use_pygments': False,
+                'css_class':'prettyprint linenums',
+            }
+        }
         target.body_html = bleach.linkify(bleach.clean(
             markdown(value, output_format='html',extensions=['markdown.extensions.extra',
                                                    'markdown.extensions.codehilite',
-                                                   'markdown.extensions.toc',]),
+                                                   'markdown.extensions.toc',
+                                                   'markdown.extensions.attr_list',
+                                                   'markdown.extensions.fenced_code'],extension_configs=config),
             tags=allowed_tags, strip=True, attributes=allowed_attrs))
 
     def setter_data(self,obj):

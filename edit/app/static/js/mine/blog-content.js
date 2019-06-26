@@ -1,7 +1,12 @@
 $(document).ready(function () {
-    $(".blogs-update").click(function () {
-        $("#blogs-control").toggle()
+
+    $(".blogsbox").each(function (index,item) {
+        $(item).attr('id','showlist-'+index)
     });
+    $("div[id*=showlist-] img[class=blogs-update]").click(function () {
+        $(this).next().toggle()
+    });
+
     $("#comment-list>li").each(function (index,item) {
         $(item).attr('id','id-'+index)
     });
@@ -27,6 +32,7 @@ $(document).ready(function () {
     $("li[id*=id-] form").blur(function () {
         $(this).animate({height:"40px"});
     });
+
 });
 
 

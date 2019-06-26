@@ -1,6 +1,6 @@
 {% extends 'base.html' %}
-{% import 'macro/recommond.html' as reco %}
-{% import 'macro/person.html' as follow %}
+{% from 'macro/person.html' import found %}
+{% from  'macro/recommond.html' import showlist %}
 
 {% block mystyle %}
     {{ super() }}
@@ -29,10 +29,10 @@
   </div>
   <!--banner end-->
   <div class="toppic">
-      {% for foo in range(2) %}
-          <li> <a href="{{ url_for('web.detail') }}" target="_blank"> <i><img src="{{ url_for('static',filename='images/toppic01.jpg') }}"></i>
-          <h2>别让这些闹心的套路，毁了你的网页设计!</h2>
-          <span>学无止境</span> </a> </li>
+      {% for blog in flask_blogs %}
+          <li> <a href="{{ url_for('web.detail',id=blog.id) }}" target="_blank"> <i><img src="{{ blog.poster }}"></i>
+          <h2>{{ blog.title }}</h2>
+          <span>{{ blog.select }}</span> </a> </li>
       {% endfor %}
        <div style="margin-top:5px;margin-left: 50px;position: relative">
            <i>心情不好,来首音乐把</i>
@@ -43,45 +43,15 @@
   </div>
     <div class="blank"></div>
     <!--blogsbox begin-->
-    {{ reco.showlist(blogs,current_user,paginations) }}
+    {{ showlist(blogs,current_user,paginations) }}
 
     <!--blogsbox end-->
-    <div class="sidebar">
-    {{ reco.new(new_blog) }}
-
-    <div class="tuijian">
-      <h2 class="hometitle">推荐文章</h2>
-      <ul class="tjpic">
-        <i><img src="{{ url_for('static',filename='images/toppic01.jpg')}}"></i>
-        <p><a href="/">别让这些闹心的套路，毁了你的网页设计</a></p>
-      </ul>
-      <ul class="sidenews">
-          {% for foo in range(4) %}
-            <li> <i><img src="{{ url_for('static',filename='images/toppic01.jpg')}}"></i>
-                <p><a href="/">别让这些闹心的套路，毁了你的网页设计</a></p>
-            <span>2018-05-13</span> </li>
-          {% endfor %}
-      </ul>
-    </div>
-
-    <div class="tuijian">
-      <h2 class="hometitle">点击排行</h2>
-      <ul class="tjpic">
-        <i><img src="{{ url_for('static',filename='images/toppic01.jpg')}}"></i>
-        <p><a href="/">别让这些闹心的套路，毁了你的网页设计</a></p>
-      </ul>
-      <ul class="sidenews">
-        {% for foo in range(5) %}
-            <li> <i><img src="{{ url_for('static',filename='images/toppic01.jpg')}}"></i>
-          <p><a href="/">给我模板PSD源文件，我给你设计HTML！</a></p>
-          <span>2018-05-13</span> </li>
-        {% endfor %}
-      </ul>
-    </div>
+  <div class="sidebar">
+    {% include 'common.html' %}
     <div class="cloud">
       <h2 class="hometitle">标签云</h2>
       <ul>
-        <a href="/">陌上花开</a> <a href="/">校园生活</a> <a href="/">html5</a> <a href="/">SumSung</a> <a href="/">青春</a> <a href="/">温暖</a> <a href="/">阳光</a> <a href="/">三星</a><a href="/">索尼</a> <a href="/">华维荣耀</a> <a href="/">三星</a> <a href="/">索尼</a>
+        <a href="#">游戏</a> <a href="#">校园生活</a> <a href="#">python</a> <a href="#">SumSung</a> <a href="#">青春</a> <a href="#">温暖</a> <a href="/">阳光</a> <a href="#">小米</a><a href="/">索尼</a>
       </ul>
     </div>
     <div class="links">
@@ -92,8 +62,7 @@
         {% endfor %}
       </ul>
     </div>
-    {{ follow.found() }}
-
+    {{ found() }}
   </div>
 
 </article>

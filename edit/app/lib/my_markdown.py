@@ -63,8 +63,6 @@ class CodePreprocessor(Preprocessor):
         if not new_lines and block:
             new_lines = block
         return new_lines
-
-
 ##后置处理器
 class CodePostprocessor(Postprocessor):
     def run(self, text):
@@ -86,6 +84,7 @@ class CodeExtension(Extension):
         ##设置Preprocessor
         # print md.preprocessors.keys()
         md.preprocessors.register(CodePreprocessor(md), 'code_pre', 20)
+        # md.postprocessors.register(MyButtonPreprocessor(md),'mybutton',26)
 
         ##设置Postprocessor
         # print md.postprocessors.keys()
@@ -94,10 +93,11 @@ class CodeExtension(Extension):
 #最后的使用
 #示例
 text= '''
-!!!python
+!!!python!!!
 !def foo():
 ###title
+<p>!<sjadghhjdas</p>
 '''
 myext = CodeExtension()
-md = markdown(text, extensions=[myext])
+md = markdown(text, extensions=[myext,])
 print(md)

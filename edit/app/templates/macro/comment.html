@@ -23,7 +23,10 @@
           </li>
           {% endfor %}
       </ul>
-    {{ render_pagination(paginations,fragment="#comment-list") }}
+    {% if comments %}
+        {{ render_pagination(paginations,fragment="#comment-list") }}
+    {% endif %}
+
       <form action="{{ url_for('web.comment',id=blog.id) }}" method="post" class="comment-form leave_message">
             <textarea name="comment" id="comment" placeholder="发表一下你的想法吧"></textarea>
             <input type="submit" name="comment_submit" value="发送">

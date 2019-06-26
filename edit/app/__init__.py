@@ -3,13 +3,16 @@ import sys
 import logging
 from logging.handlers import RotatingFileHandler
 
+
 from flask import Flask,request,render_template
 
 from app.setting import config
 from app.models import Auth,Article,Tips,Message
-from app.extension import login_register,admin_register,db_register,bootstrap_register
+from app.extension import login_manager,admin_register,db,bootstrap,apscheduler
+from app.lib.redis_thumb import redis_to_mysql
 
 basedir = os.path.abspath(os.path.dirname(os.path.dirname(__file__)))
+
 
 def create_app(config_name=None):
     if config_name is None:
@@ -22,15 +25,27 @@ def create_app(config_name=None):
     blueprint_register(app)
     logging_register(app)
     error_register(app)
+    mine_info_register(app)
 
-    admin_register(app)
-    db_register(app)
-    login_register(app)
-    bootstrap_register(app)
+    extension_register(app)
 
 
 
     return app
+
+def extension_register(app):
+    login_manager.init_app(app)
+    login_manager.login_view = 'web.login'
+    login_manager.login_message = 'Your custom message'
+    login_manager.login_message_category = 'warning'
+
+    bootstrap.init_app(app)
+    db.init_app(app)
+
+    apscheduler.init_app(app)
+    apscheduler.start()
+
+    admin_register(app)
 
 
 def blueprint_register(app):
@@ -65,4 +80,15 @@ def error_register(app):
     @app.errorhandler(500)
     def internal_server_error(error):
         return render_template('500.html'),500
+
+def mine_info_register(app):
+    #自定义上下文变量和函数
+    @app.context_processor
+    def appinfo():
+        #设置了一个上下文函数,获取全局变量,渲染公共模板
+        new = Article.query.order_by(Article.create_time.desc()).limit(3)
+        reco = Article.query.filter_by(select='other').limit(2)
+        top = Article.query.filter_by(select='css').limit(2)
+        return dict(new=new,reco=reco,top=top)
+
 

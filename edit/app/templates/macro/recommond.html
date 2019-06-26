@@ -1,22 +1,10 @@
 {% from 'bootstrap/pagination.html' import render_pagination %}
-{% macro new(blogs) %}
-    <div class="zhuanti">
-      <h2 class="hometitle">最新发布</h2>
-      <ul>
-          {% for blog in blogs %}
-              <li> <i><img src="{{ blog.poster }}"></i>
-                <p>{{ blog.title }} <span><a href="{{ url_for('web.detail',id=blog.id) }}">阅读</a></span> </p>
-              </li>
-          {% endfor %}
-      </ul>
-    </div>
-{% endmacro %}
 
 {% macro showlist(blogs,current_user,paginations) %}
     <div class="blogsbox">
     {% if blogs %}
         {% for blog in blogs %}
-            <div class="blogs" data-scroll-reveal="enter bottom over 1s" >
+            <div class="blogs" data-scroll-reveal="enter bottom over 1s">
             {# 开始           判断用户是否有权限修改该条博客#}
             {% if current_user.is_authenticated and current_user.email==blog.auth.email %}
                 <div class="nnn">
@@ -46,6 +34,7 @@
             </div>
         </div>
         {% endfor %}
+        {{ render_pagination(paginations) }}
     {% else %}
         <div class="not-found">
             <img src="{{ url_for('static',filename='images/self/404.png') }}"/>
@@ -54,6 +43,6 @@
             <a href="{{ url_for('web.index') }}"><input type="button" value="回主页"/></a>
         </div>
     {% endif %}
-    {{ render_pagination(paginations) }}
+
     </div>
 {% endmacro %}

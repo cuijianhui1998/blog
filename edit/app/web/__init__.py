@@ -21,3 +21,4 @@ from app.web import index
 from app.web import release
 from app.web import auth
 from app.web import comment
+from app.web import test

@@ -7,9 +7,7 @@
     {{ super() }}
     <link rel="stylesheet" href="{{ url_for('static',filename='css/mine/say_me.css') }}">
     <link rel="stylesheet" href="{{ url_for('static',filename='css/mine/detail.css') }}">
-
     <script src="{{ url_for('static',filename='js/run_prettify.js') }}"></script>
-
 {% endblock %}
 
 {% block content %}
@@ -27,23 +25,26 @@
           <li class="like">8888888</li>
         </ul>
       </div>
-      <div class="tags"><a href="/" target="_blank">个人博客</a> &nbsp; <a href="/" target="_blank">小世界</a></div>
+      <div class="tags"><a href="/" target="_blank">个人博客</a> &nbsp <a href="/" target="_blank">小世界</a></div>
       <div class="news_about"><strong>{{ tips[0] }}:</strong>{{ tips[1] }}</div>
-        <div class="news_con">
-            <div class="code-color" id="upcode">
-                {{ blog.body_html | safe }}
-            </div>
-        </div>
+
+      <div class="news_con">
+          <div class="code-color" id="upcode">
+              {{ blog.body_html | safe }}
+          </div>
+          <script type="text/javascript">
+              $(document).ready(function () {
+                  $("#upcode pre").addClass("linenums")
+              })
+          </script>
+      </div>
     </div>
 
     <div class="share">
-        <p class="diggit" onclick="addclick()" onmouseover="mouseShape('diggnum')"> 很赞哦！ (<b id="diggnum">13</b>)</p>
+        <p class="diggit" onmouseover="mouseShape()"> 很赞哦！ (<span id="diggnum"></span>)</p>
         <script type="text/javascript">
-            function addclick(){
-                document.getElementById("diggnum").innerText = parseInt(document.getElementById("diggnum").innerText)+1;
-            }
-            function mouseShape(id) {
-                document.getElementById(id).style.cursor="pointer";
+            function mouseShape() {
+                $(".diggit").css("cursor","pointer");
             }
         </script>
       <p class="dasbox"><a href="javascript:void(0)" onClick="dashangToggle()" class="dashang" title="打赏，支持一下">打赏本站</a></p>
@@ -156,7 +157,49 @@
 
 <script src="{{ url_for('static',filename='js/mine/blog-content.js') }}" type="text/javascript"></script>
 </article>
+<script type="text/javascript">
+    $(document).ready(function () {
+        var user_id = "";
+        if ("{{ current_user.is_authenticated }}"=="True"){
+            user_id ="{{ current_user.id }}"
+        }else {
+            user_id = "0"
+        }
+        var article_id = {{ blog.id }};
+        $.ajax({
+            url:"http://127.0.0.1:5000/thumb_total/"+article_id,
+            type:'GET',
+            cache:false,
+            dataType:'json',
+            success:function (data) {
+                console.log(data.total);
+                $("#diggnum")[0].innerText=data.total
+            }
+        });
+        $(".diggit").click(function () {
+            if (user_id!="0") {
+                $.ajax({
+                    url:"http://127.0.0.1:5000/thumb/"+user_id+"/"+article_id,
+                    type:'GET',
+                    cache:false,
+                    dataType:'json',
+                    success:function (data) {
+                        if (data.code==200) {
+                            $("#diggnum")[0].innerText =parseInt($("#diggnum")[0].innerText)+ 1;
+                            alert(data.message)
+                        }else {
+                            alert(data.message)
+                        }
+                    }
+                })
+            }else {
+                alert("你还没有登录")
+            }
 
+        })
+
+    });
+</script>
 {% endblock %}
 
 

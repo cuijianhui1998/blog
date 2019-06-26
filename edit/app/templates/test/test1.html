@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="{{ url_for('static',filename='js/jquery-3.4.1.min.js') }}" type="text/javascript"></script>
+
+</head>
+<body>
+<p id="abcbc"></p>
+</body>
+<script>
+    $(document).ready(function () {
+        $.ajax({
+            url:"http://127.0.0.1:5000/thumb_total/5",
+            type:'GET',
+            cache:false,
+            dataType:'json',
+            async:false,
+            success:function (data) {
+                console.log(data.total);
+                var a = data.total;
+                alert(a);
+                $("#abcbc").innerText="jsahdajsd"
+            }
+        })
+    })
+</script>
+</html>

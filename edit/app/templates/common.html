@@ -1,0 +1,40 @@
+
+
+<div class="zhuanti">
+  <h2 class="hometitle">最新发布</h2>
+  <ul>
+      {% for foo in new %}
+          <li> <i><img src="{{ foo.poster }}"></i>
+            <p>{{ foo.title }} <span><a href="{{ url_for('web.detail',id=foo.id) }}">阅读</a></span> </p>
+          </li>
+      {% endfor %}
+  </ul>
+</div>
+<div class="tuijian">
+      <h2 class="hometitle">推荐文章</h2>
+      <ul class="tjpic">
+        <i><img src="{{ reco[0].poster }}"></i>
+        <p><a href="{{ url_for('web.detail',id=reco[0].id) }}">{{ reco[0].title }}</a></p>
+      </ul>
+      <ul class="sidenews">
+          {% for foo in reco[1:] %}
+            <li> <i><img src="{{ foo.poster }}"></i>
+                <p><a href="{{ url_for('web.detail',id=foo.id) }}">{{ foo.title }}</a></p>
+            <span>{{ foo.create_time }}</span> </li>
+          {% endfor %}
+      </ul>
+    </div>
+<div class="tuijian">
+      <h2 class="hometitle">热门文章</h2>
+      <ul class="tjpic">
+        <i><img src="{{ top[0].poster }}"></i>
+        <p><a href="{{ url_for('web.detail',id=top[0].id) }}">{{ top[0].title }}</a></p>
+      </ul>
+      <ul class="sidenews">
+        {% for foo in top[1:] %}
+            <li> <i><img src="{{ foo.poster }}"></i>
+          <p><a href="{{ url_for('web.detail',id=foo.id) }}">{{ foo.title }}</a></p>
+          <span>{{ foo.create_time }}</span> </li>
+        {% endfor %}
+      </ul>
+    </div>

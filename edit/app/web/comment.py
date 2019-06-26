@@ -1,13 +1,16 @@
 import random
 
-from flask import render_template,request,redirect,url_for,current_app,flash
+from flask import render_template,request,redirect,url_for,current_app,flash,jsonify
 from flask_login import current_user,login_required
 from sqlalchemy.sql.expression import func
 
 
 from app.models import Comment,Reply,Article,Tips,db
 from app.forms import CommentForm,ReplyForm
+from app.lib.redis_thumb import myredis,redis_to_mysql
 from . import web
+
+redis = myredis()
 
 @web.route('/detail',methods=['GET','POST'])
 def detail():
@@ -77,3 +80,35 @@ def reply():
         flash("你不能回复自己")
     return render_template('detail.html',blog=blog,tips=tips,comment_form=comment_form,
                            reply_form=reply_form)
+
+@web.route('/thumb/<uid>/<aid>')
+def thumb(uid,aid):
+    if is_thumb(uid,aid) and not redis.sismember('thumb-'+aid,uid):
+        redis.sadd('thumb-'+aid,uid)
+        return jsonify({'code':200,'message':'点赞成功'})
+    return jsonify({'code':403,'message':'你已经点赞过了'})
+
+@web.route('/thumb_total/<aid>')
+def thumb_total(aid):
+    total = int(redis.hget('thumbs_total',aid))+len(redis.smembers('thumb-'+aid))
+    result = dict(total=total,aid=aid)
+    return jsonify(result)
+
+
+
+
+
+
+def is_thumb(uid,aid):
+    # false表示已经点赞过,不可以点赞了
+    article = Article.query.get_or_404(aid)
+    res = [thumb for thumb in article.thumbs if thumb.auth_id==uid]
+    return  False if res else True
+
+
+@web.route('/celery')
+def import_data():
+    redis_to_mysql()
+    return jsonify(dict(code=200))
+
+
