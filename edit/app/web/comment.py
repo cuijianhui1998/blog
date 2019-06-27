@@ -90,8 +90,14 @@ def thumb(uid,aid):
 
 @web.route('/thumb_total/<aid>')
 def thumb_total(aid):
-    total = int(redis.hget('thumbs_total',aid))+len(redis.smembers('thumb-'+aid))
-    result = dict(total=total,aid=aid)
+    none = request.args.get("_")
+    print(redis.hget('thumbs_total',aid))
+    if redis.hget('thumbs_total',aid) is None:
+        total = len(redis.smembers('thumb-'+aid))
+        result = dict(total=total,aid=aid)
+    else:
+        total = int(redis.hget('thumbs_total',aid))+len(redis.smembers('thumb-'+aid))
+        result = dict(total=total,aid=aid)
     return jsonify(result)
 
 
