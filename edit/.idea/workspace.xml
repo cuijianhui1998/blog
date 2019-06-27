@@ -11,8 +11,8 @@
   <component name="CoverageDataManager">
     <SUITE FILE_PATH="coverage/edit$Flask__app___init___py_.coverage" NAME="Flask (app/__init__.py) Coverage Results" MODIFIED="1560244090303" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
     <SUITE FILE_PATH="coverage/edit$order_set.coverage" NAME="order_set Coverage Results" MODIFIED="1560913697884" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/app/lib" />
-    <SUITE FILE_PATH="coverage/edit$edit.coverage" NAME="edit Coverage Results" MODIFIED="1561600350164" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/edit$redis_thumb.coverage" NAME="redis_thumb Coverage Results" MODIFIED="1561540769907" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/app/lib" />
+    <SUITE FILE_PATH="coverage/edit$edit.coverage" NAME="edit Coverage Results" MODIFIED="1561609378568" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/edit$redis_thumb.coverage" NAME="redis_thumb Coverage Results" MODIFIED="1561606990614" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/app/lib" />
     <SUITE FILE_PATH="coverage/edit$Flask__app_py_.coverage" NAME="Flask (app.py) Coverage Results" MODIFIED="1561540263533" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/edit$my_markdown.coverage" NAME="my_markdown Coverage Results" MODIFIED="1561512058369" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/app/lib" />
     <SUITE FILE_PATH="coverage/edit$article.coverage" NAME="article Coverage Results" MODIFIED="1560735443184" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/app/forms" />
@@ -48,9 +48,9 @@
           <entry key="jpg" value="102" />
           <entry key="js" value="59" />
           <entry key="json" value="1" />
-          <entry key="log" value="4" />
+          <entry key="log" value="6" />
           <entry key="png" value="75" />
-          <entry key="py" value="426" />
+          <entry key="py" value="431" />
           <entry key="svg" value="2" />
         </counts>
       </usages-collector>
@@ -61,8 +61,8 @@
           <entry key="Image" value="187" />
           <entry key="JSON" value="1" />
           <entry key="JavaScript" value="59" />
-          <entry key="Log" value="4" />
-          <entry key="Python" value="426" />
+          <entry key="Log" value="6" />
+          <entry key="Python" value="431" />
           <entry key="SVG" value="2" />
         </counts>
       </usages-collector>
@@ -70,10 +70,10 @@
         <counts>
           <entry key="Python Console" value="396" />
           <entry key="css" value="1714" />
-          <entry key="dummy" value="84" />
+          <entry key="dummy" value="88" />
           <entry key="html" value="15222" />
           <entry key="js" value="1239" />
-          <entry key="py" value="27083" />
+          <entry key="py" value="27635" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
@@ -81,8 +81,8 @@
           <entry key="CSS" value="1714" />
           <entry key="HTML" value="15222" />
           <entry key="JavaScript" value="1239" />
-          <entry key="PLAIN_TEXT" value="84" />
-          <entry key="Python" value="27479" />
+          <entry key="PLAIN_TEXT" value="88" />
+          <entry key="Python" value="28031" />
         </counts>
       </usages-collector>
     </session>
@@ -90,59 +90,30 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/templates/detail.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="5640">
-              <caret line="188" column="47" selection-start-line="188" selection-start-column="47" selection-end-line="188" selection-end-column="47" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/templates/base.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="480">
-              <caret line="16" column="56" selection-start-line="16" selection-end-line="17" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/web/auth.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <caret selection-end-line="5" selection-end-column="38" />
-              <folding>
-                <element signature="e#0#64#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/web/comment.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="477">
-              <caret line="97" column="9" lean-forward="true" selection-start-line="97" selection-start-column="9" selection-end-line="97" selection-end-column="9" />
+            <state relative-caret-position="1235">
+              <caret line="113" selection-start-line="113" selection-end-line="113" />
               <folding>
                 <element signature="e#0#13#0" expanded="true" />
-                <marker date="1561597999579" expanded="true" signature="3875:4038" ph="..." />
-                <marker date="1561597999579" expanded="true" signature="4034:4035" ph="..." />
-                <marker date="1561597999579" expanded="true" signature="4060:4065" ph="..." />
-                <marker date="1561597999579" expanded="true" signature="4086:4087" ph="..." />
+                <marker date="1561604840602" expanded="true" signature="3875:4038" ph="..." />
+                <marker date="1561604840602" expanded="true" signature="4034:4035" ph="..." />
+                <marker date="1561604840602" expanded="true" signature="4060:4065" ph="..." />
+                <marker date="1561604840602" expanded="true" signature="4086:4087" ph="..." />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/lib/redis_thumb.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="90">
-              <caret line="24" column="33" lean-forward="true" selection-start-line="24" selection-start-column="33" selection-end-line="24" selection-end-column="33" />
+            <state relative-caret-position="203">
+              <caret line="17" column="13" lean-forward="true" selection-start-line="17" selection-start-column="13" selection-end-line="17" selection-end-column="13" />
               <folding>
-                <marker date="1561549935241" expanded="true" signature="125:126" ph="..." />
-                <marker date="1561549935241" expanded="true" signature="307:312" ph="..." />
+                <element signature="e#0#26#0" expanded="true" />
+                <marker date="1561607522486" expanded="true" signature="152:153" ph="..." />
+                <marker date="1561607522486" expanded="true" signature="496:505" ph="..." />
               </folding>
             </state>
           </provider>
@@ -164,7 +135,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/web/__init__.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="540">
+            <state relative-caret-position="245">
               <caret line="23" column="24" selection-start-line="23" selection-start-column="24" selection-end-line="23" selection-end-column="24" />
               <folding>
                 <element signature="e#0#27#0" expanded="true" />
@@ -173,14 +144,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/setting.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="90">
-              <caret line="4" column="13" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
-              <folding>
-                <element signature="e#0#9#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="58">
+              <caret line="17" column="25" lean-forward="true" selection-start-line="17" selection-start-column="25" selection-end-line="17" selection-end-column="25" />
             </state>
           </provider>
         </entry>
@@ -188,12 +156,22 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/__init__.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="300">
-              <caret line="10" column="67" selection-start-line="10" selection-start-column="67" selection-end-line="10" selection-end-column="67" />
+            <state relative-caret-position="178">
+              <caret line="7" selection-start-line="7" selection-end-line="7" selection-end-column="41" />
               <folding>
-                <marker date="1561550422423" expanded="true" signature="414:416" ph="..." />
-                <marker date="1561550422423" expanded="true" signature="841:1158" ph="..." />
+                <element signature="e#2306#2644#0" />
+                <marker date="1561606990588" expanded="true" signature="409:412" ph="..." />
+                <marker date="1561606990588" expanded="true" signature="924:1188" ph="..." />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/wsgi.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="60">
+              <caret line="2" selection-start-line="2" selection-end-line="2" />
             </state>
           </provider>
         </entry>
@@ -202,11 +180,12 @@
         <entry file="file://$PROJECT_DIR$/app/extension.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="120">
-              <caret line="4" column="41" selection-start-line="4" selection-start-column="41" selection-end-line="4" selection-end-column="41" />
+              <caret line="4" selection-start-line="4" selection-end-line="4" />
               <folding>
-                <marker date="1561550408948" expanded="true" signature="383:385" ph="..." />
-                <marker date="1561550408948" expanded="true" signature="386:393" ph="..." />
-                <marker date="1561550408948" expanded="true" signature="390:393" ph="..." />
+                <marker date="1561606725857" expanded="true" signature="258:261" ph="..." />
+                <marker date="1561606725857" expanded="true" signature="317:319" ph="..." />
+                <marker date="1561606725857" expanded="true" signature="320:327" ph="..." />
+                <marker date="1561606725857" expanded="true" signature="324:327" ph="..." />
               </folding>
             </state>
           </provider>
@@ -275,18 +254,18 @@
         <option value="$PROJECT_DIR$/app/templates/macro/recommond.html" />
         <option value="$PROJECT_DIR$/app/manage.py" />
         <option value="$PROJECT_DIR$/app/models.py" />
-        <option value="$PROJECT_DIR$/app/lib/redis_thumb.py" />
-        <option value="$PROJECT_DIR$/app.py" />
-        <option value="$PROJECT_DIR$/app/setting.py" />
-        <option value="$PROJECT_DIR$/app/extension.py" />
-        <option value="$PROJECT_DIR$/app/__init__.py" />
         <option value="$PROJECT_DIR$/app/static/js/mine/blog-content.js" />
         <option value="$PROJECT_DIR$/app/web/blog_classes/test.py" />
         <option value="$PROJECT_DIR$/app/web/__init__.py" />
         <option value="$PROJECT_DIR$/app/web/test.py" />
         <option value="$PROJECT_DIR$/app/templates/test/test1.html" />
         <option value="$PROJECT_DIR$/app/templates/detail.html" />
+        <option value="$PROJECT_DIR$/app.py" />
         <option value="$PROJECT_DIR$/app/web/comment.py" />
+        <option value="$PROJECT_DIR$/app/extension.py" />
+        <option value="$PROJECT_DIR$/app/__init__.py" />
+        <option value="$PROJECT_DIR$/app/lib/redis_thumb.py" />
+        <option value="$PROJECT_DIR$/app/setting.py" />
       </list>
     </option>
   </component>
@@ -331,31 +310,6 @@
               <item name="edit" type="462c0819:PsiDirectoryNode" />
               <item name="app" type="462c0819:PsiDirectoryNode" />
               <item name="lib" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="edit" type="b2602c69:ProjectViewProjectNode" />
-              <item name="edit" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="static" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="edit" type="b2602c69:ProjectViewProjectNode" />
-              <item name="edit" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="templates" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="edit" type="b2602c69:ProjectViewProjectNode" />
-              <item name="edit" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="templates" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="edit" type="b2602c69:ProjectViewProjectNode" />
-              <item name="edit" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="web" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="edit" type="b2602c69:ProjectViewProjectNode" />
@@ -494,9 +448,9 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="Flask (app.py)" type="Python.FlaskServer" factoryName="Flask server" temporary="true" nameIsGenerated="true">
+    <configuration name="Flask (wsgi.py)" type="Python.FlaskServer" factoryName="Flask server" temporary="true" nameIsGenerated="true">
       <module name="edit" />
-      <option name="target" value="$PROJECT_DIR$/app.py" />
+      <option name="target" value="$PROJECT_DIR$/wsgi.py" />
       <option name="targetType" value="PATH" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -511,7 +465,7 @@
     </configuration>
     <configuration name="edit" type="Python.FlaskServer" factoryName="Flask server">
       <module name="edit" />
-      <option name="target" value="$PROJECT_DIR$/app.py" />
+      <option name="target" value="$PROJECT_DIR$/wsgi.py" />
       <option name="targetType" value="PATH" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -526,7 +480,7 @@
     </configuration>
     <list>
       <item itemvalue="Flask server.edit" />
-      <item itemvalue="Flask server.Flask (app.py)" />
+      <item itemvalue="Flask server.Flask (wsgi.py)" />
       <item itemvalue="Python.my_markdown" />
       <item itemvalue="Python.article" />
       <item itemvalue="Python.order_set" />
@@ -535,7 +489,7 @@
     <recent_temporary>
       <list>
         <item itemvalue="Python.redis_thumb" />
-        <item itemvalue="Flask server.Flask (app.py)" />
+        <item itemvalue="Flask server.Flask (wsgi.py)" />
         <item itemvalue="Python.my_markdown" />
         <item itemvalue="Python.order_set" />
         <item itemvalue="Python.article" />
@@ -572,7 +526,7 @@
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.3295082" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.56393445" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.47868854" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.5229508" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -633,30 +587,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app/static/css/mine/say_me.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-467">
-          <caret line="19" column="17" lean-forward="true" selection-start-line="19" selection-start-column="17" selection-end-line="19" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/static/css/mine/publish.css">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/static/css/mine/login.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-630">
-          <caret line="3" column="12" lean-forward="true" selection-start-line="3" selection-start-column="12" selection-end-line="3" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/static/css/mine/detail.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="420">
-          <caret line="17" column="18" selection-start-line="17" selection-start-column="18" selection-end-line="17" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/static/css/mine/404.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="420">
@@ -736,7 +666,13 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/static/js/500/jquery-1.10.2.js">
-      <provider selected="true" editor-type-id="text-editor" />
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+          </folding>
+        </state>
+      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/templates/500.html">
       <provider selected="true" editor-type-id="text-editor">
@@ -749,6 +685,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="210">
           <caret line="15" column="17" selection-start-line="13" selection-start-column="4" selection-end-line="17" selection-end-column="22" />
+          <folding>
+            <element signature="e#0#41#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -871,13 +810,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="6" selection-start-line="6" selection-end-line="6" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/static/js/mine/blog-content.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1020">
@@ -916,6 +848,75 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/logs/blog.log">
+      <provider selected="true" editor-type-id="LogFileEditorProvider">
+        <state relative-caret-position="-69632" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/wsgi.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="2" selection-start-line="2" selection-end-line="2" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/web/comment.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1235">
+          <caret line="113" selection-start-line="113" selection-end-line="113" />
+          <folding>
+            <element signature="e#0#13#0" expanded="true" />
+            <marker date="1561604840602" expanded="true" signature="3875:4038" ph="..." />
+            <marker date="1561604840602" expanded="true" signature="4034:4035" ph="..." />
+            <marker date="1561604840602" expanded="true" signature="4060:4065" ph="..." />
+            <marker date="1561604840602" expanded="true" signature="4086:4087" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../virtu-manage/blog/Lib/site-packages/apscheduler/util.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="57">
+          <caret line="291" selection-start-line="291" selection-end-line="291" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../virtu-manage/blog/Lib/site-packages/apscheduler/job.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="91">
+          <caret line="48" selection-start-line="48" selection-end-line="48" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../virtu-manage/blog/Lib/site-packages/apscheduler/schedulers/base.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="73">
+          <caret line="102" selection-start-line="102" selection-end-line="102" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/__init__.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="178">
+          <caret line="7" selection-start-line="7" selection-end-line="7" selection-end-column="41" />
+          <folding>
+            <element signature="e#2306#2644#0" />
+            <marker date="1561606990588" expanded="true" signature="409:412" ph="..." />
+            <marker date="1561606990588" expanded="true" signature="924:1188" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/web/__init__.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="245">
+          <caret line="23" column="24" selection-start-line="23" selection-start-column="24" selection-end-line="23" selection-end-column="24" />
+          <folding>
+            <element signature="e#0#27#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/web/test.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="60">
@@ -927,33 +928,14 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/web/__init__.py">
+    <entry file="file://$PROJECT_DIR$/app/lib/redis_thumb.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="540">
-          <caret line="23" column="24" selection-start-line="23" selection-start-column="24" selection-end-line="23" selection-end-column="24" />
+        <state relative-caret-position="203">
+          <caret line="17" column="13" lean-forward="true" selection-start-line="17" selection-start-column="13" selection-end-line="17" selection-end-column="13" />
           <folding>
-            <element signature="e#0#27#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/setting.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="4" column="13" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
-          <folding>
-            <element signature="e#0#9#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/__init__.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="300">
-          <caret line="10" column="67" selection-start-line="10" selection-start-column="67" selection-end-line="10" selection-end-column="67" />
-          <folding>
-            <marker date="1561550422423" expanded="true" signature="414:416" ph="..." />
-            <marker date="1561550422423" expanded="true" signature="841:1158" ph="..." />
+            <element signature="e#0#26#0" expanded="true" />
+            <marker date="1561607522486" expanded="true" signature="152:153" ph="..." />
+            <marker date="1561607522486" expanded="true" signature="496:505" ph="..." />
           </folding>
         </state>
       </provider>
@@ -961,37 +943,20 @@
     <entry file="file://$PROJECT_DIR$/app/extension.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="120">
-          <caret line="4" column="41" selection-start-line="4" selection-start-column="41" selection-end-line="4" selection-end-column="41" />
+          <caret line="4" selection-start-line="4" selection-end-line="4" />
           <folding>
-            <marker date="1561550408948" expanded="true" signature="383:385" ph="..." />
-            <marker date="1561550408948" expanded="true" signature="386:393" ph="..." />
-            <marker date="1561550408948" expanded="true" signature="390:393" ph="..." />
+            <marker date="1561606725857" expanded="true" signature="258:261" ph="..." />
+            <marker date="1561606725857" expanded="true" signature="317:319" ph="..." />
+            <marker date="1561606725857" expanded="true" signature="320:327" ph="..." />
+            <marker date="1561606725857" expanded="true" signature="324:327" ph="..." />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/web/comment.py">
+    <entry file="file://$PROJECT_DIR$/app/setting.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="477">
-          <caret line="97" column="9" lean-forward="true" selection-start-line="97" selection-start-column="9" selection-end-line="97" selection-end-column="9" />
-          <folding>
-            <element signature="e#0#13#0" expanded="true" />
-            <marker date="1561597999579" expanded="true" signature="3875:4038" ph="..." />
-            <marker date="1561597999579" expanded="true" signature="4034:4035" ph="..." />
-            <marker date="1561597999579" expanded="true" signature="4060:4065" ph="..." />
-            <marker date="1561597999579" expanded="true" signature="4086:4087" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/lib/redis_thumb.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="24" column="33" lean-forward="true" selection-start-line="24" selection-start-column="33" selection-end-line="24" selection-end-column="33" />
-          <folding>
-            <marker date="1561549935241" expanded="true" signature="125:126" ph="..." />
-            <marker date="1561549935241" expanded="true" signature="307:312" ph="..." />
-          </folding>
+        <state relative-caret-position="58">
+          <caret line="17" column="25" lean-forward="true" selection-start-line="17" selection-start-column="25" selection-end-line="17" selection-end-column="25" />
         </state>
       </provider>
     </entry>

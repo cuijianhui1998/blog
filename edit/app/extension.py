@@ -2,15 +2,17 @@ from flask_login import LoginManager
 from flask_admin import Admin
 from flask_admin.contrib.sqla import ModelView
 from flask_bootstrap import Bootstrap
-from flask_apscheduler import APScheduler
+
 
 from app.models import Article,Auth,db,Tips,Message
 from app.lib.admin import ArticleView,MyIndexView
 
 
+
+
+
 login_manager = LoginManager()
 bootstrap = Bootstrap()
-apscheduler = APScheduler()
 
 
 

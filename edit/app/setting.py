@@ -1,5 +1,5 @@
 import os
-from datetime import timedelta
+
 
 class BaseConfig:
     SECRET_KEY = b's\x97_\x95\xcd\xc5\x8c\xa37I\x95\xe9\xcc+-\xa0\xb9\x9a\xef\x04\r\xc7\xd3l'
@@ -11,10 +11,10 @@ class BaseConfig:
     MAIL_VALIDATE_KEY = 'A75mNHZgOMEJ1fqmixtEjUdWmTQa7CdVV9VnjXIOEGDEj6SYzh'
 
     # 定时任务设置
-    JOBC = [{
+    JOBS = [{
             'id': 'job1',
             'func': 'app.lib.redis_thumb:redis_to_mysql',
-            'trigger': 'cron',
+            'trigger': 'interval',
             'seconds': 24*3600
         }]
     SCHEDULER_API_ENABLED = True

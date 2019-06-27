@@ -112,9 +112,3 @@ def is_thumb(uid,aid):
     return  False if res else True
 
 
-@web.route('/celery')
-def import_data():
-    redis_to_mysql()
-    return jsonify(dict(code=200))
-
-

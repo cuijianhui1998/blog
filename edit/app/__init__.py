@@ -4,22 +4,22 @@ import logging
 from logging.handlers import RotatingFileHandler
 
 
-from flask import Flask,request,render_template
+from flask import Flask,request,render_template,current_app
+from flask_apscheduler import APScheduler
 
 from app.setting import config
 from app.models import Auth,Article,Tips,Message
-from app.extension import login_manager,admin_register,db,bootstrap,apscheduler
-from app.lib.redis_thumb import redis_to_mysql
+from app.extension import login_manager,admin_register,db,bootstrap
 
 basedir = os.path.abspath(os.path.dirname(os.path.dirname(__file__)))
+
 
 
 def create_app(config_name=None):
     if config_name is None:
         win = sys.platform.startswith('win')
         config_name = 'development' if win else 'production'
-
-    app =Flask(__name__)
+    app = Flask(__name__)
     app.config.from_object(config[config_name])
 
     blueprint_register(app)
@@ -29,9 +29,13 @@ def create_app(config_name=None):
 
     extension_register(app)
 
-
+    apscheduler = APScheduler()
+    apscheduler.init_app(app)
+    apscheduler.start()
 
     return app
+
+
 
 def extension_register(app):
     login_manager.init_app(app)
@@ -42,8 +46,7 @@ def extension_register(app):
     bootstrap.init_app(app)
     db.init_app(app)
 
-    apscheduler.init_app(app)
-    apscheduler.start()
+
 
     admin_register(app)
 
