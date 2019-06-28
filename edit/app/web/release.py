@@ -1,7 +1,7 @@
 import datetime
 
 
-from flask import render_template,request,jsonify,redirect,url_for,flash
+from flask import render_template,request,jsonify,redirect,url_for,flash,make_response
 from flask_login import login_required
 
 
@@ -74,8 +74,6 @@ def uploads():
     return jsonify(res)
 
 
-
-
 @web.route('/search',methods=['GET','POST'])
 def search():
     form = SearchForm(request.form)
@@ -94,10 +92,11 @@ def time_axis():
     '''
     時間軸
     '''
-    logs = Article.query.order_by(Article.create_time.desc()).all()
-    logs = [(datetime.date(l.create_time),l.title,l.id) for l in logs]
-
-    return render_template('time.html',logs=logs)
+    page = request.args.get("page", 1, type=int)
+    paginations = Article.query.order_by(Article.create_time.desc()).paginate(page,per_page=10)
+    logs = paginations.items
+    logs = [(l.create_time.date(),l.title,l.id) for l in logs]
+    return render_template('time.html',logs=logs,paginations=paginations)
 
 
 @web.route('/update',methods=['GET','POST'])

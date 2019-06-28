@@ -1,6 +1,6 @@
 import csv,codecs
 
-from flask import redirect,url_for,request
+from flask import redirect,url_for,abort
 from werkzeug.utils import secure_filename
 from flask_admin.contrib.sqla import ModelView
 from flask_admin import BaseView,AdminIndexView,expose
@@ -15,7 +15,7 @@ class MyIndexView(AdminIndexView):
         if current_user.is_authenticated:
             if current_user.username=='admin' :
                 return self.render(self._template)
-            return redirect(url_for('web.index'))
+            return abort(404)
         return redirect(url_for('web.login'))
 
 

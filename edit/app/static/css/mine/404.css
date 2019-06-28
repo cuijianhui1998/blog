@@ -1,3 +1,7 @@
+pre{
+    display: none;
+}
+
 .not-found{
     text-align: center;
 }

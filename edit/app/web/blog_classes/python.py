@@ -24,7 +24,7 @@ def python_base():
 @python.route('/progress')
 def python_progress():
     enum_value = 1002
-    title = "python进阶的知识"
+    title = "python进阶"
     page = request.args.get("page", 1, type=int)
     paginations = Article.query.filter_by(select=BlogTypeEnum(enum_value).name).order_by(
         Article.create_time.desc()).paginate(page, per_page=10)

@@ -2341,3 +2341,920 @@ Traceback (most recent call last):
   File "D:\ABC\edit\app\web\comment.py", line 98, in thumb_total
     total = int(redis.hget('thumbs_total',aid))+len(redis.smembers('thumb-'+aid))
 TypeError: int() argument must be a string, a bytes-like object or a number, not 'NoneType'
+2019-06-28 14:41:58,405 - flask.app - ERROR - Exception on /cutuploads/ [POST]
+Traceback (most recent call last):
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\flask\app.py", line 2311, in wsgi_app
+    response = self.full_dispatch_request()
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\flask\app.py", line 1834, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\flask\app.py", line 1737, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\flask\_compat.py", line 36, in reraise
+    raise value
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\flask\app.py", line 1832, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\flask\app.py", line 1818, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "D:\ABC\edit\app\web\release.py", line 80, in cutuploads
+    basestr = base64.b64decode(request.args.get('base64'))
+  File "D:\ABC\virtu-manage\blog\lib\base64.py", line 80, in b64decode
+    s = _bytes_from_decode_data(s)
+  File "D:\ABC\virtu-manage\blog\lib\base64.py", line 46, in _bytes_from_decode_data
+    "string, not %r" % s.__class__.__name__) from None
+TypeError: argument should be a bytes-like object or ASCII string, not 'NoneType'
+2019-06-28 14:45:35,659 - flask.app - ERROR - Exception on /cutuploads/ [POST]
+Traceback (most recent call last):
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\flask\app.py", line 2311, in wsgi_app
+    response = self.full_dispatch_request()
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\flask\app.py", line 1834, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\flask\app.py", line 1737, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\flask\_compat.py", line 36, in reraise
+    raise value
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\flask\app.py", line 1832, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\flask\app.py", line 1818, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "D:\ABC\edit\app\web\release.py", line 80, in cutuploads
+    basestr = base64.b64decode(request.args.get('base64'))
+  File "D:\ABC\virtu-manage\blog\lib\base64.py", line 80, in b64decode
+    s = _bytes_from_decode_data(s)
+  File "D:\ABC\virtu-manage\blog\lib\base64.py", line 46, in _bytes_from_decode_data
+    "string, not %r" % s.__class__.__name__) from None
+TypeError: argument should be a bytes-like object or ASCII string, not 'NoneType'
+2019-06-28 14:57:54,494 - flask.app - ERROR - Exception on /cutuploads/ [GET]
+Traceback (most recent call last):
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\flask\app.py", line 2311, in wsgi_app
+    response = self.full_dispatch_request()
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\flask\app.py", line 1834, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\flask\app.py", line 1737, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\flask\_compat.py", line 36, in reraise
+    raise value
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\flask\app.py", line 1832, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\flask\app.py", line 1818, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "D:\ABC\edit\app\web\release.py", line 80, in cutuploads
+    basestr = base64.b64decode(request.args.get('base64'))
+  File "D:\ABC\virtu-manage\blog\lib\base64.py", line 87, in b64decode
+    return binascii.a2b_base64(s)
+binascii.Error: Incorrect padding
+2019-06-28 15:00:14,638 - flask.app - ERROR - Exception on /cutuploads/ [GET]
+Traceback (most recent call last):
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\flask\app.py", line 2311, in wsgi_app
+    response = self.full_dispatch_request()
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\flask\app.py", line 1834, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\flask\app.py", line 1737, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\flask\_compat.py", line 36, in reraise
+    raise value
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\flask\app.py", line 1832, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\flask\app.py", line 1818, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "D:\ABC\edit\app\web\release.py", line 82, in cutuploads
+    f.write(basestr)
+TypeError: a bytes-like object is required, not 'str'
+2019-06-28 15:19:42,104 - flask.app - ERROR - Exception on /cutuploads/ [GET]
+Traceback (most recent call last):
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\flask\app.py", line 2311, in wsgi_app
+    response = self.full_dispatch_request()
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\flask\app.py", line 1834, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\flask\app.py", line 1737, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\flask\_compat.py", line 36, in reraise
+    raise value
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\flask\app.py", line 1832, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\flask\app.py", line 1818, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "D:\ABC\edit\app\web\release.py", line 82, in cutuploads
+    x = base64.b64decode(x)
+TypeError: a bytes-like object is required, not 'str'
+2019-06-28 15:21:39,726 - flask.app - ERROR - Exception on /cutuploads/ [GET]
+Traceback (most recent call last):
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\flask\app.py", line 2311, in wsgi_app
+    response = self.full_dispatch_request()
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\flask\app.py", line 1834, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\flask\app.py", line 1737, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\flask\_compat.py", line 36, in reraise
+    raise value
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\flask\app.py", line 1832, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\flask\app.py", line 1818, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "D:\ABC\edit\app\web\release.py", line 81, in cutuploads
+    x = basestr.encode('utf-8').replace("data:image/png;base64,", '')
+TypeError: a bytes-like object is required, not 'str'
+2019-06-28 15:22:12,088 - flask.app - ERROR - Exception on /cutuploads/ [GET]
+Traceback (most recent call last):
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\flask\app.py", line 2311, in wsgi_app
+    response = self.full_dispatch_request()
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\flask\app.py", line 1834, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\flask\app.py", line 1737, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\flask\_compat.py", line 36, in reraise
+    raise value
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\flask\app.py", line 1832, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\flask\app.py", line 1818, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "D:\ABC\edit\app\web\release.py", line 81, in cutuploads
+    print(type(basestr))
+TypeError: a bytes-like object is required, not 'str'
+2019-06-28 15:23:27,086 - flask.app - ERROR - Exception on /cutuploads/ [GET]
+Traceback (most recent call last):
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\flask\app.py", line 2311, in wsgi_app
+    response = self.full_dispatch_request()
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\flask\app.py", line 1835, in full_dispatch_request
+    return self.finalize_request(rv)
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\flask\app.py", line 1850, in finalize_request
+    response = self.make_response(rv)
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\flask\app.py", line 1976, in make_response
+    'The view function did not return a valid response. The'
+TypeError: The view function did not return a valid response. The function either returned None or ended without a return statement.
+2019-06-28 15:39:45,694 - flask.app - ERROR - Exception on /cutuploads/ [GET]
+Traceback (most recent call last):
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\flask\app.py", line 2311, in wsgi_app
+    response = self.full_dispatch_request()
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\flask\app.py", line 1834, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\flask\app.py", line 1737, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\flask\_compat.py", line 36, in reraise
+    raise value
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\flask\app.py", line 1832, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\flask\app.py", line 1818, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "D:\ABC\edit\app\web\release.py", line 88, in cutuploads
+    print(file.read())
+io.UnsupportedOperation: read
+2019-06-28 16:53:17,330 - flask.app - ERROR - Exception on /time [GET]
+Traceback (most recent call last):
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\flask\app.py", line 2311, in wsgi_app
+    response = self.full_dispatch_request()
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\flask\app.py", line 1834, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\flask\app.py", line 1737, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\flask\_compat.py", line 36, in reraise
+    raise value
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\flask\app.py", line 1832, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\flask\app.py", line 1818, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "D:\ABC\edit\app\web\release.py", line 96, in time_axis
+    logs = [(datetime.date(l.create_time),l.title,l.id) for l in logs]
+  File "D:\ABC\edit\app\web\release.py", line 96, in <listcomp>
+    logs = [(datetime.date(l.create_time),l.title,l.id) for l in logs]
+TypeError: an integer is required (got type datetime.datetime)
+2019-06-28 17:22:46,648 - flask.app - ERROR - Exception on /detail [GET]
+Traceback (most recent call last):
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\flask\app.py", line 2311, in wsgi_app
+    response = self.full_dispatch_request()
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\flask\app.py", line 1834, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\flask\app.py", line 1737, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\flask\_compat.py", line 36, in reraise
+    raise value
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\flask\app.py", line 1832, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\flask\app.py", line 1818, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "D:\ABC\edit\app\web\comment.py", line 24, in detail
+    blog = Article.query.get_or_404(key)
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\flask_sqlalchemy\__init__.py", line 422, in get_or_404
+    rv = self.get(ident)
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\sqlalchemy\orm\query.py", line 959, in get
+    return self._get_impl(ident, loading.load_on_pk_identity)
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\sqlalchemy\orm\query.py", line 1026, in _get_impl
+    if len(primary_key_identity) != len(mapper.primary_key):
+TypeError: object of type 'NoneType' has no len()
+2019-06-28 17:53:57,448 - flask.app - ERROR - Exception on /next [GET]
+Traceback (most recent call last):
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\flask\app.py", line 2311, in wsgi_app
+    response = self.full_dispatch_request()
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\flask\app.py", line 1834, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\flask\app.py", line 1737, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\flask\_compat.py", line 36, in reraise
+    raise value
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\flask\app.py", line 1832, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\flask\app.py", line 1818, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "D:\ABC\edit\app\web\comment.py", line 116, in next
+    return redirect(url_for('we.index'))
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\flask\helpers.py", line 356, in url_for
+    return appctx.app.handle_url_build_error(error, endpoint, values)
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\flask\app.py", line 2080, in handle_url_build_error
+    reraise(exc_type, exc_value, tb)
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\flask\_compat.py", line 36, in reraise
+    raise value
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\flask\helpers.py", line 345, in url_for
+    force_external=external)
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\werkzeug\routing.py", line 2007, in build
+    raise BuildError(endpoint, values, method, self)
+werkzeug.routing.BuildError: Could not build url for endpoint 'we.index'. Did you mean 'web.index' instead?
+2019-06-28 18:11:15,160 - flask.app - ERROR - Exception on /detail [GET]
+Traceback (most recent call last):
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\flask\app.py", line 2311, in wsgi_app
+    response = self.full_dispatch_request()
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\flask\app.py", line 1834, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\flask\app.py", line 1737, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\flask\_compat.py", line 36, in reraise
+    raise value
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\flask\app.py", line 1832, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\flask\app.py", line 1818, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "D:\ABC\edit\app\web\comment.py", line 31, in detail
+    reply_form=reply_form,pageinations=pageinations,comments=comments)
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\flask\templating.py", line 135, in render_template
+    context, ctx.app)
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\flask\templating.py", line 117, in _render
+    rv = template.render(context)
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\jinja2\asyncsupport.py", line 76, in render
+    return original_render(self, *args, **kwargs)
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\jinja2\environment.py", line 1008, in render
+    return self.environment.handle_exception(exc_info, True)
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\jinja2\environment.py", line 780, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\jinja2\_compat.py", line 37, in reraise
+    raise value.with_traceback(tb)
+  File "D:\ABC\edit\app\templates\detail.html", line 3, in top-level template code
+    {% from 'macro/comment.html' import comment %}
+  File "D:\ABC\edit\app\templates\base.html", line 134, in top-level template code
+    {% block content %}{% endblock %}
+  File "D:\ABC\edit\app\templates\detail.html", line 162, in block "content"
+    $("#next-article")[0].attr("href","{{ url_for('web.detail',id=detail.id) }}")
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\jinja2\environment.py", line 430, in getattr
+    return getattr(obj, attribute)
+jinja2.exceptions.UndefinedError: 'detail' is undefined
+2019-06-28 18:13:21,331 - flask.app - ERROR - Exception on /detail [GET]
+Traceback (most recent call last):
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\flask\app.py", line 2311, in wsgi_app
+    response = self.full_dispatch_request()
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\flask\app.py", line 1834, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\flask\app.py", line 1737, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\flask\_compat.py", line 36, in reraise
+    raise value
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\flask\app.py", line 1832, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\flask\app.py", line 1818, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "D:\ABC\edit\app\web\comment.py", line 31, in detail
+    reply_form=reply_form,pageinations=pageinations,comments=comments)
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\flask\templating.py", line 135, in render_template
+    context, ctx.app)
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\flask\templating.py", line 117, in _render
+    rv = template.render(context)
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\jinja2\asyncsupport.py", line 76, in render
+    return original_render(self, *args, **kwargs)
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\jinja2\environment.py", line 1008, in render
+    return self.environment.handle_exception(exc_info, True)
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\jinja2\environment.py", line 780, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\jinja2\_compat.py", line 37, in reraise
+    raise value.with_traceback(tb)
+  File "D:\ABC\edit\app\templates\detail.html", line 3, in top-level template code
+    {% from 'macro/comment.html' import comment %}
+  File "D:\ABC\edit\app\templates\base.html", line 134, in top-level template code
+    {% block content %}{% endblock %}
+  File "D:\ABC\edit\app\templates\detail.html", line 162, in block "content"
+    $("#next-article")[0].attr("href","{{ url_for('web.detail',id=data.id) }}")
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\jinja2\environment.py", line 430, in getattr
+    return getattr(obj, attribute)
+jinja2.exceptions.UndefinedError: 'data' is undefined
+2019-06-28 18:20:56,384 - flask.app - ERROR - Exception on /detail [GET]
+Traceback (most recent call last):
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\flask\app.py", line 2311, in wsgi_app
+    response = self.full_dispatch_request()
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\flask\app.py", line 1834, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\flask\app.py", line 1737, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\flask\_compat.py", line 36, in reraise
+    raise value
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\flask\app.py", line 1832, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\flask\app.py", line 1818, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "D:\ABC\edit\app\web\comment.py", line 31, in detail
+    reply_form=reply_form,pageinations=pageinations,comments=comments)
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\flask\templating.py", line 135, in render_template
+    context, ctx.app)
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\flask\templating.py", line 117, in _render
+    rv = template.render(context)
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\jinja2\asyncsupport.py", line 76, in render
+    return original_render(self, *args, **kwargs)
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\jinja2\environment.py", line 1008, in render
+    return self.environment.handle_exception(exc_info, True)
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\jinja2\environment.py", line 780, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\jinja2\_compat.py", line 37, in reraise
+    raise value.with_traceback(tb)
+  File "D:\ABC\edit\app\templates\detail.html", line 3, in top-level template code
+    {% from 'macro/comment.html' import comment %}
+  File "D:\ABC\edit\app\templates\base.html", line 134, in top-level template code
+    {% block content %}{% endblock %}
+  File "D:\ABC\edit\app\templates\detail.html", line 162, in block "content"
+    $("#next-article")[0].attr("href","{{ url_for('web.detail',id=data.id) }}")
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\jinja2\environment.py", line 430, in getattr
+    return getattr(obj, attribute)
+jinja2.exceptions.UndefinedError: 'data' is undefined
+2019-06-28 18:37:14,549 - flask.app - ERROR - Exception on /detail [GET]
+Traceback (most recent call last):
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\flask\app.py", line 2311, in wsgi_app
+    response = self.full_dispatch_request()
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\flask\app.py", line 1834, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\flask\app.py", line 1737, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\flask\_compat.py", line 36, in reraise
+    raise value
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\flask\app.py", line 1832, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\flask\app.py", line 1818, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "D:\ABC\edit\app\web\comment.py", line 31, in detail
+    reply_form=reply_form,pageinations=pageinations,comments=comments)
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\flask\templating.py", line 135, in render_template
+    context, ctx.app)
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\flask\templating.py", line 117, in _render
+    rv = template.render(context)
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\jinja2\asyncsupport.py", line 76, in render
+    return original_render(self, *args, **kwargs)
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\jinja2\environment.py", line 1008, in render
+    return self.environment.handle_exception(exc_info, True)
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\jinja2\environment.py", line 780, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\jinja2\_compat.py", line 37, in reraise
+    raise value.with_traceback(tb)
+  File "D:\ABC\edit\app\templates\detail.html", line 3, in top-level template code
+    {% from 'macro/comment.html' import comment %}
+  File "D:\ABC\edit\app\templates\base.html", line 134, in top-level template code
+    {% block content %}{% endblock %}
+  File "D:\ABC\edit\app\templates\detail.html", line 161, in block "content"
+    {% set id=data.id %}
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\jinja2\environment.py", line 430, in getattr
+    return getattr(obj, attribute)
+jinja2.exceptions.UndefinedError: 'data' is undefined
+2019-06-28 18:39:05,051 - flask.app - ERROR - Exception on /detail [GET]
+Traceback (most recent call last):
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\flask\app.py", line 2311, in wsgi_app
+    response = self.full_dispatch_request()
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\flask\app.py", line 1834, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\flask\app.py", line 1737, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\flask\_compat.py", line 36, in reraise
+    raise value
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\flask\app.py", line 1832, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\flask\app.py", line 1818, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "D:\ABC\edit\app\web\comment.py", line 31, in detail
+    reply_form=reply_form,pageinations=pageinations,comments=comments)
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\flask\templating.py", line 135, in render_template
+    context, ctx.app)
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\flask\templating.py", line 117, in _render
+    rv = template.render(context)
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\jinja2\asyncsupport.py", line 76, in render
+    return original_render(self, *args, **kwargs)
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\jinja2\environment.py", line 1008, in render
+    return self.environment.handle_exception(exc_info, True)
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\jinja2\environment.py", line 780, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\jinja2\_compat.py", line 37, in reraise
+    raise value.with_traceback(tb)
+  File "D:\ABC\edit\app\templates\detail.html", line 3, in top-level template code
+    {% from 'macro/comment.html' import comment %}
+  File "D:\ABC\edit\app\templates\base.html", line 134, in top-level template code
+    {% block content %}{% endblock %}
+  File "D:\ABC\edit\app\templates\detail.html", line 161, in block "content"
+    {% set id=data.id %}
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\jinja2\environment.py", line 430, in getattr
+    return getattr(obj, attribute)
+jinja2.exceptions.UndefinedError: 'data' is undefined
+2019-06-28 18:39:11,821 - flask.app - ERROR - Exception on /detail [GET]
+Traceback (most recent call last):
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\flask\app.py", line 2311, in wsgi_app
+    response = self.full_dispatch_request()
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\flask\app.py", line 1834, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\flask\app.py", line 1737, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\flask\_compat.py", line 36, in reraise
+    raise value
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\flask\app.py", line 1832, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\flask\app.py", line 1818, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "D:\ABC\edit\app\web\comment.py", line 31, in detail
+    reply_form=reply_form,pageinations=pageinations,comments=comments)
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\flask\templating.py", line 135, in render_template
+    context, ctx.app)
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\flask\templating.py", line 117, in _render
+    rv = template.render(context)
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\jinja2\asyncsupport.py", line 76, in render
+    return original_render(self, *args, **kwargs)
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\jinja2\environment.py", line 1008, in render
+    return self.environment.handle_exception(exc_info, True)
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\jinja2\environment.py", line 780, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\jinja2\_compat.py", line 37, in reraise
+    raise value.with_traceback(tb)
+  File "D:\ABC\edit\app\templates\detail.html", line 3, in top-level template code
+    {% from 'macro/comment.html' import comment %}
+  File "D:\ABC\edit\app\templates\base.html", line 134, in top-level template code
+    {% block content %}{% endblock %}
+  File "D:\ABC\edit\app\templates\detail.html", line 161, in block "content"
+    {% set id=data.id %}
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\jinja2\environment.py", line 430, in getattr
+    return getattr(obj, attribute)
+jinja2.exceptions.UndefinedError: 'data' is undefined
+2019-06-28 18:39:13,679 - flask.app - ERROR - Exception on /detail [GET]
+Traceback (most recent call last):
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\flask\app.py", line 2311, in wsgi_app
+    response = self.full_dispatch_request()
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\flask\app.py", line 1834, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\flask\app.py", line 1737, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\flask\_compat.py", line 36, in reraise
+    raise value
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\flask\app.py", line 1832, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\flask\app.py", line 1818, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "D:\ABC\edit\app\web\comment.py", line 31, in detail
+    reply_form=reply_form,pageinations=pageinations,comments=comments)
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\flask\templating.py", line 135, in render_template
+    context, ctx.app)
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\flask\templating.py", line 117, in _render
+    rv = template.render(context)
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\jinja2\asyncsupport.py", line 76, in render
+    return original_render(self, *args, **kwargs)
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\jinja2\environment.py", line 1008, in render
+    return self.environment.handle_exception(exc_info, True)
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\jinja2\environment.py", line 780, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\jinja2\_compat.py", line 37, in reraise
+    raise value.with_traceback(tb)
+  File "D:\ABC\edit\app\templates\detail.html", line 3, in top-level template code
+    {% from 'macro/comment.html' import comment %}
+  File "D:\ABC\edit\app\templates\base.html", line 134, in top-level template code
+    {% block content %}{% endblock %}
+  File "D:\ABC\edit\app\templates\detail.html", line 161, in block "content"
+    {% set id=data.id %}
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\jinja2\environment.py", line 430, in getattr
+    return getattr(obj, attribute)
+jinja2.exceptions.UndefinedError: 'data' is undefined
+2019-06-28 18:39:14,159 - flask.app - ERROR - Exception on /detail [GET]
+Traceback (most recent call last):
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\flask\app.py", line 2311, in wsgi_app
+    response = self.full_dispatch_request()
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\flask\app.py", line 1834, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\flask\app.py", line 1737, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\flask\_compat.py", line 36, in reraise
+    raise value
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\flask\app.py", line 1832, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\flask\app.py", line 1818, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "D:\ABC\edit\app\web\comment.py", line 31, in detail
+    reply_form=reply_form,pageinations=pageinations,comments=comments)
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\flask\templating.py", line 135, in render_template
+    context, ctx.app)
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\flask\templating.py", line 117, in _render
+    rv = template.render(context)
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\jinja2\asyncsupport.py", line 76, in render
+    return original_render(self, *args, **kwargs)
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\jinja2\environment.py", line 1008, in render
+    return self.environment.handle_exception(exc_info, True)
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\jinja2\environment.py", line 780, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\jinja2\_compat.py", line 37, in reraise
+    raise value.with_traceback(tb)
+  File "D:\ABC\edit\app\templates\detail.html", line 3, in top-level template code
+    {% from 'macro/comment.html' import comment %}
+  File "D:\ABC\edit\app\templates\base.html", line 134, in top-level template code
+    {% block content %}{% endblock %}
+  File "D:\ABC\edit\app\templates\detail.html", line 161, in block "content"
+    {% set id=data.id %}
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\jinja2\environment.py", line 430, in getattr
+    return getattr(obj, attribute)
+jinja2.exceptions.UndefinedError: 'data' is undefined
+2019-06-28 18:39:52,956 - flask.app - ERROR - Exception on /detail [GET]
+Traceback (most recent call last):
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\flask\app.py", line 2311, in wsgi_app
+    response = self.full_dispatch_request()
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\flask\app.py", line 1834, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\flask\app.py", line 1737, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\flask\_compat.py", line 36, in reraise
+    raise value
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\flask\app.py", line 1832, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\flask\app.py", line 1818, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "D:\ABC\edit\app\web\comment.py", line 31, in detail
+    reply_form=reply_form,pageinations=pageinations,comments=comments)
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\flask\templating.py", line 135, in render_template
+    context, ctx.app)
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\flask\templating.py", line 117, in _render
+    rv = template.render(context)
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\jinja2\asyncsupport.py", line 76, in render
+    return original_render(self, *args, **kwargs)
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\jinja2\environment.py", line 1008, in render
+    return self.environment.handle_exception(exc_info, True)
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\jinja2\environment.py", line 780, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\jinja2\_compat.py", line 37, in reraise
+    raise value.with_traceback(tb)
+  File "D:\ABC\edit\app\templates\detail.html", line 3, in top-level template code
+    {% from 'macro/comment.html' import comment %}
+  File "D:\ABC\edit\app\templates\base.html", line 134, in top-level template code
+    {% block content %}{% endblock %}
+  File "D:\ABC\edit\app\templates\detail.html", line 161, in block "content"
+    {% set id=data.id %}
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\jinja2\environment.py", line 430, in getattr
+    return getattr(obj, attribute)
+jinja2.exceptions.UndefinedError: 'data' is undefined
+2019-06-28 18:40:10,373 - flask.app - ERROR - Exception on /detail [GET]
+Traceback (most recent call last):
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\flask\app.py", line 2311, in wsgi_app
+    response = self.full_dispatch_request()
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\flask\app.py", line 1834, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\flask\app.py", line 1737, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\flask\_compat.py", line 36, in reraise
+    raise value
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\flask\app.py", line 1832, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\flask\app.py", line 1818, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "D:\ABC\edit\app\web\comment.py", line 31, in detail
+    reply_form=reply_form,pageinations=pageinations,comments=comments)
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\flask\templating.py", line 135, in render_template
+    context, ctx.app)
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\flask\templating.py", line 117, in _render
+    rv = template.render(context)
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\jinja2\asyncsupport.py", line 76, in render
+    return original_render(self, *args, **kwargs)
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\jinja2\environment.py", line 1008, in render
+    return self.environment.handle_exception(exc_info, True)
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\jinja2\environment.py", line 780, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\jinja2\_compat.py", line 37, in reraise
+    raise value.with_traceback(tb)
+  File "D:\ABC\edit\app\templates\detail.html", line 3, in top-level template code
+    {% from 'macro/comment.html' import comment %}
+  File "D:\ABC\edit\app\templates\base.html", line 134, in top-level template code
+    {% block content %}{% endblock %}
+  File "D:\ABC\edit\app\templates\detail.html", line 161, in block "content"
+    {% set id=data.id %}
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\jinja2\environment.py", line 430, in getattr
+    return getattr(obj, attribute)
+jinja2.exceptions.UndefinedError: 'data' is undefined
+2019-06-28 18:40:32,878 - flask.app - ERROR - Exception on /detail [GET]
+Traceback (most recent call last):
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\flask\app.py", line 2311, in wsgi_app
+    response = self.full_dispatch_request()
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\flask\app.py", line 1834, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\flask\app.py", line 1737, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\flask\_compat.py", line 36, in reraise
+    raise value
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\flask\app.py", line 1832, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\flask\app.py", line 1818, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "D:\ABC\edit\app\web\comment.py", line 31, in detail
+    reply_form=reply_form,pageinations=pageinations,comments=comments)
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\flask\templating.py", line 135, in render_template
+    context, ctx.app)
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\flask\templating.py", line 117, in _render
+    rv = template.render(context)
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\jinja2\asyncsupport.py", line 76, in render
+    return original_render(self, *args, **kwargs)
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\jinja2\environment.py", line 1008, in render
+    return self.environment.handle_exception(exc_info, True)
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\jinja2\environment.py", line 780, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\jinja2\_compat.py", line 37, in reraise
+    raise value.with_traceback(tb)
+  File "D:\ABC\edit\app\templates\detail.html", line 3, in top-level template code
+    {% from 'macro/comment.html' import comment %}
+  File "D:\ABC\edit\app\templates\base.html", line 134, in top-level template code
+    {% block content %}{% endblock %}
+  File "D:\ABC\edit\app\templates\detail.html", line 177, in block "content"
+    {% set id=data.id %}
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\jinja2\environment.py", line 430, in getattr
+    return getattr(obj, attribute)
+jinja2.exceptions.UndefinedError: 'data' is undefined
+2019-06-28 18:40:49,430 - flask.app - ERROR - Exception on /detail [GET]
+Traceback (most recent call last):
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\flask\app.py", line 2311, in wsgi_app
+    response = self.full_dispatch_request()
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\flask\app.py", line 1834, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\flask\app.py", line 1737, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\flask\_compat.py", line 36, in reraise
+    raise value
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\flask\app.py", line 1832, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\flask\app.py", line 1818, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "D:\ABC\edit\app\web\comment.py", line 31, in detail
+    reply_form=reply_form,pageinations=pageinations,comments=comments)
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\flask\templating.py", line 135, in render_template
+    context, ctx.app)
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\flask\templating.py", line 117, in _render
+    rv = template.render(context)
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\jinja2\asyncsupport.py", line 76, in render
+    return original_render(self, *args, **kwargs)
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\jinja2\environment.py", line 1008, in render
+    return self.environment.handle_exception(exc_info, True)
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\jinja2\environment.py", line 780, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\jinja2\_compat.py", line 37, in reraise
+    raise value.with_traceback(tb)
+  File "D:\ABC\edit\app\templates\detail.html", line 3, in top-level template code
+    {% from 'macro/comment.html' import comment %}
+  File "D:\ABC\edit\app\templates\base.html", line 134, in top-level template code
+    {% block content %}{% endblock %}
+  File "D:\ABC\edit\app\templates\detail.html", line 177, in block "content"
+    {% set id=data.id %}
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\jinja2\environment.py", line 430, in getattr
+    return getattr(obj, attribute)
+jinja2.exceptions.UndefinedError: 'data' is undefined
+2019-06-28 18:53:43,919 - flask.app - ERROR - Exception on /detail [GET]
+Traceback (most recent call last):
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\flask\app.py", line 2311, in wsgi_app
+    response = self.full_dispatch_request()
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\flask\app.py", line 1834, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\flask\app.py", line 1737, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\flask\_compat.py", line 36, in reraise
+    raise value
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\flask\app.py", line 1832, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\flask\app.py", line 1818, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "D:\ABC\edit\app\web\comment.py", line 31, in detail
+    reply_form=reply_form,pageinations=pageinations,comments=comments)
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\flask\templating.py", line 135, in render_template
+    context, ctx.app)
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\flask\templating.py", line 117, in _render
+    rv = template.render(context)
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\jinja2\asyncsupport.py", line 76, in render
+    return original_render(self, *args, **kwargs)
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\jinja2\environment.py", line 1008, in render
+    return self.environment.handle_exception(exc_info, True)
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\jinja2\environment.py", line 780, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\jinja2\_compat.py", line 37, in reraise
+    raise value.with_traceback(tb)
+  File "D:\ABC\edit\app\templates\detail.html", line 3, in top-level template code
+    {% from 'macro/comment.html' import comment %}
+  File "D:\ABC\edit\app\templates\base.html", line 134, in top-level template code
+    {% block content %}{% endblock %}
+  File "D:\ABC\edit\app\templates\detail.html", line 162, in block "content"
+    $("#next-article")[0].attr("href","{{ url_for('web.detail',id=data.id) }}")
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\jinja2\environment.py", line 430, in getattr
+    return getattr(obj, attribute)
+jinja2.exceptions.UndefinedError: 'data' is undefined
+2019-06-28 19:55:19,779 - flask.app - ERROR - Exception on /detail [GET]
+Traceback (most recent call last):
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\flask\app.py", line 2311, in wsgi_app
+    response = self.full_dispatch_request()
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\flask\app.py", line 1834, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\flask\app.py", line 1737, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\flask\_compat.py", line 36, in reraise
+    raise value
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\flask\app.py", line 1832, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\flask\app.py", line 1818, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "D:\ABC\edit\app\web\comment.py", line 28, in detail
+    last = Article.query.filter_by(select=blog.select).filter(blog.id>id).order_by(Article.id.asc()).first()
+TypeError: '>' not supported between instances of 'int' and 'builtin_function_or_method'
+2019-06-28 20:32:27,949 - flask.app - ERROR - Exception on /last [GET]
+Traceback (most recent call last):
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\flask\app.py", line 2311, in wsgi_app
+    response = self.full_dispatch_request()
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\flask\app.py", line 1834, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\flask\app.py", line 1737, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\flask\_compat.py", line 36, in reraise
+    raise value
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\flask\app.py", line 1832, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\flask\app.py", line 1818, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "D:\ABC\edit\app\web\comment.py", line 115, in last
+    last_article = dict(url=url_for('web.detail',id=last.id), title=next.title,code=200)
+AttributeError: 'function' object has no attribute 'title'
+2019-06-28 20:32:35,282 - flask.app - ERROR - Exception on /last [GET]
+Traceback (most recent call last):
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\flask\app.py", line 2311, in wsgi_app
+    response = self.full_dispatch_request()
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\flask\app.py", line 1834, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\flask\app.py", line 1737, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\flask\_compat.py", line 36, in reraise
+    raise value
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\flask\app.py", line 1832, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\flask\app.py", line 1818, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "D:\ABC\edit\app\web\comment.py", line 115, in last
+    last_article = dict(url=url_for('web.detail',id=last.id), title=next.title,code=200)
+AttributeError: 'function' object has no attribute 'title'
+2019-06-28 20:33:04,730 - flask.app - ERROR - Exception on /last [GET]
+Traceback (most recent call last):
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\flask\app.py", line 2311, in wsgi_app
+    response = self.full_dispatch_request()
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\flask\app.py", line 1834, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\flask\app.py", line 1737, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\flask\_compat.py", line 36, in reraise
+    raise value
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\flask\app.py", line 1832, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\flask\app.py", line 1818, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "D:\ABC\edit\app\web\comment.py", line 115, in last
+    last_article = dict(url=url_for('web.detail',id=last.id), title=next.title,code=200)
+AttributeError: 'function' object has no attribute 'title'
+2019-06-28 21:19:10,353 - flask.app - ERROR - Exception on /next [GET]
+Traceback (most recent call last):
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\flask\app.py", line 2311, in wsgi_app
+    response = self.full_dispatch_request()
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\flask\app.py", line 1834, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\flask\app.py", line 1737, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\flask\_compat.py", line 36, in reraise
+    raise value
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\flask\app.py", line 1832, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\flask\app.py", line 1818, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "D:\ABC\edit\app\web\comment.py", line 125, in next
+    next_article = Article.query.filter_by(select=select).filter(Article.id < id).order_by(Article.id.desc()).first()
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\sqlalchemy\sql\operators.py", line 346, in __lt__
+    return self.operate(lt, other)
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\sqlalchemy\orm\attributes.py", line 211, in operate
+    return op(self.comparator, *other, **kwargs)
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\sqlalchemy\sql\operators.py", line 346, in __lt__
+    return self.operate(lt, other)
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\sqlalchemy\orm\properties.py", line 315, in operate
+    return op(self.__clause_element__(), *other, **kwargs)
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\sqlalchemy\sql\operators.py", line 346, in __lt__
+    return self.operate(lt, other)
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\sqlalchemy\sql\elements.py", line 727, in operate
+    return op(self.comparator, *other, **kwargs)
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\sqlalchemy\sql\operators.py", line 346, in __lt__
+    return self.operate(lt, other)
+  File "<string>", line 1, in <lambda>
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\sqlalchemy\sql\type_api.py", line 67, in operate
+    return o[0](self.expr, op, *(other + o[1:]), **kwargs)
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\sqlalchemy\sql\default_comparator.py", line 100, in _boolean_compare
+    "Only '=', '!=', 'is_()', 'isnot()', "
+sqlalchemy.exc.ArgumentError: Only '=', '!=', 'is_()', 'isnot()', 'is_distinct_from()', 'isnot_distinct_from()' operators can be used with None/True/False
+2019-06-28 21:19:15,841 - flask.app - ERROR - Exception on /next [GET]
+Traceback (most recent call last):
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\flask\app.py", line 2311, in wsgi_app
+    response = self.full_dispatch_request()
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\flask\app.py", line 1834, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\flask\app.py", line 1737, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\flask\_compat.py", line 36, in reraise
+    raise value
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\flask\app.py", line 1832, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\flask\app.py", line 1818, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "D:\ABC\edit\app\web\comment.py", line 125, in next
+    next_article = Article.query.filter_by(select=select).filter(Article.id < id).order_by(Article.id.desc()).first()
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\sqlalchemy\sql\operators.py", line 346, in __lt__
+    return self.operate(lt, other)
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\sqlalchemy\orm\attributes.py", line 211, in operate
+    return op(self.comparator, *other, **kwargs)
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\sqlalchemy\sql\operators.py", line 346, in __lt__
+    return self.operate(lt, other)
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\sqlalchemy\orm\properties.py", line 315, in operate
+    return op(self.__clause_element__(), *other, **kwargs)
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\sqlalchemy\sql\operators.py", line 346, in __lt__
+    return self.operate(lt, other)
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\sqlalchemy\sql\elements.py", line 727, in operate
+    return op(self.comparator, *other, **kwargs)
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\sqlalchemy\sql\operators.py", line 346, in __lt__
+    return self.operate(lt, other)
+  File "<string>", line 1, in <lambda>
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\sqlalchemy\sql\type_api.py", line 67, in operate
+    return o[0](self.expr, op, *(other + o[1:]), **kwargs)
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\sqlalchemy\sql\default_comparator.py", line 100, in _boolean_compare
+    "Only '=', '!=', 'is_()', 'isnot()', "
+sqlalchemy.exc.ArgumentError: Only '=', '!=', 'is_()', 'isnot()', 'is_distinct_from()', 'isnot_distinct_from()' operators can be used with None/True/False
+2019-06-28 21:19:26,269 - flask.app - ERROR - Exception on /next [GET]
+Traceback (most recent call last):
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\flask\app.py", line 2311, in wsgi_app
+    response = self.full_dispatch_request()
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\flask\app.py", line 1834, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\flask\app.py", line 1737, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\flask\_compat.py", line 36, in reraise
+    raise value
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\flask\app.py", line 1832, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\flask\app.py", line 1818, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "D:\ABC\edit\app\web\comment.py", line 125, in next
+    next_article = Article.query.filter_by(select=select).filter(Article.id < id).order_by(Article.id.desc()).first()
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\sqlalchemy\sql\operators.py", line 346, in __lt__
+    return self.operate(lt, other)
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\sqlalchemy\orm\attributes.py", line 211, in operate
+    return op(self.comparator, *other, **kwargs)
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\sqlalchemy\sql\operators.py", line 346, in __lt__
+    return self.operate(lt, other)
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\sqlalchemy\orm\properties.py", line 315, in operate
+    return op(self.__clause_element__(), *other, **kwargs)
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\sqlalchemy\sql\operators.py", line 346, in __lt__
+    return self.operate(lt, other)
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\sqlalchemy\sql\elements.py", line 727, in operate
+    return op(self.comparator, *other, **kwargs)
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\sqlalchemy\sql\operators.py", line 346, in __lt__
+    return self.operate(lt, other)
+  File "<string>", line 1, in <lambda>
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\sqlalchemy\sql\type_api.py", line 67, in operate
+    return o[0](self.expr, op, *(other + o[1:]), **kwargs)
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\sqlalchemy\sql\default_comparator.py", line 100, in _boolean_compare
+    "Only '=', '!=', 'is_()', 'isnot()', "
+sqlalchemy.exc.ArgumentError: Only '=', '!=', 'is_()', 'isnot()', 'is_distinct_from()', 'isnot_distinct_from()' operators can be used with None/True/False
+2019-06-28 21:29:28,345 - flask.app - ERROR - Exception on /article/link [GET]
+Traceback (most recent call last):
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\flask\app.py", line 2311, in wsgi_app
+    response = self.full_dispatch_request()
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\flask\app.py", line 1834, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\flask\app.py", line 1737, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\flask\_compat.py", line 36, in reraise
+    raise value
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\flask\app.py", line 1832, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\flask\app.py", line 1818, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "D:\ABC\edit\app\web\comment.py", line 138, in link
+    link_articles = Article.query.filter_by(select=select).filter_by(Article.id!=id).order_by(func.rand()).limit(10)
+TypeError: filter_by() takes 1 positional argument but 2 were given
+2019-06-28 21:29:54,774 - flask.app - ERROR - Exception on /article/link [GET]
+Traceback (most recent call last):
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\flask\app.py", line 2311, in wsgi_app
+    response = self.full_dispatch_request()
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\flask\app.py", line 1834, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\flask\app.py", line 1737, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\flask\_compat.py", line 36, in reraise
+    raise value
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\flask\app.py", line 1832, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\flask\app.py", line 1818, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "D:\ABC\edit\app\web\comment.py", line 138, in link
+    link_articles = Article.query.filter_by(select=select).filter_by(Article.id!=id).order_by(func.rand()).limit(10)
+TypeError: filter_by() takes 1 positional argument but 2 were given

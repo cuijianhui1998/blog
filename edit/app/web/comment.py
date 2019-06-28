@@ -7,7 +7,7 @@ from sqlalchemy.sql.expression import func
 
 from app.models import Comment,Reply,Article,Tips,db
 from app.forms import CommentForm,ReplyForm
-from app.lib.redis_thumb import myredis,redis_to_mysql
+from app.lib.redis_thumb import myredis
 from . import web
 
 redis = myredis()
@@ -24,8 +24,9 @@ def detail():
     blog = Article.query.get_or_404(key)
     pageinations = Comment.query.with_parent(blog).order_by(Comment.create_time.asc()).paginate(page,per_page=5)
     comments = pageinations.items
+
+
     if reply_form.reply_submit.data and reply_form.validate():
-        print("回复成功")
         return render_template('404.html')
     return render_template('detail.html',blog=blog,tips=tips,comment_form=comment_form,
                            reply_form=reply_form,pageinations=pageinations,comments=comments)
@@ -83,7 +84,7 @@ def reply():
 
 @web.route('/thumb/<uid>/<aid>')
 def thumb(uid,aid):
-    if is_thumb(uid,aid) and not redis.sismember('thumb-'+aid,uid):
+    if _is_thumb(uid,aid) and not redis.sismember('thumb-'+aid,uid):
         redis.sadd('thumb-'+aid,uid)
         return jsonify({'code':200,'message':'点赞成功'})
     return jsonify({'code':403,'message':'你已经点赞过了'})
@@ -100,15 +101,47 @@ def thumb_total(aid):
         result = dict(total=total,aid=aid)
     return jsonify(result)
 
-
-
-
-
-
-def is_thumb(uid,aid):
-    # false表示已经点赞过,不可以点赞了
+def _is_thumb(uid,aid):
     article = Article.query.get_or_404(aid)
     res = [thumb for thumb in article.thumbs if thumb.auth_id==uid]
     return  False if res else True
 
+@web.route('/last')
+def last():
+    id = request.args.get('id')
+    select =request.args.get('select')
+    last_article = Article.query.filter_by(select=select).filter(Article.id>id).order_by(Article.id.asc()).first()
+    if last_article:
+        last_article = dict(url=url_for('web.detail',id=last_article.id), title=last_article.title,code=200)
+        return jsonify(last_article)
+    else:
+        last_article = dict(code=404,message="这才是第一篇文章哦")
+        return jsonify(last_article)
 
+@web.route('/next')
+def next():
+    id = request.args.get('id')
+    select = request.args.get('select')
+    next_article = Article.query.filter_by(select=select).filter(Article.id < id).order_by(Article.id.desc()).first()
+    if next_article:
+        next_article = dict(url=url_for('web.detail',id=next_article.id), title=next_article.title,code=200)
+        return jsonify(next_article)
+    else:
+        next_article = dict(code=404,message="这是最后一篇哦")
+        return jsonify(next_article)
+
+
+@web.route('/article/link')
+def link():
+    select = request.args.get('select')
+    id = request.args.get('id')
+    link_articles = Article.query.filter_by(select=select).filter(Article.id!=id).order_by(func.rand()).limit(10)
+    result = {}
+
+    if link_articles:
+        data=[dict(url=url_for(
+            'web.detail',id=link_article.id),title=link_article.title) for link_article in link_articles]
+        result['data'] = data
+        result['code'] = 200
+        return jsonify(result)
+    return jsonify(dict(code=404,message='暂时还没有相关的文章'))
