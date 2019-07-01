@@ -15,7 +15,7 @@ class BaseConfig:
             'id': 'job1',
             'func': 'app.lib.redis_thumb:redis_to_mysql',
             'trigger': 'interval',
-            'seconds': 24*3600
+            'seconds': 20
         }]
     SCHEDULER_API_ENABLED = True
 

@@ -1,17 +1,26 @@
 import os
 import sys
 import logging
+import atexit
+try:
+    #windows下并没有这个模块,只存在于Linux下
+    import fcntl
+except ModuleNotFoundError:
+    pass
+
 from logging.handlers import RotatingFileHandler
 
-
-from flask import Flask,request,render_template,current_app
+from flask import Flask,request,render_template
 from flask_apscheduler import APScheduler
+from flask_moment import Moment
 
 from app.setting import config
 from app.models import Auth,Article,Tips,Message
 from app.extension import login_manager,admin_register,db,bootstrap
 
 basedir = os.path.abspath(os.path.dirname(os.path.dirname(__file__)))
+
+
 
 
 
@@ -28,13 +37,27 @@ def create_app(config_name=None):
     mine_info_register(app)
 
     extension_register(app)
+    moment = Moment(app)
 
-    apscheduler = APScheduler()
-    apscheduler.init_app(app)
-    apscheduler.start()
+    apscheduler_register(app)
 
     return app
 
+
+def apscheduler_register(app):
+    f = open("scheduler.lock", "wb")
+    try:
+        fcntl.flock(f, fcntl.LOCK_EX | fcntl.LOCK_NB)
+        scheduler = APScheduler()
+        scheduler.init_app(app)
+        scheduler.start()
+    except:
+        pass
+
+    def unlock():
+        fcntl.flock(f, fcntl.LOCK_UN)
+        f.close()
+    atexit.register(unlock)
 
 
 def extension_register(app):
@@ -45,8 +68,6 @@ def extension_register(app):
 
     bootstrap.init_app(app)
     db.init_app(app)
-
-
 
     admin_register(app)
 

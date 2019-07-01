@@ -4,6 +4,7 @@ from flask_admin.contrib.sqla import ModelView
 from flask_bootstrap import Bootstrap
 
 
+
 from app.models import Article,Auth,db,Tips,Message
 from app.lib.admin import ArticleView,MyIndexView
 
@@ -13,16 +14,6 @@ from app.lib.admin import ArticleView,MyIndexView
 
 login_manager = LoginManager()
 bootstrap = Bootstrap()
-
-
-
-
-
-
-
-
-
-
 
 def admin_register(app):
     admin = Admin(app, name='博客后台',index_view= MyIndexView(name="首页"),template_mode='bootstrap3')

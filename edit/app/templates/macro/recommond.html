@@ -1,6 +1,6 @@
 {% from 'bootstrap/pagination.html' import render_pagination %}
 
-{% macro showlist(blogs,current_user,paginations) %}
+{% macro showlist(blogs,current_user,paginations,moment) %}
     <div class="blogsbox">
     {% if blogs %}
         {% for blog in blogs %}
@@ -27,9 +27,9 @@
                 <ul>
                   <li class="author"><a href="/">{{ blog.author }}</a></li>
                   <li class="lmname"><a href="/">{{ blog.select }}</a></li>
-                  <li class="timer">{{ blog.create_time }}</li>
-                  <li class="view"><span>34567</span>已阅读</li>
-                  <li class="like">9999</li>
+                  <li class="timer">{{ moment(blog.create_time).fromNow(refresh=True) }}</li>
+                  <li class="view"><span>{{ range(1000)|random }}</span>已阅读</li>
+                  <li class="like">{{ range(1000)|random }}</li>
                 </ul>
             </div>
         </div>

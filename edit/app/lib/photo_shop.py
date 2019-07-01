@@ -27,13 +27,14 @@ def get_specification_image(imageFile):
     '''
     picture = io.imread(imageFile)
     slice_width, slice_height, _ = picture.shape
+    width_crop=1
+    height_crop = 1
     if slice_height > slice_width * 1.5:
         # 加1是为了防止得到的值为0
         height_crop = int((slice_height - slice_width * 1.5) // 2) + 1
-        width_crop = 1
 
     if slice_height < slice_width * 1.5:
-        height_crop = 1
+
         width_crop = int((slice_width - (slice_height / 1.5)) // 2) + 1
 
     img_data = picture[width_crop:-width_crop, :, :]

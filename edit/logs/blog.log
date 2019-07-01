@@ -3258,3 +3258,350 @@ Traceback (most recent call last):
   File "D:\ABC\edit\app\web\comment.py", line 138, in link
     link_articles = Article.query.filter_by(select=select).filter_by(Article.id!=id).order_by(func.rand()).limit(10)
 TypeError: filter_by() takes 1 positional argument but 2 were given
+2019-07-01 15:12:33,197 - flask.app - ERROR - Exception on / [GET]
+Traceback (most recent call last):
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\flask\app.py", line 2311, in wsgi_app
+    response = self.full_dispatch_request()
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\flask\app.py", line 1834, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\flask\app.py", line 1737, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\flask\_compat.py", line 36, in reraise
+    raise value
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\flask\app.py", line 1832, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\flask\app.py", line 1818, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "D:\ABC\edit\app\web\index.py", line 18, in index
+    return render_template('index.html',recommend=recommend,blogs=blogs,paginations=paginations,flask_blogs=flask_blogs)
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\flask\templating.py", line 135, in render_template
+    context, ctx.app)
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\flask\templating.py", line 117, in _render
+    rv = template.render(context)
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\jinja2\asyncsupport.py", line 76, in render
+    return original_render(self, *args, **kwargs)
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\jinja2\environment.py", line 1008, in render
+    return self.environment.handle_exception(exc_info, True)
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\jinja2\environment.py", line 780, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\jinja2\_compat.py", line 37, in reraise
+    raise value.with_traceback(tb)
+  File "D:\ABC\edit\app\templates\index.html", line 3, in top-level template code
+    {% from  'macro/recommond.html' import showlist %}
+  File "D:\ABC\edit\app\templates\base.html", line 137, in top-level template code
+    {% block content %}{% endblock %}
+  File "D:\ABC\edit\app\templates\index.html", line 46, in block "content"
+    {{ showlist(blogs,current_user,paginations) }}
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\jinja2\runtime.py", line 579, in _invoke
+    rv = self._func(*arguments)
+  File "D:\ABC\edit\app\templates\macro\recommond.html", line 30, in template
+    <li class="timer">{{ moment(blog.create_time).fromNow(refresh=True) }}</li>
+jinja2.exceptions.UndefinedError: 'moment' is undefined
+2019-07-01 15:15:12,637 - flask.app - ERROR - Exception on / [GET]
+Traceback (most recent call last):
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\flask\app.py", line 2311, in wsgi_app
+    response = self.full_dispatch_request()
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\flask\app.py", line 1834, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\flask\app.py", line 1737, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\flask\_compat.py", line 36, in reraise
+    raise value
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\flask\app.py", line 1832, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\flask\app.py", line 1818, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "D:\ABC\edit\app\web\index.py", line 18, in index
+    return render_template('index.html',recommend=recommend,blogs=blogs,paginations=paginations,flask_blogs=flask_blogs)
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\flask\templating.py", line 135, in render_template
+    context, ctx.app)
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\flask\templating.py", line 117, in _render
+    rv = template.render(context)
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\jinja2\asyncsupport.py", line 76, in render
+    return original_render(self, *args, **kwargs)
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\jinja2\environment.py", line 1008, in render
+    return self.environment.handle_exception(exc_info, True)
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\jinja2\environment.py", line 780, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\jinja2\_compat.py", line 37, in reraise
+    raise value.with_traceback(tb)
+  File "D:\ABC\edit\app\templates\index.html", line 3, in top-level template code
+    {% from  'macro/recommond.html' import showlist %}
+  File "D:\ABC\edit\app\templates\base.html", line 137, in top-level template code
+    {% block content %}{% endblock %}
+  File "D:\ABC\edit\app\templates\index.html", line 46, in block "content"
+    {{ showlist(blogs,current_user,paginations) }}
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\jinja2\runtime.py", line 579, in _invoke
+    rv = self._func(*arguments)
+  File "D:\ABC\edit\app\templates\macro\recommond.html", line 30, in template
+    <li class="timer">{{ moment(blog.create_time).fromNow(refresh=True) }}</li>
+jinja2.exceptions.UndefinedError: 'moment' is undefined
+2019-07-01 15:25:37,087 - flask.app - ERROR - Exception on / [GET]
+Traceback (most recent call last):
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\flask\app.py", line 2311, in wsgi_app
+    response = self.full_dispatch_request()
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\flask\app.py", line 1834, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\flask\app.py", line 1737, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\flask\_compat.py", line 36, in reraise
+    raise value
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\flask\app.py", line 1832, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\flask\app.py", line 1818, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "D:\ABC\edit\app\web\index.py", line 18, in index
+    return render_template('index.html',recommend=recommend,blogs=blogs,paginations=paginations,flask_blogs=flask_blogs)
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\flask\templating.py", line 135, in render_template
+    context, ctx.app)
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\flask\templating.py", line 117, in _render
+    rv = template.render(context)
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\jinja2\asyncsupport.py", line 76, in render
+    return original_render(self, *args, **kwargs)
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\jinja2\environment.py", line 1008, in render
+    return self.environment.handle_exception(exc_info, True)
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\jinja2\environment.py", line 780, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\jinja2\_compat.py", line 37, in reraise
+    raise value.with_traceback(tb)
+  File "D:\ABC\edit\app\templates\index.html", line 3, in top-level template code
+    {% from  'macro/recommond.html' import showlist %}
+  File "D:\ABC\edit\app\templates\base.html", line 137, in top-level template code
+    {% block content %}{% endblock %}
+  File "D:\ABC\edit\app\templates\index.html", line 46, in block "content"
+    {{ showlist(blogs,current_user,paginations) }}
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\jinja2\runtime.py", line 579, in _invoke
+    rv = self._func(*arguments)
+  File "D:\ABC\edit\app\templates\macro\recommond.html", line 30, in template
+    <li class="timer">{{ moment(blog.create_time).fromNow(refresh=True) }}</li>
+jinja2.exceptions.UndefinedError: 'moment' is undefined
+2019-07-01 15:26:56,725 - flask.app - ERROR - Exception on / [GET]
+Traceback (most recent call last):
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\flask\app.py", line 2311, in wsgi_app
+    response = self.full_dispatch_request()
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\flask\app.py", line 1834, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\flask\app.py", line 1737, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\flask\_compat.py", line 36, in reraise
+    raise value
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\flask\app.py", line 1832, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\flask\app.py", line 1818, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "D:\ABC\edit\app\web\index.py", line 18, in index
+    return render_template('index.html',recommend=recommend,blogs=blogs,paginations=paginations,flask_blogs=flask_blogs)
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\flask\templating.py", line 135, in render_template
+    context, ctx.app)
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\flask\templating.py", line 117, in _render
+    rv = template.render(context)
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\jinja2\asyncsupport.py", line 76, in render
+    return original_render(self, *args, **kwargs)
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\jinja2\environment.py", line 1008, in render
+    return self.environment.handle_exception(exc_info, True)
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\jinja2\environment.py", line 780, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\jinja2\_compat.py", line 37, in reraise
+    raise value.with_traceback(tb)
+  File "D:\ABC\edit\app\templates\index.html", line 3, in top-level template code
+    {% from  'macro/recommond.html' import showlist %}
+  File "D:\ABC\edit\app\templates\base.html", line 137, in top-level template code
+    {% block content %}{% endblock %}
+  File "D:\ABC\edit\app\templates\index.html", line 46, in block "content"
+    {{ showlist(blogs,current_user,paginations) }}
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\jinja2\runtime.py", line 579, in _invoke
+    rv = self._func(*arguments)
+  File "D:\ABC\edit\app\templates\macro\recommond.html", line 30, in template
+    <li class="timer">{{ moment(blog.create_time).fromNow(refresh=True) }}</li>
+jinja2.exceptions.UndefinedError: 'moment' is undefined
+2019-07-01 15:27:57,243 - flask.app - ERROR - Exception on / [GET]
+Traceback (most recent call last):
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\flask\app.py", line 2311, in wsgi_app
+    response = self.full_dispatch_request()
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\flask\app.py", line 1834, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\flask\app.py", line 1737, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\flask\_compat.py", line 36, in reraise
+    raise value
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\flask\app.py", line 1832, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\flask\app.py", line 1818, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "D:\ABC\edit\app\web\index.py", line 18, in index
+    return render_template('index.html',recommend=recommend,blogs=blogs,paginations=paginations,flask_blogs=flask_blogs)
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\flask\templating.py", line 135, in render_template
+    context, ctx.app)
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\flask\templating.py", line 117, in _render
+    rv = template.render(context)
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\jinja2\asyncsupport.py", line 76, in render
+    return original_render(self, *args, **kwargs)
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\jinja2\environment.py", line 1008, in render
+    return self.environment.handle_exception(exc_info, True)
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\jinja2\environment.py", line 780, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\jinja2\_compat.py", line 37, in reraise
+    raise value.with_traceback(tb)
+  File "D:\ABC\edit\app\templates\index.html", line 3, in top-level template code
+    {% from  'macro/recommond.html' import showlist %}
+  File "D:\ABC\edit\app\templates\base.html", line 137, in top-level template code
+    {% block content %}{% endblock %}
+  File "D:\ABC\edit\app\templates\index.html", line 46, in block "content"
+    {{ showlist(blogs,current_user,paginations,moment) }}
+TypeError: macro 'showlist' takes not more than 3 argument(s)
+2019-07-01 15:28:42,996 - flask.app - ERROR - Exception on /web_frame/flask [GET]
+Traceback (most recent call last):
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\flask\app.py", line 2311, in wsgi_app
+    response = self.full_dispatch_request()
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\flask\app.py", line 1834, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\flask\app.py", line 1737, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\flask\_compat.py", line 36, in reraise
+    raise value
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\flask\app.py", line 1832, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\flask\app.py", line 1818, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "D:\ABC\edit\app\web\blog_classes\frame.py", line 19, in web_flask
+    return render_template('list.html', blogs=blogs, title=title,paginations=paginations)
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\flask\templating.py", line 135, in render_template
+    context, ctx.app)
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\flask\templating.py", line 117, in _render
+    rv = template.render(context)
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\jinja2\asyncsupport.py", line 76, in render
+    return original_render(self, *args, **kwargs)
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\jinja2\environment.py", line 1008, in render
+    return self.environment.handle_exception(exc_info, True)
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\jinja2\environment.py", line 780, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\jinja2\_compat.py", line 37, in reraise
+    raise value.with_traceback(tb)
+  File "D:\ABC\edit\app\templates\list.html", line 3, in top-level template code
+    {% from  'macro/recommond.html' import showlist %}
+  File "D:\ABC\edit\app\templates\base.html", line 137, in top-level template code
+    {% block content %}{% endblock %}
+  File "D:\ABC\edit\app\templates\list.html", line 17, in block "content"
+    {{ showlist(blogs,current_user,paginations) }}
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\jinja2\runtime.py", line 579, in _invoke
+    rv = self._func(*arguments)
+  File "D:\ABC\edit\app\templates\macro\recommond.html", line 30, in template
+    <li class="timer">{{ moment(blog.create_time).fromNow(refresh=True) }}</li>
+jinja2.exceptions.UndefinedError: parameter 'moment' was not provided
+2019-07-01 15:38:08,447 - flask.app - ERROR - Exception on / [GET]
+Traceback (most recent call last):
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\flask\app.py", line 2311, in wsgi_app
+    response = self.full_dispatch_request()
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\flask\app.py", line 1834, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\flask\app.py", line 1737, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\flask\_compat.py", line 36, in reraise
+    raise value
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\flask\app.py", line 1832, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\flask\app.py", line 1818, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "D:\ABC\edit\app\web\index.py", line 18, in index
+    return render_template('index.html',recommend=recommend,blogs=blogs,paginations=paginations,flask_blogs=flask_blogs)
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\flask\templating.py", line 135, in render_template
+    context, ctx.app)
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\flask\templating.py", line 117, in _render
+    rv = template.render(context)
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\jinja2\asyncsupport.py", line 76, in render
+    return original_render(self, *args, **kwargs)
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\jinja2\environment.py", line 1008, in render
+    return self.environment.handle_exception(exc_info, True)
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\jinja2\environment.py", line 780, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\jinja2\_compat.py", line 37, in reraise
+    raise value.with_traceback(tb)
+  File "D:\ABC\edit\app\templates\index.html", line 3, in top-level template code
+    {% from  'macro/recommond.html' import showlist %}
+  File "D:\ABC\edit\app\templates\base.html", line 137, in top-level template code
+    {% block content %}{% endblock %}
+  File "D:\ABC\edit\app\templates\index.html", line 46, in block "content"
+    {{ showlist(blogs,current_user,paginations,moment) }}
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\jinja2\runtime.py", line 579, in _invoke
+    rv = self._func(*arguments)
+  File "D:\ABC\edit\app\templates\macro\recommond.html", line 31, in template
+    <li class="view"><span>{{ random(range(1000)) }}</span>ÒÑÔÄ¶Á</li>
+jinja2.exceptions.UndefinedError: 'random' is undefined
+2019-07-01 15:38:39,431 - flask.app - ERROR - Exception on / [GET]
+Traceback (most recent call last):
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\flask\app.py", line 2311, in wsgi_app
+    response = self.full_dispatch_request()
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\flask\app.py", line 1834, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\flask\app.py", line 1737, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\flask\_compat.py", line 36, in reraise
+    raise value
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\flask\app.py", line 1832, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\flask\app.py", line 1818, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "D:\ABC\edit\app\web\index.py", line 18, in index
+    return render_template('index.html',recommend=recommend,blogs=blogs,paginations=paginations,flask_blogs=flask_blogs)
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\flask\templating.py", line 135, in render_template
+    context, ctx.app)
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\flask\templating.py", line 117, in _render
+    rv = template.render(context)
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\jinja2\asyncsupport.py", line 76, in render
+    return original_render(self, *args, **kwargs)
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\jinja2\environment.py", line 1008, in render
+    return self.environment.handle_exception(exc_info, True)
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\jinja2\environment.py", line 780, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\jinja2\_compat.py", line 37, in reraise
+    raise value.with_traceback(tb)
+  File "D:\ABC\edit\app\templates\index.html", line 3, in top-level template code
+    {% from  'macro/recommond.html' import showlist %}
+  File "D:\ABC\edit\app\templates\base.html", line 137, in top-level template code
+    {% block content %}{% endblock %}
+  File "D:\ABC\edit\app\templates\index.html", line 46, in block "content"
+    {{ showlist(blogs,current_user,paginations,moment,random) }}
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\jinja2\runtime.py", line 579, in _invoke
+    rv = self._func(*arguments)
+  File "D:\ABC\edit\app\templates\macro\recommond.html", line 31, in template
+    <li class="view"><span>{{ random(range(1000)) }}</span>ÒÑÔÄ¶Á</li>
+jinja2.exceptions.UndefinedError: 'random' is undefined
+2019-07-01 15:39:20,933 - flask.app - ERROR - Exception on / [GET]
+Traceback (most recent call last):
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\flask\app.py", line 2311, in wsgi_app
+    response = self.full_dispatch_request()
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\flask\app.py", line 1834, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\flask\app.py", line 1737, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\flask\_compat.py", line 36, in reraise
+    raise value
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\flask\app.py", line 1832, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\flask\app.py", line 1818, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "D:\ABC\edit\app\web\index.py", line 18, in index
+    return render_template('index.html',recommend=recommend,blogs=blogs,paginations=paginations,flask_blogs=flask_blogs)
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\flask\templating.py", line 135, in render_template
+    context, ctx.app)
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\flask\templating.py", line 117, in _render
+    rv = template.render(context)
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\jinja2\asyncsupport.py", line 76, in render
+    return original_render(self, *args, **kwargs)
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\jinja2\environment.py", line 1008, in render
+    return self.environment.handle_exception(exc_info, True)
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\jinja2\environment.py", line 780, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\jinja2\_compat.py", line 37, in reraise
+    raise value.with_traceback(tb)
+  File "D:\ABC\edit\app\templates\index.html", line 3, in top-level template code
+    {% from  'macro/recommond.html' import showlist %}
+  File "D:\ABC\edit\app\templates\base.html", line 137, in top-level template code
+    {% block content %}{% endblock %}
+  File "D:\ABC\edit\app\templates\index.html", line 46, in block "content"
+    {{ showlist(blogs,current_user,paginations,moment,random) }}
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\jinja2\runtime.py", line 579, in _invoke
+    rv = self._func(*arguments)
+  File "D:\ABC\edit\app\templates\macro\recommond.html", line 31, in template
+    <li class="view"><span>{{ random(range(1000)) }}</span>ÒÑÔÄ¶Á</li>
+jinja2.exceptions.UndefinedError: 'random' is undefined

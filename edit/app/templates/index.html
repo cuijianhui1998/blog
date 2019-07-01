@@ -43,7 +43,7 @@
   </div>
     <div class="blank"></div>
     <!--blogsbox begin-->
-    {{ showlist(blogs,current_user,paginations) }}
+    {{ showlist(blogs,current_user,paginations,moment) }}
 
     <!--blogsbox end-->
   <div class="sidebar">
@@ -57,9 +57,10 @@
     <div class="links">
       <h2 class="hometitle">友情链接</h2>
       <ul>
-        {% for foo in range(3) %}
-            <li><a href="http://www.yangqq.com" target="_blank">优秀个人博客</a></li>
-        {% endfor %}
+
+          <li><a href="http://www.yangqq.com" target="_blank">优秀博客模板</a></li>
+          <li><a href="https://docs.python.org/3/" target="_blank">python官方地址</a></li>
+
       </ul>
     </div>
     {{ found() }}

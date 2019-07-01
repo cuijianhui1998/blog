@@ -20,7 +20,7 @@
           {% for foo in reco[1:] %}
             <li> <i><img src="{{ foo.poster }}"></i>
                 <p><a href="{{ url_for('web.detail',id=foo.id) }}">{{ foo.title }}</a></p>
-            <span>{{ foo.create_time }}</span> </li>
+            <span>{{ moment(foo.create_time).fromNow(refresh=True) }}</span> </li>
           {% endfor %}
       </ul>
     </div>
