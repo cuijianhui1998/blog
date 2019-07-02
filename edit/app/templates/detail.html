@@ -111,7 +111,7 @@
         }
         var article_id = {{ blog.id }};
         $.ajax({
-            url:"http://127.0.0.1:5000/thumb_total/"+article_id,
+            url:"http://cuijianhui.com/thumb_total/"+article_id,
             type:'GET',
             cache:false,
             dataType:'json',
@@ -123,7 +123,7 @@
         $(".diggit").click(function () {
             if (user_id!="0") {
                 $.ajax({
-                    url:"http://127.0.0.1:5000/thumb/"+user_id+"/"+article_id,
+                    url:"http://cuijianhui.com/thumb/"+user_id+"/"+article_id,
                     type:'GET',
                     cache:false,
                     dataType:'json',
@@ -142,7 +142,7 @@
 
         });
         $.ajax({
-            url:"http://127.0.0.1:5000/last",
+            url:"http://cuijianhui.com/last",
             type:'GET',
             cache:false,
             dataType:'json',
@@ -159,7 +159,7 @@
             }
         });
         $.ajax({
-            url:"http://127.0.0.1:5000/next",
+            url:"http://cuijianhui.com/next",
             type:'GET',
             cache:false,
             dataType:'json',
@@ -176,7 +176,7 @@
             }
         })
         $.ajax({
-            url:"http://127.0.0.1:5000/article/link",
+            url:"http://cuijianhui.com/article/link",
             type:'GET',
             cache:false,
             dataType:'json',

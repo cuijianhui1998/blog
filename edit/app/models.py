@@ -151,7 +151,8 @@ class Article(Base):
                                                    'markdown.extensions.codehilite',
                                                    'markdown.extensions.toc',
                                                    'markdown.extensions.attr_list',
-                                                   'markdown.extensions.fenced_code'],extension_configs=config),
+                                                   'markdown.extensions.fenced_code',
+                                                   'markdown.extensions.tables',],extension_configs=config),
             tags=allowed_tags, strip=True, attributes=allowed_attrs))
 
     def setter_data(self,obj):

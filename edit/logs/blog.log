@@ -3605,3 +3605,129 @@ Traceback (most recent call last):
   File "D:\ABC\edit\app\templates\macro\recommond.html", line 31, in template
     <li class="view"><span>{{ random(range(1000)) }}</span>已阅读</li>
 jinja2.exceptions.UndefinedError: 'random' is undefined
+2019-07-01 19:38:32,281 - flask.app - ERROR - Exception on / [GET]
+Traceback (most recent call last):
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\pymysql\connections.py", line 583, in connect
+    **kwargs)
+  File "c:\users\hui\appdata\local\programs\python\python37\Lib\socket.py", line 727, in create_connection
+    raise err
+  File "c:\users\hui\appdata\local\programs\python\python37\Lib\socket.py", line 716, in create_connection
+    sock.connect(sa)
+ConnectionRefusedError: [WinError 10061] 由于目标计算机积极拒绝，无法连接。
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\sqlalchemy\engine\base.py", line 2262, in _wrap_pool_connect
+    return fn()
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\sqlalchemy\pool\base.py", line 363, in connect
+    return _ConnectionFairy._checkout(self)
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\sqlalchemy\pool\base.py", line 760, in _checkout
+    fairy = _ConnectionRecord.checkout(pool)
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\sqlalchemy\pool\base.py", line 492, in checkout
+    rec = pool._do_get()
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\sqlalchemy\pool\impl.py", line 139, in _do_get
+    self._dec_overflow()
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\sqlalchemy\util\langhelpers.py", line 68, in __exit__
+    compat.reraise(exc_type, exc_value, exc_tb)
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\sqlalchemy\util\compat.py", line 129, in reraise
+    raise value
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\sqlalchemy\pool\impl.py", line 136, in _do_get
+    return self._create_connection()
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\sqlalchemy\pool\base.py", line 308, in _create_connection
+    return _ConnectionRecord(self)
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\sqlalchemy\pool\base.py", line 437, in __init__
+    self.__connect(first_connect_check=True)
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\sqlalchemy\pool\base.py", line 639, in __connect
+    connection = pool._invoke_creator(self)
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\sqlalchemy\engine\strategies.py", line 114, in connect
+    return dialect.connect(*cargs, **cparams)
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\sqlalchemy\engine\default.py", line 453, in connect
+    return self.dbapi.connect(*cargs, **cparams)
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\pymysql\__init__.py", line 94, in Connect
+    return Connection(*args, **kwargs)
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\pymysql\connections.py", line 325, in __init__
+    self.connect()
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\pymysql\connections.py", line 630, in connect
+    raise exc
+pymysql.err.OperationalError: (2003, "Can't connect to MySQL server on 'localhost' ([WinError 10061] 由于目标计算机积极拒绝，无法连接。)")
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\flask\app.py", line 2311, in wsgi_app
+    response = self.full_dispatch_request()
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\flask\app.py", line 1834, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\flask\app.py", line 1737, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\flask\_compat.py", line 36, in reraise
+    raise value
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\flask\app.py", line 1832, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\flask\app.py", line 1818, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "D:\ABC\edit\app\web\index.py", line 15, in index
+    Article.create_time.desc()).paginate(page, per_page=10)
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\flask_sqlalchemy\__init__.py", line 496, in paginate
+    items = self.limit(per_page).offset((page - 1) * per_page).all()
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\sqlalchemy\orm\query.py", line 3161, in all
+    return list(self)
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\sqlalchemy\orm\query.py", line 3317, in __iter__
+    return self._execute_and_instances(context)
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\sqlalchemy\orm\query.py", line 3339, in _execute_and_instances
+    querycontext, self._connection_from_session, close_with_result=True
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\sqlalchemy\orm\query.py", line 3354, in _get_bind_args
+    mapper=self._bind_mapper(), clause=querycontext.statement, **kw
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\sqlalchemy\orm\query.py", line 3332, in _connection_from_session
+    conn = self.session.connection(**kw)
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\sqlalchemy\orm\session.py", line 1123, in connection
+    execution_options=execution_options,
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\sqlalchemy\orm\session.py", line 1129, in _connection_for_bind
+    engine, execution_options
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\sqlalchemy\orm\session.py", line 430, in _connection_for_bind
+    conn = bind._contextual_connect()
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\sqlalchemy\engine\base.py", line 2226, in _contextual_connect
+    self._wrap_pool_connect(self.pool.connect, None),
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\sqlalchemy\engine\base.py", line 2266, in _wrap_pool_connect
+    e, dialect, self
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\sqlalchemy\engine\base.py", line 1536, in _handle_dbapi_exception_noconnection
+    util.raise_from_cause(sqlalchemy_exception, exc_info)
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\sqlalchemy\util\compat.py", line 383, in raise_from_cause
+    reraise(type(exception), exception, tb=exc_tb, cause=cause)
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\sqlalchemy\util\compat.py", line 128, in reraise
+    raise value.with_traceback(tb)
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\sqlalchemy\engine\base.py", line 2262, in _wrap_pool_connect
+    return fn()
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\sqlalchemy\pool\base.py", line 363, in connect
+    return _ConnectionFairy._checkout(self)
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\sqlalchemy\pool\base.py", line 760, in _checkout
+    fairy = _ConnectionRecord.checkout(pool)
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\sqlalchemy\pool\base.py", line 492, in checkout
+    rec = pool._do_get()
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\sqlalchemy\pool\impl.py", line 139, in _do_get
+    self._dec_overflow()
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\sqlalchemy\util\langhelpers.py", line 68, in __exit__
+    compat.reraise(exc_type, exc_value, exc_tb)
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\sqlalchemy\util\compat.py", line 129, in reraise
+    raise value
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\sqlalchemy\pool\impl.py", line 136, in _do_get
+    return self._create_connection()
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\sqlalchemy\pool\base.py", line 308, in _create_connection
+    return _ConnectionRecord(self)
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\sqlalchemy\pool\base.py", line 437, in __init__
+    self.__connect(first_connect_check=True)
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\sqlalchemy\pool\base.py", line 639, in __connect
+    connection = pool._invoke_creator(self)
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\sqlalchemy\engine\strategies.py", line 114, in connect
+    return dialect.connect(*cargs, **cparams)
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\sqlalchemy\engine\default.py", line 453, in connect
+    return self.dbapi.connect(*cargs, **cparams)
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\pymysql\__init__.py", line 94, in Connect
+    return Connection(*args, **kwargs)
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\pymysql\connections.py", line 325, in __init__
+    self.connect()
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\pymysql\connections.py", line 630, in connect
+    raise exc
+sqlalchemy.exc.OperationalError: (pymysql.err.OperationalError) (2003, "Can't connect to MySQL server on 'localhost' ([WinError 10061] 由于目标计算机积极拒绝，无法连接。)")
+(Background on this error at: http://sqlalche.me/e/e3q8)

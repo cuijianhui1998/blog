@@ -32,7 +32,7 @@ class BlogTypeEnum(Enum):
     flask = 1011
     Django = 1012
     tornado = 1013
-    html5 = 1021
+    data_structure = 1021
     css = 1022
     javascript = 1023
     allIsFile = 1031

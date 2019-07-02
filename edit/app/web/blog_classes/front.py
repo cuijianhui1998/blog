@@ -12,10 +12,10 @@ front = BlankPrint('front')
 
 
 
-@front.route('/html5')
-def front_html5():
+@front.route('/data_structure')
+def data_structure():
     enum_value = 1021
-    title = "html5"
+    title = "数据结构"
     page = request.args.get("page", 1, type=int)
     paginations = Article.query.filter_by(select=BlogTypeEnum(enum_value).name).order_by(
         Article.create_time.desc()).paginate(page, per_page=10)
