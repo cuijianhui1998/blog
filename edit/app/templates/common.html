@@ -12,6 +12,7 @@
 </div>
 <div class="tuijian">
       <h2 class="hometitle">推荐文章</h2>
+    {% if reco %}
       <ul class="tjpic">
         <i><img src="{{ reco[0].poster }}"></i>
         <p><a href="{{ url_for('web.detail',id=reco[0].id) }}">{{ reco[0].title }}</a></p>
@@ -23,9 +24,12 @@
             <span>{{ moment(foo.create_time).fromNow(refresh=True) }}</span> </li>
           {% endfor %}
       </ul>
+    {% else %}
+    {% endif %}
     </div>
 <div class="tuijian">
       <h2 class="hometitle">热门文章</h2>
+    {% if top %}
       <ul class="tjpic">
         <i><img src="{{ top[0].poster }}"></i>
         <p><a href="{{ url_for('web.detail',id=top[0].id) }}">{{ top[0].title }}</a></p>
@@ -37,4 +41,6 @@
           <span>{{ foo.create_time }}</span> </li>
         {% endfor %}
       </ul>
+    {% else %}
+    {% endif %}
     </div>

@@ -1,0 +1,7 @@
+{% extends 'error/404.html' %}
+{% block title %}<title>406 not Acceptable</title>{% endblock %}
+
+{% block data %}
+    <a href="{{ url_for('web.index') }}">Back Home→</a></br>
+    包含非法字符
+{% endblock %}

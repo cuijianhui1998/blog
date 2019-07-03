@@ -3731,3 +3731,358 @@ Traceback (most recent call last):
     raise exc
 sqlalchemy.exc.OperationalError: (pymysql.err.OperationalError) (2003, "Can't connect to MySQL server on 'localhost' ([WinError 10061] 由于目标计算机积极拒绝，无法连接。)")
 (Background on this error at: http://sqlalche.me/e/e3q8)
+2019-07-02 16:31:38,302 - flask.app - ERROR - Exception on / [GET]
+Traceback (most recent call last):
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\flask\app.py", line 2311, in wsgi_app
+    response = self.full_dispatch_request()
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\flask\app.py", line 1834, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\flask\app.py", line 1737, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\flask\_compat.py", line 36, in reraise
+    raise value
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\flask\app.py", line 1832, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\flask\app.py", line 1818, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "D:\ABC\edit\app\web\index.py", line 18, in index
+    return render_template('index.html',recommend=recommend,blogs=blogs,paginations=paginations,flask_blogs=flask_blogs)
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\flask\templating.py", line 135, in render_template
+    context, ctx.app)
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\flask\templating.py", line 117, in _render
+    rv = template.render(context)
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\jinja2\asyncsupport.py", line 76, in render
+    return original_render(self, *args, **kwargs)
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\jinja2\environment.py", line 1008, in render
+    return self.environment.handle_exception(exc_info, True)
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\jinja2\environment.py", line 780, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\jinja2\_compat.py", line 37, in reraise
+    raise value.with_traceback(tb)
+  File "D:\ABC\edit\app\templates\index.html", line 3, in top-level template code
+    {% from  'macro/recommond.html' import showlist %}
+  File "D:\ABC\edit\app\templates\base.html", line 137, in top-level template code
+    {% block content %}{% endblock %}
+  File "D:\ABC\edit\app\templates\index.html", line 50, in block "content"
+    {% include 'common.html' %}
+  File "D:\ABC\edit\app\templates\common.html", line 34, in top-level template code
+    <i><img src="{{ top[0].poster }}"></i>
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\jinja2\environment.py", line 430, in getattr
+    return getattr(obj, attribute)
+jinja2.exceptions.UndefinedError: flask_sqlalchemy.BaseQuery object has no element 0
+2019-07-02 16:34:16,671 - flask.app - ERROR - Exception on / [GET]
+Traceback (most recent call last):
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\flask\app.py", line 2311, in wsgi_app
+    response = self.full_dispatch_request()
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\flask\app.py", line 1834, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\flask\app.py", line 1737, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\flask\_compat.py", line 36, in reraise
+    raise value
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\flask\app.py", line 1832, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\flask\app.py", line 1818, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "D:\ABC\edit\app\web\index.py", line 18, in index
+    return render_template('index.html',recommend=recommend,blogs=blogs,paginations=paginations,flask_blogs=flask_blogs)
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\flask\templating.py", line 135, in render_template
+    context, ctx.app)
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\flask\templating.py", line 117, in _render
+    rv = template.render(context)
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\jinja2\asyncsupport.py", line 76, in render
+    return original_render(self, *args, **kwargs)
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\jinja2\environment.py", line 1008, in render
+    return self.environment.handle_exception(exc_info, True)
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\jinja2\environment.py", line 780, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\jinja2\_compat.py", line 37, in reraise
+    raise value.with_traceback(tb)
+  File "D:\ABC\edit\app\templates\index.html", line 3, in top-level template code
+    {% from  'macro/recommond.html' import showlist %}
+  File "D:\ABC\edit\app\templates\base.html", line 137, in top-level template code
+    {% block content %}{% endblock %}
+  File "D:\ABC\edit\app\templates\index.html", line 50, in block "content"
+    {% include 'common.html' %}
+  File "D:\ABC\edit\app\templates\common.html", line 34, in top-level template code
+    <i><img src="{{ top[0].poster }}"></i>
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\jinja2\environment.py", line 430, in getattr
+    return getattr(obj, attribute)
+jinja2.exceptions.UndefinedError: flask_sqlalchemy.BaseQuery object has no element 0
+2019-07-03 10:59:41,771 - flask.app - ERROR - Exception on / [GET]
+Traceback (most recent call last):
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\flask\app.py", line 2311, in wsgi_app
+    response = self.full_dispatch_request()
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\flask\app.py", line 1834, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\flask\app.py", line 1737, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\flask\_compat.py", line 36, in reraise
+    raise value
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\flask\app.py", line 1832, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\flask\app.py", line 1818, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "D:\ABC\edit\app\web\index.py", line 18, in index
+    return render_template('index.html',recommend=recommend,blogs=blogs,paginations=paginations,flask_blogs=flask_blogs)
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\flask\templating.py", line 135, in render_template
+    context, ctx.app)
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\flask\templating.py", line 117, in _render
+    rv = template.render(context)
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\jinja2\asyncsupport.py", line 76, in render
+    return original_render(self, *args, **kwargs)
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\jinja2\environment.py", line 1008, in render
+    return self.environment.handle_exception(exc_info, True)
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\jinja2\environment.py", line 780, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\jinja2\_compat.py", line 37, in reraise
+    raise value.with_traceback(tb)
+  File "D:\ABC\edit\app\templates\index.html", line 3, in top-level template code
+    {% from  'macro/recommond.html' import showlist %}
+  File "D:\ABC\edit\app\templates\base.html", line 137, in top-level template code
+    {% block content %}{% endblock %}
+  File "D:\ABC\edit\app\templates\index.html", line 50, in block "content"
+    {% include 'common.html' %}
+  File "D:\ABC\edit\app\templates\common.html", line 32, in top-level template code
+    {% if top|length %}
+TypeError: object of type 'BaseQuery' has no len()
+2019-07-03 11:00:13,793 - flask.app - ERROR - Exception on / [GET]
+Traceback (most recent call last):
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\flask\app.py", line 2311, in wsgi_app
+    response = self.full_dispatch_request()
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\flask\app.py", line 1834, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\flask\app.py", line 1737, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\flask\_compat.py", line 36, in reraise
+    raise value
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\flask\app.py", line 1832, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\flask\app.py", line 1818, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "D:\ABC\edit\app\web\index.py", line 18, in index
+    return render_template('index.html',recommend=recommend,blogs=blogs,paginations=paginations,flask_blogs=flask_blogs)
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\flask\templating.py", line 135, in render_template
+    context, ctx.app)
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\flask\templating.py", line 117, in _render
+    rv = template.render(context)
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\jinja2\asyncsupport.py", line 76, in render
+    return original_render(self, *args, **kwargs)
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\jinja2\environment.py", line 1008, in render
+    return self.environment.handle_exception(exc_info, True)
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\jinja2\environment.py", line 780, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\jinja2\_compat.py", line 37, in reraise
+    raise value.with_traceback(tb)
+  File "D:\ABC\edit\app\templates\index.html", line 3, in top-level template code
+    {% from  'macro/recommond.html' import showlist %}
+  File "D:\ABC\edit\app\templates\base.html", line 137, in top-level template code
+    {% block content %}{% endblock %}
+  File "D:\ABC\edit\app\templates\index.html", line 50, in block "content"
+    {% include 'common.html' %}
+  File "D:\ABC\edit\app\templates\common.html", line 34, in top-level template code
+    <i><img src="{{ top[0].poster }}"></i>
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\jinja2\environment.py", line 430, in getattr
+    return getattr(obj, attribute)
+jinja2.exceptions.UndefinedError: flask_sqlalchemy.BaseQuery object has no element 0
+2019-07-03 11:02:11,481 - flask.app - ERROR - Exception on / [GET]
+Traceback (most recent call last):
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\flask\app.py", line 2311, in wsgi_app
+    response = self.full_dispatch_request()
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\flask\app.py", line 1834, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\flask\app.py", line 1737, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\flask\_compat.py", line 36, in reraise
+    raise value
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\flask\app.py", line 1832, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\flask\app.py", line 1818, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "D:\ABC\edit\app\web\index.py", line 18, in index
+    return render_template('index.html',recommend=recommend,blogs=blogs,paginations=paginations,flask_blogs=flask_blogs)
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\flask\templating.py", line 135, in render_template
+    context, ctx.app)
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\flask\templating.py", line 117, in _render
+    rv = template.render(context)
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\jinja2\asyncsupport.py", line 76, in render
+    return original_render(self, *args, **kwargs)
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\jinja2\environment.py", line 1008, in render
+    return self.environment.handle_exception(exc_info, True)
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\jinja2\environment.py", line 780, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\jinja2\_compat.py", line 37, in reraise
+    raise value.with_traceback(tb)
+  File "D:\ABC\edit\app\templates\index.html", line 3, in top-level template code
+    {% from  'macro/recommond.html' import showlist %}
+  File "D:\ABC\edit\app\templates\base.html", line 137, in top-level template code
+    {% block content %}{% endblock %}
+  File "D:\ABC\edit\app\templates\index.html", line 50, in block "content"
+    {% include 'common.html' %}
+  File "D:\ABC\edit\app\templates\common.html", line 34, in top-level template code
+    <i><img src="{{ top[0].poster }}"></i>
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\jinja2\environment.py", line 430, in getattr
+    return getattr(obj, attribute)
+jinja2.exceptions.UndefinedError: flask_sqlalchemy.BaseQuery object has no element 0
+2019-07-03 11:23:42,841 - flask.app - ERROR - Exception on /hhhh [GET]
+Traceback (most recent call last):
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\flask\app.py", line 2311, in wsgi_app
+    response = self.full_dispatch_request()
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\flask\app.py", line 1834, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\flask\app.py", line 1737, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\flask\_compat.py", line 36, in reraise
+    raise value
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\flask\app.py", line 1832, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\flask\app.py", line 1818, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "D:\ABC\edit\app\web\test.py", line 8, in hhhhh
+    raise sqlalchemy.exc.InternalError
+TypeError: __init__() missing 3 required positional arguments: 'statement', 'params', and 'orig'
+2019-07-03 11:25:42,711 - flask.app - ERROR - Exception on /hhhh [GET]
+Traceback (most recent call last):
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\flask\app.py", line 2311, in wsgi_app
+    response = self.full_dispatch_request()
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\flask\app.py", line 1834, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\flask\app.py", line 1737, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\flask\_compat.py", line 36, in reraise
+    raise value
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\flask\app.py", line 1832, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\flask\app.py", line 1818, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "D:\ABC\edit\app\web\test.py", line 8, in hhhhh
+    raise sqlalchemy.exc.InternalError(1366, "Incorrect string value: '\\xF0\\x9F\\x98\\x80\\xE4\\xBB...' for column 'body' at row 1",'dsada')
+sqlalchemy.exc.InternalError: (builtins.str) dsada
+[SQL: 1366]
+[parameters: "Incorrect string value: '\\xF0\\x9F\\x98\\x80\\xE4\\xBB...' for column 'body' at row 1"]
+(Background on this error at: http://sqlalche.me/e/2j85)
+2019-07-03 11:27:26,480 - flask.app - ERROR - Exception on /aaaaa [GET]
+Traceback (most recent call last):
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\flask\app.py", line 2311, in wsgi_app
+    response = self.full_dispatch_request()
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\flask\app.py", line 1834, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\flask\app.py", line 1737, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\flask\_compat.py", line 36, in reraise
+    raise value
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\flask\app.py", line 1832, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\flask\app.py", line 1818, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "D:\ABC\edit\app\web\test.py", line 12, in aaaaa
+    raise KeyError()
+KeyError
+2019-07-03 11:30:39,395 - flask.app - ERROR - Exception on /aaaaa [GET]
+Traceback (most recent call last):
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\flask\app.py", line 2311, in wsgi_app
+    response = self.full_dispatch_request()
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\flask\app.py", line 1834, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\flask\app.py", line 1737, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\flask\_compat.py", line 36, in reraise
+    raise value
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\flask\app.py", line 1832, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\flask\app.py", line 1818, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "D:\ABC\edit\app\web\test.py", line 12, in aaaaa
+    raise KeyError()
+KeyError
+2019-07-03 11:32:03,924 - flask.app - ERROR - Exception on /aaaaa [GET]
+Traceback (most recent call last):
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\flask\app.py", line 2311, in wsgi_app
+    response = self.full_dispatch_request()
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\flask\app.py", line 1834, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\flask\app.py", line 1737, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\flask\_compat.py", line 36, in reraise
+    raise value
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\flask\app.py", line 1832, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\flask\app.py", line 1818, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "D:\ABC\edit\app\web\test.py", line 12, in aaaaa
+    raise KeyError()
+KeyError
+2019-07-03 11:32:04,011 - flask.app - ERROR - Request finalizing failed with an error while handling an error
+Traceback (most recent call last):
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\flask\app.py", line 2311, in wsgi_app
+    response = self.full_dispatch_request()
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\flask\app.py", line 1834, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\flask\app.py", line 1737, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\flask\_compat.py", line 36, in reraise
+    raise value
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\flask\app.py", line 1832, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\flask\app.py", line 1818, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "D:\ABC\edit\app\web\test.py", line 12, in aaaaa
+    raise KeyError()
+KeyError
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\flask\app.py", line 1852, in finalize_request
+    response = self.process_response(response)
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\flask\app.py", line 2131, in process_response
+    response = handler(response)
+TypeError: unsupported() takes 0 positional arguments but 1 was given
+2019-07-03 11:32:04,133 - flask.app - ERROR - Exception on /favicon.ico [GET]
+Traceback (most recent call last):
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\flask\app.py", line 2311, in wsgi_app
+    response = self.full_dispatch_request()
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\flask\app.py", line 1835, in full_dispatch_request
+    return self.finalize_request(rv)
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\flask\app.py", line 1852, in finalize_request
+    response = self.process_response(response)
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\flask\app.py", line 2131, in process_response
+    response = handler(response)
+TypeError: unsupported() takes 0 positional arguments but 1 was given
+2019-07-03 11:32:04,140 - flask.app - ERROR - Request finalizing failed with an error while handling an error
+Traceback (most recent call last):
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\flask\app.py", line 2311, in wsgi_app
+    response = self.full_dispatch_request()
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\flask\app.py", line 1835, in full_dispatch_request
+    return self.finalize_request(rv)
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\flask\app.py", line 1852, in finalize_request
+    response = self.process_response(response)
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\flask\app.py", line 2131, in process_response
+    response = handler(response)
+TypeError: unsupported() takes 0 positional arguments but 1 was given
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\flask\app.py", line 1852, in finalize_request
+    response = self.process_response(response)
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\flask\app.py", line 2131, in process_response
+    response = handler(response)
+TypeError: unsupported() takes 0 positional arguments but 1 was given
+2019-07-03 11:34:10,054 - flask.app - ERROR - Exception on /aaaaa [GET]
+Traceback (most recent call last):
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\flask\app.py", line 2311, in wsgi_app
+    response = self.full_dispatch_request()
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\flask\app.py", line 1834, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\flask\app.py", line 1737, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\flask\_compat.py", line 36, in reraise
+    raise value
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\flask\app.py", line 1832, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "D:\ABC\virtu-manage\blog\lib\site-packages\flask\app.py", line 1818, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "D:\ABC\edit\app\web\test.py", line 12, in aaaaa
+    raise KeyError()
+KeyError

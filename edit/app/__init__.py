@@ -10,7 +10,7 @@ except ModuleNotFoundError:
 
 from logging.handlers import RotatingFileHandler
 
-from flask import Flask,request,render_template
+from flask import Flask,request,render_template,redirect,url_for
 from flask_apscheduler import APScheduler
 from flask_moment import Moment
 
@@ -74,7 +74,9 @@ def extension_register(app):
 
 def blueprint_register(app):
     from app.web import web
+    from app.test import test
     app.register_blueprint(web)
+    app.register_blueprint(test)
 
 def logging_register(app):
     class RequestFormatter(logging.Formatter):
@@ -99,11 +101,17 @@ def error_register(app):
 
     @app.errorhandler(404)
     def page_not_found(error):
-        return render_template('404.html'),404
-
+        return render_template('error/404.html'), 404
     @app.errorhandler(500)
     def internal_server_error(error):
-        return render_template('500.html'),500
+        return render_template('error/500.html'), 500
+    @app.errorhandler(413)
+    def request_file_large(error):
+        return render_template('error/413.html'),413
+    @app.errorhandler(406)
+    def request_file_large(error):
+        return render_template('error/406.html'), 406
+
 
 def mine_info_register(app):
     #自定义上下文变量和函数
@@ -111,8 +119,12 @@ def mine_info_register(app):
     def appinfo():
         #设置了一个上下文函数,获取全局变量,渲染公共模板
         new = Article.query.order_by(Article.create_time.desc()).limit(3)
-        reco = Article.query.filter_by(select='other').limit(2)
-        top = Article.query.filter_by(select='css').limit(2)
+        reco = Article.query.filter_by(select='pythonBase').limit(2)
+        top = Article.query.filter_by(select='data_structure').limit(2)
         return dict(new=new,reco=reco,top=top)
+
+
+
+
 
 

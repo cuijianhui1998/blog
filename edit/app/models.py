@@ -8,8 +8,8 @@ from markdown import markdown
 from flask_login import UserMixin
 from sqlalchemy import Column,String,Integer,Text,Boolean,DateTime,ForeignKey
 from flask_sqlalchemy import SQLAlchemy as _SQLAlchemy
-
-
+import sqlalchemy
+from app.error.sql_error import UnSupportedException
 
 class SQLAlchemy(_SQLAlchemy):
     @contextmanager
@@ -17,9 +17,12 @@ class SQLAlchemy(_SQLAlchemy):
         try:
             yield
             self.session.commit()
-        except Exception as e:
+        except sqlalchemy.exc.InternalError as e:
             self.session.rollback()
-            raise e
+            if e.statement==1366:
+                raise UnSupportedException()
+
+
 
 db = SQLAlchemy()
 

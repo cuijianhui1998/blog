@@ -27,7 +27,7 @@ def detail():
 
 
     if reply_form.reply_submit.data and reply_form.validate():
-        return render_template('404.html')
+        return render_template('error/404.html')
     return render_template('detail.html',blog=blog,tips=tips,comment_form=comment_form,
                            reply_form=reply_form,pageinations=pageinations,comments=comments)
 

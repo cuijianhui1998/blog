@@ -1,0 +1,9 @@
+{% extends 'error/404.html' %}
+{% block title %}
+    <title>Request Entity Too Large</title>
+{% endblock %}
+
+{% block data %}
+    <a href="{{ url_for('web.index') }}">Back Home→</a></br>
+    上传文件太大
+{% endblock %}
