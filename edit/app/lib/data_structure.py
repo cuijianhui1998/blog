@@ -33,8 +33,8 @@ class BlogTypeEnum(Enum):
     Django = 1012
     tornado = 1013
     data_structure = 1021
-    css = 1022
-    javascript = 1023
+    sql = 1022
+    network = 1023
     allIsFile = 1031
     install = 1032
 

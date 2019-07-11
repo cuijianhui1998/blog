@@ -5,14 +5,14 @@ from app.models import Article
 from app.lib.data_structure import BlogTypeEnum
 from app.lib.blankprint import BlankPrint
 
-front = BlankPrint('front')
+computer = BlankPrint('computer')
 
 
 
 
 
 
-@front.route('/data_structure')
+@computer.route('/data_structure')
 def data_structure():
     enum_value = 1021
     title = "数据结构"
@@ -23,10 +23,10 @@ def data_structure():
     return render_template('list.html', blogs=blogs, title=title,paginations=paginations)
 
 
-@front.route('/css')
-def front_css():
+@computer.route('/sql')
+def sql():
     enum_value = 1022
-    title = "css"
+    title = "数据库"
     page = request.args.get("page", 1, type=int)
     paginations = Article.query.filter_by(select=BlogTypeEnum(enum_value).name).order_by(
         Article.create_time.desc()).paginate(page, per_page=10)
@@ -34,10 +34,10 @@ def front_css():
     return render_template('list.html', blogs=blogs, title=title,paginations=paginations)
 
 
-@front.route('/js')
-def front_js():
+@computer.route('/network')
+def network():
     enum_value = 1023
-    title = "javascript"
+    title = "计算机网络"
     page = request.args.get("page", 1, type=int)
     paginations = Article.query.filter_by(select=BlogTypeEnum(enum_value).name).order_by(
         Article.create_time.desc()).paginate(page, per_page=10)
