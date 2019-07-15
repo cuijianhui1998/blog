@@ -22,14 +22,14 @@
             <label>类型:
                 <select name="select" id="select">
                     <option value ="pythonBase">python基础</option>
-                    <option value ="pythonProgress" selected>python进阶</option>
+                    <option value ="pythonProgress">python进阶</option>
                     <option value="pythonNew">python新特性</option>
                     <option value ="flask">flask</option>
                     <option value ="Django">Django</option>
                     <option value="tornado">tornado</option>
-                    <option value ="html5">html5</option>
-                    <option value ="css">css</option>
-                    <option value="javascript">javascript</option>
+                    <option value ="data_structure">数据结构和算法</option>
+                    <option value ="sql">数据库</option>
+                    <option value="network">计算机网络</option>
                     <option value ="allIsFile">一切皆文件</option>
                     <option value ="install">linux的安装</option>
                     <option value="other">其他</option>
@@ -77,6 +77,7 @@
             var is_recommand ={{ article.is_recommend|tojson }};
             $("#is_recommend option[value="+is_recommand+"]").attr("selected","selected");
             $("#select option[value="+select+"]").attr("selected","selected");
+            console.log("#select option[value="+select+"]");
         })
     </script>
 {% endblock %}
